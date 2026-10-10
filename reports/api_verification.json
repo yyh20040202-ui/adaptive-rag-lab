@@ -1,0 +1,19 @@
+{
+  "passed": true,
+  "checks": {
+    "/": true,
+    "/static/app.js": true,
+    "/static/style.css": true,
+    "/api/health": true,
+    "/api/resources": true,
+    "/api/reports": true,
+    "/api/example-queries": true,
+    "/api/documents?corpus=scifact": true,
+    "real_benchmark_search": true,
+    "selected_quality_model_search": true,
+    "real_paper_import": true,
+    "imported_paper_search": true,
+    "immutable_benchmark": true
+  },
+  "scope": "In-process actual FastAPI endpoints; real SciFact text, no LLM mock. Static assets served; browser layout/interaction not visually verified."
+}

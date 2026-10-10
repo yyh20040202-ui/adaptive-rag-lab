@@ -1,0 +1,11 @@
+{
+  "passed": true,
+  "recorded_at_utc": "2026-10-10T04:41:10.884206+00:00",
+  "pytest_passed": 66,
+  "node_syntax_check": true,
+  "html_unique_ids": 92,
+  "missing_static_dom_selectors": [],
+  "browser_visual_qa": false,
+  "scope": "CPU offline regression contracts, JavaScript syntax and DOM selector consistency; not a model accuracy or browser interaction evaluation.",
+  "warning": "Bundled Starlette TestClient emitted one AnyIO deprecation warning."
+}

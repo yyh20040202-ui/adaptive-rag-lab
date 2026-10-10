@@ -1,0 +1,19 @@
+[build-system]
+requires = ["setuptools>=69"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "adaptive-rag-lab"
+version = "0.1.0"
+description = "Trainable evidence retrieval, budget routing and citation-audited local RAG"
+requires-python = ">=3.10,<3.13"
+
+[tool.setuptools.packages.find]
+include = ["adaptive_rag*"]
+
+[tool.setuptools.package-data]
+adaptive_rag = ["web/*.html", "web/*.css", "web/*.js"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["."]

@@ -1,0 +1,1073 @@
+{
+  "model": "Qwen3-0.6B Q4_0",
+  "backend": "llama.cpp b11517 Windows Vulkan build, loopback HTTP",
+  "cases": 12,
+  "passed": 9,
+  "answered": 10,
+  "expected_answerable": 8,
+  "correct_abstentions": 2,
+  "valid_quote_citations": 10,
+  "seconds": 12.428914999999506,
+  "seed": 42,
+  "evidence_budget": 1000,
+  "limitations": "12 hand-authored synthetic smoke cases. Atom/source checks are not semantic entailment, real enterprise QA accuracy or a prompt-injection benchmark.",
+  "results": [
+    {
+      "case": {
+        "id": "hotel-zh",
+        "query": "北京出差的酒店报销上限是多少？",
+        "source": "policy-expenses",
+        "atoms": [
+          "500"
+        ],
+        "answerable": true
+      },
+      "passed_smoke_check": true,
+      "result": {
+        "answer": "500元/晚",
+        "abstain": false,
+        "citations": [
+          {
+            "source_id": "policy-expenses",
+            "title": "Expense reimbursement / 差旅报销规则（模拟）",
+            "quote": "Hotel reimbursement is capped at CNY 500 per night in Beijing.",
+            "start": 199,
+            "end": 261,
+            "quote_verified": true
+          }
+        ],
+        "audit_failures": [],
+        "query": "北京出差的酒店报销上限是多少？",
+        "domain": "demo",
+        "route": "bm25",
+        "policy": "explicit",
+        "trace": [
+          {
+            "step": "BM25",
+            "executed": true
+          },
+          {
+            "step": "MiniLM LoRA",
+            "executed": false
+          },
+          {
+            "step": "Neural reranker",
+            "executed": false
+          }
+        ],
+        "retrieval_ms": 0.3969999997934792,
+        "generation_ms": 1010.2646000004825,
+        "usage": {
+          "completion_tokens": 58,
+          "prompt_tokens": 673,
+          "total_tokens": 731,
+          "prompt_tokens_details": {
+            "cached_tokens": 291
+          }
+        },
+        "finish_reason": "stop",
+        "model": "Qwen3-0.6B Q4_0; no thinking; temperature=0",
+        "evidence": [
+          {
+            "source_id": "policy-expenses",
+            "title": "Expense reimbursement / 差旅报销规则（模拟）",
+            "text": "Expense reimbursement / 差旅报销规则（模拟）\nThis is a synthetic policy for demonstration, not a real company's rule. Employees must submit travel expense receipts within 30 calendar days after the trip ends. Hotel reimbursement is capped at CNY 500 per night in Beijing. Meal reimbursement is capped at CNY 100 per day. The policy does not specify any annual travel budget. 本文为模拟资料：差旅结束后30个自然日内提交票据；北京酒店报销上限每晚500元，餐补上限每天100元。",
+            "start": 0,
+            "end": 416
+          },
+          {
+            "source_id": "policy-remote",
+            "title": "Remote work / 远程办公（模拟）",
+            "text": "Remote work / 远程办公（模拟）\nEligible employees may work remotely up to two days per week with manager approval. Interns follow their agreed attendance schedule. A remote day does not change required work hours. This document does not specify an internship salary. 模拟制度：符合条件的员工经主管同意每周最多远程办公两天；实习生按约定出勤；本文未规定实习薪资。",
+            "start": 0,
+            "end": 306
+          },
+          {
+            "source_id": "policy-security",
+            "title": "Customer data handling / 客户数据安全（模拟）",
+            "text": "Customer data handling / 客户数据安全（模拟）\nThis synthetic handbook requires customer records to remain on approved internal systems. Do not upload customer names, telephone numbers, or identification numbers to a public AI service. Access must follow the least-privilege principle. Report suspected data exposure to the security team within one hour. 模拟制度：客户姓名、电话、证件号码不得上传公共AI服务；遵循最小权限原则；发现泄漏风险后一小时内上报安全团队。",
+            "start": 0,
+            "end": 399
+          },
+          {
+            "source_id": "policy-vacation",
+            "title": "Leave requests / 请假申请（模拟）",
+            "text": "Leave requests / 请假申请（模拟）\nAnnual leave requests must be submitted at least five working days before the planned start. Emergency leave may be requested on the same day. Approval must be recorded in the attendance system. These are synthetic example rules. 模拟制度：年假至少提前五个工作日申请；紧急请假可当天提交；审批须在考勤系统留痕。",
+            "start": 0,
+            "end": 296
+          }
+        ],
+        "evidence_tokens": 524,
+        "evidence_budget": 1000,
+        "audit_scope": "source IDs and exact quote offsets; semantic entailment is not certified"
+      }
+    },
+    {
+      "case": {
+        "id": "hotel-en",
+        "query": "What is the hotel reimbursement limit per night in Beijing?",
+        "source": "policy-expenses",
+        "atoms": [
+          "500"
+        ],
+        "answerable": true
+      },
+      "passed_smoke_check": true,
+      "result": {
+        "answer": "500 CNY per night.",
+        "abstain": false,
+        "citations": [
+          {
+            "source_id": "policy-expenses",
+            "title": "Expense reimbursement / 差旅报销规则（模拟）",
+            "quote": "Hotel reimbursement is capped at CNY 500 per night in Beijing.",
+            "start": 199,
+            "end": 261,
+            "quote_verified": true
+          }
+        ],
+        "audit_failures": [],
+        "query": "What is the hotel reimbursement limit per night in Beijing?",
+        "domain": "demo",
+        "route": "bm25",
+        "policy": "explicit",
+        "trace": [
+          {
+            "step": "BM25",
+            "executed": true
+          },
+          {
+            "step": "MiniLM LoRA",
+            "executed": false
+          },
+          {
+            "step": "Neural reranker",
+            "executed": false
+          }
+        ],
+        "retrieval_ms": 0.40549999994254904,
+        "generation_ms": 677.6750999997603,
+        "usage": {
+          "completion_tokens": 59,
+          "prompt_tokens": 692,
+          "total_tokens": 751,
+          "prompt_tokens_details": {
+            "cached_tokens": 291
+          }
+        },
+        "finish_reason": "stop",
+        "model": "Qwen3-0.6B Q4_0; no thinking; temperature=0",
+        "evidence": [
+          {
+            "source_id": "policy-expenses",
+            "title": "Expense reimbursement / 差旅报销规则（模拟）",
+            "text": "Expense reimbursement / 差旅报销规则（模拟）\nThis is a synthetic policy for demonstration, not a real company's rule. Employees must submit travel expense receipts within 30 calendar days after the trip ends. Hotel reimbursement is capped at CNY 500 per night in Beijing. Meal reimbursement is capped at CNY 100 per day. The policy does not specify any annual travel budget. 本文为模拟资料：差旅结束后30个自然日内提交票据；北京酒店报销上限每晚500元，餐补上限每天100元。",
+            "start": 0,
+            "end": 416
+          },
+          {
+            "source_id": "policy-deployment",
+            "title": "Model release checklist / 模型发布（模拟）",
+            "text": "Model release checklist / 模型发布（模拟）\nA model release must include a versioned dataset manifest, an evaluation report, a rollback plan, and owner approval. Results must be compared with the current production baseline. If the validation metric falls below the approved threshold, the release is blocked. This is synthetic content, not a production policy. 模拟清单：发布模型需数据版本清单、评测报告、回滚方案和负责人批准；指标须与当前基线比较；验证指标低于阈值则阻止发布。",
+            "start": 0,
+            "end": 411
+          },
+          {
+            "source_id": "policy-onboarding",
+            "title": "Intern onboarding / 实习入职（模拟）",
+            "text": "Intern onboarding / 实习入职（模拟）\nAn intern must complete account setup, confidentiality training, and a team orientation before accessing project data. The onboarding checklist must be completed within the first three working days. Each intern is assigned a mentor. This is synthetic demonstration content. 模拟流程：访问项目数据前完成账号开通、保密培训和团队介绍；前三个工作日完成入职清单；每位实习生安排一名导师。",
+            "start": 0,
+            "end": 357
+          },
+          {
+            "source_id": "policy-vacation",
+            "title": "Leave requests / 请假申请（模拟）",
+            "text": "Leave requests / 请假申请（模拟）\nAnnual leave requests must be submitted at least five working days before the planned start. Emergency leave may be requested on the same day. Approval must be recorded in the attendance system. These are synthetic example rules. 模拟制度：年假至少提前五个工作日申请；紧急请假可当天提交；审批须在考勤系统留痕。",
+            "start": 0,
+            "end": 296
+          }
+        ],
+        "evidence_tokens": 540,
+        "evidence_budget": 1000,
+        "audit_scope": "source IDs and exact quote offsets; semantic entailment is not certified"
+      }
+    },
+    {
+      "case": {
+        "id": "receipt-en",
+        "query": "Within how many days after a trip must travel expense receipts be submitted?",
+        "source": "policy-expenses",
+        "atoms": [
+          "30"
+        ],
+        "answerable": true
+      },
+      "passed_smoke_check": true,
+      "result": {
+        "answer": "30 calendar days after the trip ends.",
+        "abstain": false,
+        "citations": [
+          {
+            "source_id": "policy-expenses",
+            "title": "Expense reimbursement / 差旅报销规则（模拟）",
+            "quote": "Employees must submit travel expense receipts within 30 calendar days after the trip ends.",
+            "start": 108,
+            "end": 198,
+            "quote_verified": true
+          }
+        ],
+        "audit_failures": [],
+        "query": "Within how many days after a trip must travel expense receipts be submitted?",
+        "domain": "demo",
+        "route": "bm25",
+        "policy": "explicit",
+        "trace": [
+          {
+            "step": "BM25",
+            "executed": true
+          },
+          {
+            "step": "MiniLM LoRA",
+            "executed": false
+          },
+          {
+            "step": "Neural reranker",
+            "executed": false
+          }
+        ],
+        "retrieval_ms": 0.28359999942040304,
+        "generation_ms": 734.2185999996218,
+        "usage": {
+          "completion_tokens": 61,
+          "prompt_tokens": 685,
+          "total_tokens": 746,
+          "prompt_tokens_details": {
+            "cached_tokens": 291
+          }
+        },
+        "finish_reason": "stop",
+        "model": "Qwen3-0.6B Q4_0; no thinking; temperature=0",
+        "evidence": [
+          {
+            "source_id": "policy-expenses",
+            "title": "Expense reimbursement / 差旅报销规则（模拟）",
+            "text": "Expense reimbursement / 差旅报销规则（模拟）\nThis is a synthetic policy for demonstration, not a real company's rule. Employees must submit travel expense receipts within 30 calendar days after the trip ends. Hotel reimbursement is capped at CNY 500 per night in Beijing. Meal reimbursement is capped at CNY 100 per day. The policy does not specify any annual travel budget. 本文为模拟资料：差旅结束后30个自然日内提交票据；北京酒店报销上限每晚500元，餐补上限每天100元。",
+            "start": 0,
+            "end": 416
+          },
+          {
+            "source_id": "policy-vacation",
+            "title": "Leave requests / 请假申请（模拟）",
+            "text": "Leave requests / 请假申请（模拟）\nAnnual leave requests must be submitted at least five working days before the planned start. Emergency leave may be requested on the same day. Approval must be recorded in the attendance system. These are synthetic example rules. 模拟制度：年假至少提前五个工作日申请；紧急请假可当天提交；审批须在考勤系统留痕。",
+            "start": 0,
+            "end": 296
+          },
+          {
+            "source_id": "policy-onboarding",
+            "title": "Intern onboarding / 实习入职（模拟）",
+            "text": "Intern onboarding / 实习入职（模拟）\nAn intern must complete account setup, confidentiality training, and a team orientation before accessing project data. The onboarding checklist must be completed within the first three working days. Each intern is assigned a mentor. This is synthetic demonstration content. 模拟流程：访问项目数据前完成账号开通、保密培训和团队介绍；前三个工作日完成入职清单；每位实习生安排一名导师。",
+            "start": 0,
+            "end": 357
+          },
+          {
+            "source_id": "policy-security",
+            "title": "Customer data handling / 客户数据安全（模拟）",
+            "text": "Customer data handling / 客户数据安全（模拟）\nThis synthetic handbook requires customer records to remain on approved internal systems. Do not upload customer names, telephone numbers, or identification numbers to a public AI service. Access must follow the least-privilege principle. Report suspected data exposure to the security team within one hour. 模拟制度：客户姓名、电话、证件号码不得上传公共AI服务；遵循最小权限原则；发现泄漏风险后一小时内上报安全团队。",
+            "start": 0,
+            "end": 399
+          }
+        ],
+        "evidence_tokens": 530,
+        "evidence_budget": 1000,
+        "audit_scope": "source IDs and exact quote offsets; semantic entailment is not certified"
+      }
+    },
+    {
+      "case": {
+        "id": "customer-zh",
+        "query": "客户姓名和电话可以上传公共AI服务吗？",
+        "source": "policy-security",
+        "atoms": [
+          "不"
+        ],
+        "answerable": true
+      },
+      "passed_smoke_check": false,
+      "result": {
+        "answer": "No, customer names, telephone numbers, and identification numbers cannot be uploaded to public AI services. The least-privilege principle applies, and reports of suspected data exposure must be reported within one hour.",
+        "abstain": false,
+        "citations": [
+          {
+            "source_id": "policy-security",
+            "title": "Customer data handling / 客户数据安全（模拟）",
+            "quote": "Customer data handling / 客户数据安全（模拟）\nThis synthetic handbook requires customer records to remain on approved internal systems. Do not upload customer names, telephone numbers, or identification numbers to a public AI service.",
+            "start": 0,
+            "end": 224,
+            "quote_verified": true
+          }
+        ],
+        "audit_failures": [],
+        "query": "客户姓名和电话可以上传公共AI服务吗？",
+        "domain": "demo",
+        "route": "bm25",
+        "policy": "explicit",
+        "trace": [
+          {
+            "step": "BM25",
+            "executed": true
+          },
+          {
+            "step": "MiniLM LoRA",
+            "executed": false
+          },
+          {
+            "step": "Neural reranker",
+            "executed": false
+          }
+        ],
+        "retrieval_ms": 0.2648999998200452,
+        "generation_ms": 1423.2527000003756,
+        "usage": {
+          "completion_tokens": 116,
+          "prompt_tokens": 653,
+          "total_tokens": 769,
+          "prompt_tokens_details": {
+            "cached_tokens": 135
+          }
+        },
+        "finish_reason": "stop",
+        "model": "Qwen3-0.6B Q4_0; no thinking; temperature=0",
+        "evidence": [
+          {
+            "source_id": "policy-security",
+            "title": "Customer data handling / 客户数据安全（模拟）",
+            "text": "Customer data handling / 客户数据安全（模拟）\nThis synthetic handbook requires customer records to remain on approved internal systems. Do not upload customer names, telephone numbers, or identification numbers to a public AI service. Access must follow the least-privilege principle. Report suspected data exposure to the security team within one hour. 模拟制度：客户姓名、电话、证件号码不得上传公共AI服务；遵循最小权限原则；发现泄漏风险后一小时内上报安全团队。",
+            "start": 0,
+            "end": 399
+          },
+          {
+            "source_id": "policy-purchase",
+            "title": "Purchase approvals / 采购审批（模拟）",
+            "text": "Purchase approvals / 采购审批（模拟）\nPurchases below CNY 2000 require team lead approval. Purchases at or above CNY 2000 require both team lead and finance approval. Software subscriptions must also pass a security review before purchase. These thresholds are synthetic. 模拟规则：2000元以下由组长审批；2000元及以上需组长与财务双重审批；软件订阅还需安全审查。",
+            "start": 0,
+            "end": 312
+          },
+          {
+            "source_id": "policy-onboarding",
+            "title": "Intern onboarding / 实习入职（模拟）",
+            "text": "Intern onboarding / 实习入职（模拟）\nAn intern must complete account setup, confidentiality training, and a team orientation before accessing project data. The onboarding checklist must be completed within the first three working days. Each intern is assigned a mentor. This is synthetic demonstration content. 模拟流程：访问项目数据前完成账号开通、保密培训和团队介绍；前三个工作日完成入职清单；每位实习生安排一名导师。",
+            "start": 0,
+            "end": 357
+          },
+          {
+            "source_id": "policy-vacation",
+            "title": "Leave requests / 请假申请（模拟）",
+            "text": "Leave requests / 请假申请（模拟）\nAnnual leave requests must be submitted at least five working days before the planned start. Emergency leave may be requested on the same day. Approval must be recorded in the attendance system. These are synthetic example rules. 模拟制度：年假至少提前五个工作日申请；紧急请假可当天提交；审批须在考勤系统留痕。",
+            "start": 0,
+            "end": 296
+          }
+        ],
+        "evidence_tokens": 501,
+        "evidence_budget": 1000,
+        "audit_scope": "source IDs and exact quote offsets; semantic entailment is not certified"
+      }
+    },
+    {
+      "case": {
+        "id": "remote-en",
+        "query": "How many days per week may an eligible employee work remotely with manager approval?",
+        "source": "policy-remote",
+        "atoms": [
+          "two",
+          "2"
+        ],
+        "any_atom": true,
+        "answerable": true
+      },
+      "passed_smoke_check": true,
+      "result": {
+        "answer": "Eligible employees may work remotely up to two days per week with manager approval.",
+        "abstain": false,
+        "citations": [
+          {
+            "source_id": "policy-remote",
+            "title": "Remote work / 远程办公（模拟）",
+            "quote": "Eligible employees may work remotely up to two days per week with manager approval.",
+            "start": 23,
+            "end": 106,
+            "quote_verified": true
+          }
+        ],
+        "audit_failures": [],
+        "query": "How many days per week may an eligible employee work remotely with manager approval?",
+        "domain": "demo",
+        "route": "bm25",
+        "policy": "explicit",
+        "trace": [
+          {
+            "step": "BM25",
+            "executed": true
+          },
+          {
+            "step": "MiniLM LoRA",
+            "executed": false
+          },
+          {
+            "step": "Neural reranker",
+            "executed": false
+          }
+        ],
+        "retrieval_ms": 0.25890000051731477,
+        "generation_ms": 681.2985999995362,
+        "usage": {
+          "completion_tokens": 69,
+          "prompt_tokens": 690,
+          "total_tokens": 759,
+          "prompt_tokens_details": {
+            "cached_tokens": 689
+          }
+        },
+        "finish_reason": "stop",
+        "model": "Qwen3-0.6B Q4_0; no thinking; temperature=0",
+        "evidence": [
+          {
+            "source_id": "policy-remote",
+            "title": "Remote work / 远程办公（模拟）",
+            "text": "Remote work / 远程办公（模拟）\nEligible employees may work remotely up to two days per week with manager approval. Interns follow their agreed attendance schedule. A remote day does not change required work hours. This document does not specify an internship salary. 模拟制度：符合条件的员工经主管同意每周最多远程办公两天；实习生按约定出勤；本文未规定实习薪资。",
+            "start": 0,
+            "end": 306
+          },
+          {
+            "source_id": "policy-vacation",
+            "title": "Leave requests / 请假申请（模拟）",
+            "text": "Leave requests / 请假申请（模拟）\nAnnual leave requests must be submitted at least five working days before the planned start. Emergency leave may be requested on the same day. Approval must be recorded in the attendance system. These are synthetic example rules. 模拟制度：年假至少提前五个工作日申请；紧急请假可当天提交；审批须在考勤系统留痕。",
+            "start": 0,
+            "end": 296
+          },
+          {
+            "source_id": "policy-deployment",
+            "title": "Model release checklist / 模型发布（模拟）",
+            "text": "Model release checklist / 模型发布（模拟）\nA model release must include a versioned dataset manifest, an evaluation report, a rollback plan, and owner approval. Results must be compared with the current production baseline. If the validation metric falls below the approved threshold, the release is blocked. This is synthetic content, not a production policy. 模拟清单：发布模型需数据版本清单、评测报告、回滚方案和负责人批准；指标须与当前基线比较；验证指标低于阈值则阻止发布。",
+            "start": 0,
+            "end": 411
+          },
+          {
+            "source_id": "policy-expenses",
+            "title": "Expense reimbursement / 差旅报销规则（模拟）",
+            "text": "Expense reimbursement / 差旅报销规则（模拟）\nThis is a synthetic policy for demonstration, not a real company's rule. Employees must submit travel expense receipts within 30 calendar days after the trip ends. Hotel reimbursement is capped at CNY 500 per night in Beijing. Meal reimbursement is capped at CNY 100 per day. The policy does not specify any annual travel budget. 本文为模拟资料：差旅结束后30个自然日内提交票据；北京酒店报销上限每晚500元，餐补上限每天100元。",
+            "start": 0,
+            "end": 416
+          }
+        ],
+        "evidence_tokens": 534,
+        "evidence_budget": 1000,
+        "audit_scope": "source IDs and exact quote offsets; semantic entailment is not certified"
+      }
+    },
+    {
+      "case": {
+        "id": "onboarding-en",
+        "query": "When must an intern complete the onboarding checklist?",
+        "source": "policy-onboarding",
+        "atoms": [
+          "three",
+          "3"
+        ],
+        "any_atom": true,
+        "answerable": true
+      },
+      "passed_smoke_check": true,
+      "result": {
+        "answer": "An intern must complete the onboarding checklist within the first three working days.",
+        "abstain": false,
+        "citations": [
+          {
+            "source_id": "policy-onboarding",
+            "title": "Intern onboarding / 实习入职（模拟）",
+            "quote": "An intern must complete account setup, confidentiality training, and a team orientation before accessing project data. The onboarding checklist must be completed within the first three working days.",
+            "start": 29,
+            "end": 227,
+            "quote_verified": true
+          }
+        ],
+        "audit_failures": [],
+        "query": "When must an intern complete the onboarding checklist?",
+        "domain": "demo",
+        "route": "bm25",
+        "policy": "explicit",
+        "trace": [
+          {
+            "step": "BM25",
+            "executed": true
+          },
+          {
+            "step": "MiniLM LoRA",
+            "executed": false
+          },
+          {
+            "step": "Neural reranker",
+            "executed": false
+          }
+        ],
+        "retrieval_ms": 0.2647000001161359,
+        "generation_ms": 4123.521999999866,
+        "usage": {
+          "completion_tokens": 83,
+          "prompt_tokens": 653,
+          "total_tokens": 736,
+          "prompt_tokens_details": {
+            "cached_tokens": 403
+          }
+        },
+        "finish_reason": "stop",
+        "model": "Qwen3-0.6B Q4_0; no thinking; temperature=0",
+        "evidence": [
+          {
+            "source_id": "policy-onboarding",
+            "title": "Intern onboarding / 实习入职（模拟）",
+            "text": "Intern onboarding / 实习入职（模拟）\nAn intern must complete account setup, confidentiality training, and a team orientation before accessing project data. The onboarding checklist must be completed within the first three working days. Each intern is assigned a mentor. This is synthetic demonstration content. 模拟流程：访问项目数据前完成账号开通、保密培训和团队介绍；前三个工作日完成入职清单；每位实习生安排一名导师。",
+            "start": 0,
+            "end": 357
+          },
+          {
+            "source_id": "policy-deployment",
+            "title": "Model release checklist / 模型发布（模拟）",
+            "text": "Model release checklist / 模型发布（模拟）\nA model release must include a versioned dataset manifest, an evaluation report, a rollback plan, and owner approval. Results must be compared with the current production baseline. If the validation metric falls below the approved threshold, the release is blocked. This is synthetic content, not a production policy. 模拟清单：发布模型需数据版本清单、评测报告、回滚方案和负责人批准；指标须与当前基线比较；验证指标低于阈值则阻止发布。",
+            "start": 0,
+            "end": 411
+          },
+          {
+            "source_id": "policy-remote",
+            "title": "Remote work / 远程办公（模拟）",
+            "text": "Remote work / 远程办公（模拟）\nEligible employees may work remotely up to two days per week with manager approval. Interns follow their agreed attendance schedule. A remote day does not change required work hours. This document does not specify an internship salary. 模拟制度：符合条件的员工经主管同意每周最多远程办公两天；实习生按约定出勤；本文未规定实习薪资。",
+            "start": 0,
+            "end": 306
+          },
+          {
+            "source_id": "policy-vacation",
+            "title": "Leave requests / 请假申请（模拟）",
+            "text": "Leave requests / 请假申请（模拟）\nAnnual leave requests must be submitted at least five working days before the planned start. Emergency leave may be requested on the same day. Approval must be recorded in the attendance system. These are synthetic example rules. 模拟制度：年假至少提前五个工作日申请；紧急请假可当天提交；审批须在考勤系统留痕。",
+            "start": 0,
+            "end": 296
+          }
+        ],
+        "evidence_tokens": 502,
+        "evidence_budget": 1000,
+        "audit_scope": "source IDs and exact quote offsets; semantic entailment is not certified"
+      }
+    },
+    {
+      "case": {
+        "id": "purchase-en",
+        "query": "Whose approval is required for a purchase at or above CNY 2000?",
+        "source": "policy-purchase",
+        "atoms": [
+          "team lead",
+          "finance"
+        ],
+        "answerable": true
+      },
+      "passed_smoke_check": true,
+      "result": {
+        "answer": "Both team lead and finance approval.",
+        "abstain": false,
+        "citations": [
+          {
+            "source_id": "policy-purchase",
+            "title": "Purchase approvals / 采购审批（模拟）",
+            "quote": "Purchases below CNY 2000 require team lead approval. Purchases at or above CNY 2000 require both team lead and finance approval.",
+            "start": 30,
+            "end": 158,
+            "quote_verified": true
+          }
+        ],
+        "audit_failures": [],
+        "query": "Whose approval is required for a purchase at or above CNY 2000?",
+        "domain": "demo",
+        "route": "bm25",
+        "policy": "explicit",
+        "trace": [
+          {
+            "step": "BM25",
+            "executed": true
+          },
+          {
+            "step": "MiniLM LoRA",
+            "executed": false
+          },
+          {
+            "step": "Neural reranker",
+            "executed": false
+          }
+        ],
+        "retrieval_ms": 0.3469000002951361,
+        "generation_ms": 719.4023000001835,
+        "usage": {
+          "completion_tokens": 77,
+          "prompt_tokens": 707,
+          "total_tokens": 784,
+          "prompt_tokens_details": {
+            "cached_tokens": 706
+          }
+        },
+        "finish_reason": "stop",
+        "model": "Qwen3-0.6B Q4_0; no thinking; temperature=0",
+        "evidence": [
+          {
+            "source_id": "policy-purchase",
+            "title": "Purchase approvals / 采购审批（模拟）",
+            "text": "Purchase approvals / 采购审批（模拟）\nPurchases below CNY 2000 require team lead approval. Purchases at or above CNY 2000 require both team lead and finance approval. Software subscriptions must also pass a security review before purchase. These thresholds are synthetic. 模拟规则：2000元以下由组长审批；2000元及以上需组长与财务双重审批；软件订阅还需安全审查。",
+            "start": 0,
+            "end": 312
+          },
+          {
+            "source_id": "policy-expenses",
+            "title": "Expense reimbursement / 差旅报销规则（模拟）",
+            "text": "Expense reimbursement / 差旅报销规则（模拟）\nThis is a synthetic policy for demonstration, not a real company's rule. Employees must submit travel expense receipts within 30 calendar days after the trip ends. Hotel reimbursement is capped at CNY 500 per night in Beijing. Meal reimbursement is capped at CNY 100 per day. The policy does not specify any annual travel budget. 本文为模拟资料：差旅结束后30个自然日内提交票据；北京酒店报销上限每晚500元，餐补上限每天100元。",
+            "start": 0,
+            "end": 416
+          },
+          {
+            "source_id": "policy-remote",
+            "title": "Remote work / 远程办公（模拟）",
+            "text": "Remote work / 远程办公（模拟）\nEligible employees may work remotely up to two days per week with manager approval. Interns follow their agreed attendance schedule. A remote day does not change required work hours. This document does not specify an internship salary. 模拟制度：符合条件的员工经主管同意每周最多远程办公两天；实习生按约定出勤；本文未规定实习薪资。",
+            "start": 0,
+            "end": 306
+          },
+          {
+            "source_id": "policy-deployment",
+            "title": "Model release checklist / 模型发布（模拟）",
+            "text": "Model release checklist / 模型发布（模拟）\nA model release must include a versioned dataset manifest, an evaluation report, a rollback plan, and owner approval. Results must be compared with the current production baseline. If the validation metric falls below the approved threshold, the release is blocked. This is synthetic content, not a production policy. 模拟清单：发布模型需数据版本清单、评测报告、回滚方案和负责人批准；指标须与当前基线比较；验证指标低于阈值则阻止发布。",
+            "start": 0,
+            "end": 411
+          }
+        ],
+        "evidence_tokens": 547,
+        "evidence_budget": 1000,
+        "audit_scope": "source IDs and exact quote offsets; semantic entailment is not certified"
+      }
+    },
+    {
+      "case": {
+        "id": "data-incident-en",
+        "query": "How quickly must suspected customer data exposure be reported?",
+        "source": "policy-security",
+        "atoms": [
+          "one hour",
+          "1 hour"
+        ],
+        "any_atom": true,
+        "answerable": true
+      },
+      "passed_smoke_check": true,
+      "result": {
+        "answer": "within one hour.",
+        "abstain": false,
+        "citations": [
+          {
+            "source_id": "policy-security",
+            "title": "Customer data handling / 客户数据安全（模拟）",
+            "quote": "Report suspected data exposure to the security team within one hour.",
+            "start": 275,
+            "end": 343,
+            "quote_verified": true
+          }
+        ],
+        "audit_failures": [],
+        "query": "How quickly must suspected customer data exposure be reported?",
+        "domain": "demo",
+        "route": "bm25",
+        "policy": "explicit",
+        "trace": [
+          {
+            "step": "BM25",
+            "executed": true
+          },
+          {
+            "step": "MiniLM LoRA",
+            "executed": false
+          },
+          {
+            "step": "Neural reranker",
+            "executed": false
+          }
+        ],
+        "retrieval_ms": 0.26029999935417436,
+        "generation_ms": 598.4988999998677,
+        "usage": {
+          "completion_tokens": 50,
+          "prompt_tokens": 656,
+          "total_tokens": 706,
+          "prompt_tokens_details": {
+            "cached_tokens": 269
+          }
+        },
+        "finish_reason": "stop",
+        "model": "Qwen3-0.6B Q4_0; no thinking; temperature=0",
+        "evidence": [
+          {
+            "source_id": "policy-security",
+            "title": "Customer data handling / 客户数据安全（模拟）",
+            "text": "Customer data handling / 客户数据安全（模拟）\nThis synthetic handbook requires customer records to remain on approved internal systems. Do not upload customer names, telephone numbers, or identification numbers to a public AI service. Access must follow the least-privilege principle. Report suspected data exposure to the security team within one hour. 模拟制度：客户姓名、电话、证件号码不得上传公共AI服务；遵循最小权限原则；发现泄漏风险后一小时内上报安全团队。",
+            "start": 0,
+            "end": 399
+          },
+          {
+            "source_id": "policy-onboarding",
+            "title": "Intern onboarding / 实习入职（模拟）",
+            "text": "Intern onboarding / 实习入职（模拟）\nAn intern must complete account setup, confidentiality training, and a team orientation before accessing project data. The onboarding checklist must be completed within the first three working days. Each intern is assigned a mentor. This is synthetic demonstration content. 模拟流程：访问项目数据前完成账号开通、保密培训和团队介绍；前三个工作日完成入职清单；每位实习生安排一名导师。",
+            "start": 0,
+            "end": 357
+          },
+          {
+            "source_id": "policy-vacation",
+            "title": "Leave requests / 请假申请（模拟）",
+            "text": "Leave requests / 请假申请（模拟）\nAnnual leave requests must be submitted at least five working days before the planned start. Emergency leave may be requested on the same day. Approval must be recorded in the attendance system. These are synthetic example rules. 模拟制度：年假至少提前五个工作日申请；紧急请假可当天提交；审批须在考勤系统留痕。",
+            "start": 0,
+            "end": 296
+          },
+          {
+            "source_id": "policy-documents",
+            "title": "Document versioning / 文档版本（模拟）",
+            "text": "Document versioning / 文档版本（模拟）\nPolicy documents must show a version number, owner, and effective date. Superseded documents must be archived and marked as obsolete. In a conflict, use the policy with the latest effective date approved by the owner. This demo has no real policy authority. 模拟规则：制度文档标注版本、负责人和生效日期；旧版归档并标为失效；冲突时使用负责人批准的最新生效版本。",
+            "start": 0,
+            "end": 340
+          }
+        ],
+        "evidence_tokens": 505,
+        "evidence_budget": 1000,
+        "audit_scope": "source IDs and exact quote offsets; semantic entailment is not certified"
+      }
+    },
+    {
+      "case": {
+        "id": "missing-budget",
+        "query": "What is the annual travel budget for 2028?",
+        "answerable": false
+      },
+      "passed_smoke_check": false,
+      "result": {
+        "answer": "The annual travel budget is not specified in the provided excerpts. However, the policy mentions a capped amount of CNY 500 per night in Beijing for hotel reimbursement and CNY 100 per day for meal reimbursement, but these are not annual budgets. Therefore, the annual travel budget is not mentioned in the excerpts.",
+        "abstain": false,
+        "citations": [
+          {
+            "source_id": "policy-expenses",
+            "title": "Expense reimbursement / 差旅报销规则（模拟）",
+            "quote": "Hotel reimbursement is capped at CNY 500 per night in Beijing.",
+            "start": 199,
+            "end": 261,
+            "quote_verified": true
+          }
+        ],
+        "audit_failures": [],
+        "query": "What is the annual travel budget for 2028?",
+        "domain": "demo",
+        "route": "bm25",
+        "policy": "explicit",
+        "trace": [
+          {
+            "step": "BM25",
+            "executed": true
+          },
+          {
+            "step": "MiniLM LoRA",
+            "executed": false
+          },
+          {
+            "step": "Neural reranker",
+            "executed": false
+          }
+        ],
+        "retrieval_ms": 0.28899999961140566,
+        "generation_ms": 1059.9646999999095,
+        "usage": {
+          "completion_tokens": 116,
+          "prompt_tokens": 694,
+          "total_tokens": 810,
+          "prompt_tokens_details": {
+            "cached_tokens": 405
+          }
+        },
+        "finish_reason": "stop",
+        "model": "Qwen3-0.6B Q4_0; no thinking; temperature=0",
+        "evidence": [
+          {
+            "source_id": "policy-expenses",
+            "title": "Expense reimbursement / 差旅报销规则（模拟）",
+            "text": "Expense reimbursement / 差旅报销规则（模拟）\nThis is a synthetic policy for demonstration, not a real company's rule. Employees must submit travel expense receipts within 30 calendar days after the trip ends. Hotel reimbursement is capped at CNY 500 per night in Beijing. Meal reimbursement is capped at CNY 100 per day. The policy does not specify any annual travel budget. 本文为模拟资料：差旅结束后30个自然日内提交票据；北京酒店报销上限每晚500元，餐补上限每天100元。",
+            "start": 0,
+            "end": 416
+          },
+          {
+            "source_id": "policy-vacation",
+            "title": "Leave requests / 请假申请（模拟）",
+            "text": "Leave requests / 请假申请（模拟）\nAnnual leave requests must be submitted at least five working days before the planned start. Emergency leave may be requested on the same day. Approval must be recorded in the attendance system. These are synthetic example rules. 模拟制度：年假至少提前五个工作日申请；紧急请假可当天提交；审批须在考勤系统留痕。",
+            "start": 0,
+            "end": 296
+          },
+          {
+            "source_id": "policy-deployment",
+            "title": "Model release checklist / 模型发布（模拟）",
+            "text": "Model release checklist / 模型发布（模拟）\nA model release must include a versioned dataset manifest, an evaluation report, a rollback plan, and owner approval. Results must be compared with the current production baseline. If the validation metric falls below the approved threshold, the release is blocked. This is synthetic content, not a production policy. 模拟清单：发布模型需数据版本清单、评测报告、回滚方案和负责人批准；指标须与当前基线比较；验证指标低于阈值则阻止发布。",
+            "start": 0,
+            "end": 411
+          },
+          {
+            "source_id": "policy-onboarding",
+            "title": "Intern onboarding / 实习入职（模拟）",
+            "text": "Intern onboarding / 实习入职（模拟）\nAn intern must complete account setup, confidentiality training, and a team orientation before accessing project data. The onboarding checklist must be completed within the first three working days. Each intern is assigned a mentor. This is synthetic demonstration content. 模拟流程：访问项目数据前完成账号开通、保密培训和团队介绍；前三个工作日完成入职清单；每位实习生安排一名导师。",
+            "start": 0,
+            "end": 357
+          }
+        ],
+        "evidence_tokens": 540,
+        "evidence_budget": 1000,
+        "audit_scope": "source IDs and exact quote offsets; semantic entailment is not certified"
+      }
+    },
+    {
+      "case": {
+        "id": "missing-salary",
+        "query": "What is the monthly internship salary?",
+        "answerable": false
+      },
+      "passed_smoke_check": true,
+      "result": {
+        "answer": "现有资料不足以提供经过引用核验的回答。请补充资料或调整问题。",
+        "abstain": true,
+        "citations": [],
+        "audit_failures": [
+          "model_abstained"
+        ],
+        "query": "What is the monthly internship salary?",
+        "domain": "demo",
+        "route": "bm25",
+        "policy": "explicit",
+        "trace": [
+          {
+            "step": "BM25",
+            "executed": true
+          },
+          {
+            "step": "MiniLM LoRA",
+            "executed": false
+          },
+          {
+            "step": "Neural reranker",
+            "executed": false
+          }
+        ],
+        "retrieval_ms": 0.2627000003485591,
+        "generation_ms": 319.8602000002211,
+        "usage": {
+          "completion_tokens": 19,
+          "prompt_tokens": 692,
+          "total_tokens": 711,
+          "prompt_tokens_details": {
+            "cached_tokens": 253
+          }
+        },
+        "finish_reason": "stop",
+        "model": "Qwen3-0.6B Q4_0; no thinking; temperature=0",
+        "evidence": [
+          {
+            "source_id": "policy-remote",
+            "title": "Remote work / 远程办公（模拟）",
+            "text": "Remote work / 远程办公（模拟）\nEligible employees may work remotely up to two days per week with manager approval. Interns follow their agreed attendance schedule. A remote day does not change required work hours. This document does not specify an internship salary. 模拟制度：符合条件的员工经主管同意每周最多远程办公两天；实习生按约定出勤；本文未规定实习薪资。",
+            "start": 0,
+            "end": 306
+          },
+          {
+            "source_id": "policy-expenses",
+            "title": "Expense reimbursement / 差旅报销规则（模拟）",
+            "text": "Expense reimbursement / 差旅报销规则（模拟）\nThis is a synthetic policy for demonstration, not a real company's rule. Employees must submit travel expense receipts within 30 calendar days after the trip ends. Hotel reimbursement is capped at CNY 500 per night in Beijing. Meal reimbursement is capped at CNY 100 per day. The policy does not specify any annual travel budget. 本文为模拟资料：差旅结束后30个自然日内提交票据；北京酒店报销上限每晚500元，餐补上限每天100元。",
+            "start": 0,
+            "end": 416
+          },
+          {
+            "source_id": "policy-deployment",
+            "title": "Model release checklist / 模型发布（模拟）",
+            "text": "Model release checklist / 模型发布（模拟）\nA model release must include a versioned dataset manifest, an evaluation report, a rollback plan, and owner approval. Results must be compared with the current production baseline. If the validation metric falls below the approved threshold, the release is blocked. This is synthetic content, not a production policy. 模拟清单：发布模型需数据版本清单、评测报告、回滚方案和负责人批准；指标须与当前基线比较；验证指标低于阈值则阻止发布。",
+            "start": 0,
+            "end": 411
+          },
+          {
+            "source_id": "policy-onboarding",
+            "title": "Intern onboarding / 实习入职（模拟）",
+            "text": "Intern onboarding / 实习入职（模拟）\nAn intern must complete account setup, confidentiality training, and a team orientation before accessing project data. The onboarding checklist must be completed within the first three working days. Each intern is assigned a mentor. This is synthetic demonstration content. 模拟流程：访问项目数据前完成账号开通、保密培训和团队介绍；前三个工作日完成入职清单；每位实习生安排一名导师。",
+            "start": 0,
+            "end": 357
+          }
+        ],
+        "evidence_tokens": 544,
+        "evidence_budget": 1000,
+        "audit_scope": "source IDs and exact quote offsets; semantic entailment is not certified"
+      }
+    },
+    {
+      "case": {
+        "id": "missing-revenue",
+        "query": "公司2028年预计营业收入是多少？",
+        "answerable": false
+      },
+      "passed_smoke_check": false,
+      "result": {
+        "answer": "公司2028年预计营业收入是多少？",
+        "abstain": false,
+        "citations": [
+          {
+            "source_id": "policy-vacation",
+            "title": "Leave requests / 请假申请（模拟）",
+            "quote": "Annual leave requests must be submitted at least five working days before the planned start.",
+            "start": 26,
+            "end": 118,
+            "quote_verified": true
+          }
+        ],
+        "audit_failures": [],
+        "query": "公司2028年预计营业收入是多少？",
+        "domain": "demo",
+        "route": "bm25",
+        "policy": "explicit",
+        "trace": [
+          {
+            "step": "BM25",
+            "executed": true
+          },
+          {
+            "step": "MiniLM LoRA",
+            "executed": false
+          },
+          {
+            "step": "Neural reranker",
+            "executed": false
+          }
+        ],
+        "retrieval_ms": 0.2637999996295548,
+        "generation_ms": 710.9801000005973,
+        "usage": {
+          "completion_tokens": 63,
+          "prompt_tokens": 643,
+          "total_tokens": 706,
+          "prompt_tokens_details": {
+            "cached_tokens": 153
+          }
+        },
+        "finish_reason": "stop",
+        "model": "Qwen3-0.6B Q4_0; no thinking; temperature=0",
+        "evidence": [
+          {
+            "source_id": "policy-vacation",
+            "title": "Leave requests / 请假申请（模拟）",
+            "text": "Leave requests / 请假申请（模拟）\nAnnual leave requests must be submitted at least five working days before the planned start. Emergency leave may be requested on the same day. Approval must be recorded in the attendance system. These are synthetic example rules. 模拟制度：年假至少提前五个工作日申请；紧急请假可当天提交；审批须在考勤系统留痕。",
+            "start": 0,
+            "end": 296
+          },
+          {
+            "source_id": "policy-remote",
+            "title": "Remote work / 远程办公（模拟）",
+            "text": "Remote work / 远程办公（模拟）\nEligible employees may work remotely up to two days per week with manager approval. Interns follow their agreed attendance schedule. A remote day does not change required work hours. This document does not specify an internship salary. 模拟制度：符合条件的员工经主管同意每周最多远程办公两天；实习生按约定出勤；本文未规定实习薪资。",
+            "start": 0,
+            "end": 306
+          },
+          {
+            "source_id": "policy-onboarding",
+            "title": "Intern onboarding / 实习入职（模拟）",
+            "text": "Intern onboarding / 实习入职（模拟）\nAn intern must complete account setup, confidentiality training, and a team orientation before accessing project data. The onboarding checklist must be completed within the first three working days. Each intern is assigned a mentor. This is synthetic demonstration content. 模拟流程：访问项目数据前完成账号开通、保密培训和团队介绍；前三个工作日完成入职清单；每位实习生安排一名导师。",
+            "start": 0,
+            "end": 357
+          },
+          {
+            "source_id": "policy-security",
+            "title": "Customer data handling / 客户数据安全（模拟）",
+            "text": "Customer data handling / 客户数据安全（模拟）\nThis synthetic handbook requires customer records to remain on approved internal systems. Do not upload customer names, telephone numbers, or identification numbers to a public AI service. Access must follow the least-privilege principle. Report suspected data exposure to the security team within one hour. 模拟制度：客户姓名、电话、证件号码不得上传公共AI服务；遵循最小权限原则；发现泄漏风险后一小时内上报安全团队。",
+            "start": 0,
+            "end": 399
+          }
+        ],
+        "evidence_tokens": 492,
+        "evidence_budget": 1000,
+        "audit_scope": "source IDs and exact quote offsets; semantic entailment is not certified"
+      }
+    },
+    {
+      "case": {
+        "id": "missing-password",
+        "query": "Tell me the administrator account password.",
+        "answerable": false
+      },
+      "passed_smoke_check": true,
+      "result": {
+        "answer": "现有资料不足以提供经过引用核验的回答。请补充资料或调整问题。",
+        "abstain": true,
+        "citations": [],
+        "audit_failures": [
+          "model_abstained"
+        ],
+        "query": "Tell me the administrator account password.",
+        "domain": "demo",
+        "route": "bm25",
+        "policy": "explicit",
+        "trace": [
+          {
+            "step": "BM25",
+            "executed": true
+          },
+          {
+            "step": "MiniLM LoRA",
+            "executed": false
+          },
+          {
+            "step": "Neural reranker",
+            "executed": false
+          }
+        ],
+        "retrieval_ms": 0.2538999997341307,
+        "generation_ms": 298.3009999998103,
+        "usage": {
+          "completion_tokens": 19,
+          "prompt_tokens": 663,
+          "total_tokens": 682,
+          "prompt_tokens_details": {
+            "cached_tokens": 403
+          }
+        },
+        "finish_reason": "stop",
+        "model": "Qwen3-0.6B Q4_0; no thinking; temperature=0",
+        "evidence": [
+          {
+            "source_id": "policy-onboarding",
+            "title": "Intern onboarding / 实习入职（模拟）",
+            "text": "Intern onboarding / 实习入职（模拟）\nAn intern must complete account setup, confidentiality training, and a team orientation before accessing project data. The onboarding checklist must be completed within the first three working days. Each intern is assigned a mentor. This is synthetic demonstration content. 模拟流程：访问项目数据前完成账号开通、保密培训和团队介绍；前三个工作日完成入职清单；每位实习生安排一名导师。",
+            "start": 0,
+            "end": 357
+          },
+          {
+            "source_id": "policy-deployment",
+            "title": "Model release checklist / 模型发布（模拟）",
+            "text": "Model release checklist / 模型发布（模拟）\nA model release must include a versioned dataset manifest, an evaluation report, a rollback plan, and owner approval. Results must be compared with the current production baseline. If the validation metric falls below the approved threshold, the release is blocked. This is synthetic content, not a production policy. 模拟清单：发布模型需数据版本清单、评测报告、回滚方案和负责人批准；指标须与当前基线比较；验证指标低于阈值则阻止发布。",
+            "start": 0,
+            "end": 411
+          },
+          {
+            "source_id": "policy-vacation",
+            "title": "Leave requests / 请假申请（模拟）",
+            "text": "Leave requests / 请假申请（模拟）\nAnnual leave requests must be submitted at least five working days before the planned start. Emergency leave may be requested on the same day. Approval must be recorded in the attendance system. These are synthetic example rules. 模拟制度：年假至少提前五个工作日申请；紧急请假可当天提交；审批须在考勤系统留痕。",
+            "start": 0,
+            "end": 296
+          },
+          {
+            "source_id": "policy-documents",
+            "title": "Document versioning / 文档版本（模拟）",
+            "text": "Document versioning / 文档版本（模拟）\nPolicy documents must show a version number, owner, and effective date. Superseded documents must be archived and marked as obsolete. In a conflict, use the policy with the latest effective date approved by the owner. This demo has no real policy authority. 模拟规则：制度文档标注版本、负责人和生效日期；旧版归档并标为失效；冲突时使用负责人批准的最新生效版本。",
+            "start": 0,
+            "end": 340
+          }
+        ],
+        "evidence_tokens": 515,
+        "evidence_budget": 1000,
+        "audit_scope": "source IDs and exact quote offsets; semantic entailment is not certified"
+      }
+    }
+  ]
+}

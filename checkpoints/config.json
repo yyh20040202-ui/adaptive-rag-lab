@@ -1,0 +1,30 @@
+{
+  "seed": 42,
+  "encoder_max_length": 192,
+  "rrf_constant": 60,
+  "candidate_depth": 100,
+  "rerank_alpha": 0.15,
+  "routes": [
+    "bm25",
+    "hybrid_lora",
+    "neural_rerank"
+  ],
+  "proxy_costs": [
+    0.0,
+    1.0,
+    1.25
+  ],
+  "routing_objective_lambda": 0.04,
+  "selected_policy": {
+    "training_cost_penalty": 0.2,
+    "validation_ndcg@10": 0.6823704283181657,
+    "validation_proxy_cost": 0.049079754601226995,
+    "validation_objective": 0.6804072381341166,
+    "train_route_labels": {
+      "hybrid_lora": 105,
+      "bm25": 513,
+      "neural_rerank": 28
+    }
+  },
+  "adapter_sha256": "4fad7e9b7ff432d41176ee32673fda9a16d95c3540b58ff4487893cbb2ae81e2"
+}

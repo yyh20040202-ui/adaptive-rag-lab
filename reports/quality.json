@@ -1,0 +1,197 @@
+{
+  "dataset": "BEIR SciFact",
+  "corpus": 5183,
+  "train": 646,
+  "validation": 163,
+  "test": 300,
+  "primary_method": "cross_encoder",
+  "seed": 42,
+  "route_counts": {
+    "bm25": 287,
+    "hybrid_lora": 13,
+    "neural_rerank": 0
+  },
+  "dense_call_fraction": 0.043333333333333335,
+  "metrics": {
+    "bm25": {
+      "ndcg@10": 0.6468287717744379,
+      "mrr@10": 0.6113201058201059,
+      "recall@10": 0.7711666666666667,
+      "recall@5": 0.7027777777777777
+    },
+    "dense_frozen": {
+      "ndcg@10": 0.6443494039456269,
+      "mrr@10": 0.6025171957671958,
+      "recall@10": 0.785,
+      "recall@5": 0.7211666666666666
+    },
+    "hybrid_frozen": {
+      "ndcg@10": 0.6649132766242544,
+      "mrr@10": 0.6277050264550265,
+      "recall@10": 0.7969444444444443,
+      "recall@5": 0.7382222222222222
+    },
+    "dense_lora": {
+      "ndcg@10": 0.6576437520371021,
+      "mrr@10": 0.6169060846560845,
+      "recall@10": 0.7993333333333333,
+      "recall@5": 0.7239444444444445
+    },
+    "hybrid_lora": {
+      "ndcg@10": 0.6746063821461009,
+      "mrr@10": 0.6369695767195768,
+      "recall@10": 0.8136111111111111,
+      "recall@5": 0.7403333333333334
+    },
+    "neural_rerank": {
+      "ndcg@10": 0.692537779991656,
+      "mrr@10": 0.6598769841269841,
+      "recall@10": 0.8186111111111111,
+      "recall@5": 0.746
+    },
+    "adaptive": {
+      "ndcg@10": 0.6528716401060916,
+      "mrr@10": 0.6162685185185186,
+      "recall@10": 0.7811666666666667,
+      "recall@5": 0.7077777777777777
+    },
+    "cross_encoder": {
+      "ndcg@10": 0.7378199809840261,
+      "mrr@10": 0.7064801587301587,
+      "recall@10": 0.8535555555555555,
+      "recall@5": 0.7769444444444444
+    }
+  },
+  "latency": {
+    "bm25": {
+      "p50_ms": 2.0532000007733586,
+      "p95_ms": 2.757494999605113,
+      "mean_ms": 2.113157500025409,
+      "queries": 40
+    },
+    "hybrid_lora": {
+      "p50_ms": 13.013300000238814,
+      "p95_ms": 17.86399499906109,
+      "mean_ms": 13.756130000138,
+      "queries": 40
+    },
+    "neural_rerank": {
+      "p50_ms": 13.814850000926526,
+      "p95_ms": 17.450779999126098,
+      "mean_ms": 14.030562499920052,
+      "queries": 40
+    },
+    "adaptive": {
+      "p50_ms": 2.7581999993344652,
+      "p95_ms": 10.977295000429875,
+      "mean_ms": 3.5931750000145257,
+      "queries": 40
+    },
+    "cross_encoder": {
+      "p50_ms": 2712.7703000005567,
+      "p95_ms": 2887.0438949992604,
+      "mean_ms": 2701.712264999969,
+      "queries": 40
+    }
+  },
+  "config": {
+    "variant": "bge",
+    "model_path": "models/bge_reranker",
+    "model": "gpustack/bge-reranker-v2-m3-GGUF",
+    "revision": "3093af03b1a635e67b084b1d8c03c5f5e020fd05",
+    "rerank_depth": 50,
+    "alpha": 0.75,
+    "max_length": 384,
+    "inference": "GGUF-Q8_0-Vulkan",
+    "backend": "llama_vulkan",
+    "model_file": "bge-reranker-v2-m3-Q8_0.gguf",
+    "candidate_depth": 100,
+    "rrf_constant": 60,
+    "validation_metrics": {
+      "ndcg@10": 0.7662334351699481,
+      "mrr@10": 0.7352760736196319,
+      "recall@10": 0.879959100204499,
+      "recall@5": 0.8278118609406954
+    },
+    "embedding_fingerprint": {
+      "schema": 2,
+      "documents": {
+        "count": 5183,
+        "ids_sha256": "3df87dafd673a62a3ec6cb9ecc42d65916bff917e3fa539778ed543a2d72fe26",
+        "texts_sha256": "7b1dc0a5ca2f5b019468505af285f84821205986bfcbe225cd3970790c94bad7"
+      },
+      "queries": {
+        "count": 1109,
+        "ids_sha256": "574b5c6a26e2e5d1a99ef82f257c842eaacb8be6a3884fd3a219c0374c5bdbe1",
+        "texts_sha256": "7a81bd430f5b2c0088e5f73c1cd6b5c42648af67a8ee93849a873a7f34d9749a"
+      },
+      "encoder": {
+        "model_id": "sentence-transformers/all-MiniLM-L6-v2",
+        "revision": "1110a243fdf4706b3f48f1d95db1a4f5529b4d41",
+        "files_sha256": {
+          "config.json": "953f9c0d463486b10a6871cc2fd59f223b2c70184f49815e7efbcab5d8908b41",
+          "model.safetensors": "53aa51172d142c89d9012cce15ae4d6cc0ca6895895114379cacb4fab128d9db",
+          "tokenizer.json": "be50c3628f2bf5bb5e3a7f17b1f74611b2561a3a27eeab05e5aa30f411572037",
+          "tokenizer_config.json": "acb92769e8195aabd29b7b2137a9e6d6e25c476a4f15aa4355c233426c61576b",
+          "special_tokens_map.json": "303df45a03609e4ead04bc3dc1536d0ab19b5358db685b6f3da123d05ec200e3",
+          "vocab.txt": "07eced375cec144d27c900241f3e339478dec958f92fddbc551f295c992038a3"
+        },
+        "max_length": 192,
+        "dimension": 384,
+        "pooling": "attention-mask-mean-l2-v1",
+        "dtype": "float32"
+      },
+      "adapter": {
+        "adapter_config.json": "1b228996228016019bc2da2950226c62a5e4ff1de1a8b17345b2289645a9352e",
+        "adapter_model.safetensors": "4fad7e9b7ff432d41176ee32673fda9a16d95c3540b58ff4487893cbb2ae81e2"
+      },
+      "fingerprint_sha256": "55e93cc1aaadb6f94055e9ed5b38ce75d327d0c4cb35b8db5e2d0855ab818bfc"
+    }
+  },
+  "paired_ndcg_comparisons": {
+    "cross_encoder-vs-bm25": {
+      "delta": 0.09099120920958816,
+      "ci95": [
+        0.06331948204723829,
+        0.12100231418407857
+      ],
+      "method": "paired query bootstrap",
+      "iterations": 2000,
+      "seed": 42
+    },
+    "cross_encoder-vs-neural_rerank": {
+      "delta": 0.04528220099237019,
+      "ci95": [
+        0.024195383144447503,
+        0.06707224188246047
+      ],
+      "method": "paired query bootstrap",
+      "iterations": 2000,
+      "seed": 42
+    }
+  },
+  "resources": {
+    "peak_observed_process_rss_gib": 0.6284294128417969,
+    "minimum_observed_available_gib": 4.376682281494141,
+    "samples": 300,
+    "seconds": 819.9925361000005,
+    "cpu_threads": 2,
+    "batch_limit": 8,
+    "minimum_available_gib_guard": 2.0,
+    "note": "Sampled before batches, not an OS-enforced hard allocation cap; other apps can change available RAM."
+  },
+  "runtime_seconds": 829.0785006999995,
+  "timing_protocol": "40 seed42 sampled test queries from300 live-engine pass; warmed serial requests; CPU query encoding included; selected CE backend recorded in config; mode order rotates; startup,indexing,generation excluded; 2 CPU threads; other system apps uncontrolled",
+  "environment": {
+    "cpu_threads": 2,
+    "platform": "Windows-11-10.0.26200-SP0",
+    "python": "3.12.14"
+  },
+  "limitations": [
+    "V2 iteration on previously inspected BEIR test; config chosen on validation only, not a pristine blind test",
+    "English biomedical retrieval; pretrained contamination unknown",
+    "nDCG is ranking quality, not QA correctness",
+    "Cross-encoder uses upstream pretrained weights and quantized inference; no project CE fine-tuning",
+    "Unserved frozen/dense metrics retained from V1; five served methods re-evaluated in V2"
+  ]
+}

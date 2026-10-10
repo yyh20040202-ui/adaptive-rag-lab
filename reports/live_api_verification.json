@@ -1,0 +1,120 @@
+{
+  "passed": true,
+  "health": {
+    "status": "ok",
+    "generator_available": true,
+    "encoder_available": true,
+    "benchmark_available": true,
+    "adapter_available": true,
+    "model": "Qwen3-4B-Instruct-2507 Q4_K_M",
+    "local_only": true,
+    "cross_encoder_available": true,
+    "retrieval_modes": [
+      "cross_encoder",
+      "neural_rerank",
+      "hybrid_lora",
+      "adaptive",
+      "bm25"
+    ],
+    "default_mode": "cross_encoder"
+  },
+  "elapsed_seconds": 14.455622400000038,
+  "response": {
+    "answer": "Loss of TET2 function leads to myeloid and lymphoid transformations, as demonstrated in Tet2 knockout mice, where haploinsufficiency initiates tumor development. This indicates that TET2 loss has dire biological consequences, particularly in hematopoietic malignancies.",
+    "abstain": false,
+    "citations": [
+      {
+        "source_id": "11951999",
+        "title": "The Ten-Eleven Translocation-2 (TET2) gene in hematopoiesis and hematopoietic diseases",
+        "quote": "Analysis of Tet2 knockout mice, which are viable and fertile, demonstrated that Tet2 functions as a tumor suppressor whose haploinsufficiency initiates myeloid and lymphoid transformations.",
+        "start": 1473,
+        "end": 1662,
+        "quote_verified": true
+      }
+    ],
+    "audit_failures": [],
+    "query": "The loss of the TET protein functions may have dire biological consequences, such as myeloid cancers.",
+    "domain": "scifact",
+    "route": "cross_encoder",
+    "policy": "explicit",
+    "trace": [
+      {
+        "step": "BM25",
+        "executed": true
+      },
+      {
+        "step": "MiniLM LoRA",
+        "executed": true
+      },
+      {
+        "step": "Neural reranker",
+        "executed": false
+      },
+      {
+        "step": "Token cross-encoder",
+        "executed": true
+      }
+    ],
+    "retrieval_ms": 6676.967900000136,
+    "generation_ms": 6638.482199999999,
+    "usage": {
+      "completion_tokens": 77,
+      "prompt_tokens": 1740,
+      "total_tokens": 1817,
+      "prompt_tokens_details": {
+        "cached_tokens": 334
+      }
+    },
+    "finish_reason": "stop",
+    "model": "Qwen3-4B-Instruct-2507 Q4_K_M; no thinking; temperature=0",
+    "citation_method": "constrained span selection; exact quote provenance audited separately",
+    "citable_spans": 24,
+    "raw_model_output": "{\"abstain\":false,\"answer\":\"Loss of TET2 function leads to myeloid and lymphoid transformations, as demonstrated in Tet2 knockout mice, where haploinsufficiency initiates tumor development. This indicates that TET2 loss has dire biological consequences, particularly in hematopoietic malignancies.\",\"citations\":[{\"span_id\":\"s1_2\"}]}",
+    "evidence": [
+      {
+        "source_id": "11951999",
+        "title": "The Ten-Eleven Translocation-2 (TET2) gene in hematopoiesis and hematopoietic diseases",
+        "text": " TET2 has pleiotropic roles during hematopoiesis, including stem-cell self-renewal, lineage commitment and terminal differentiation of monocytes. Analysis of Tet2 knockout mice, which are viable and fertile, demonstrated that Tet2 functions as a tumor suppressor whose haploinsufficiency initiates myeloid and lymphoid transformations. This review summarizes the recently identified TET2 physiological and pathological functions and discusses how this knowledge influences our therapeutic approaches in hematological malignancies and possibly other tumor types.",
+        "start": 1327,
+        "end": 1888
+      },
+      {
+        "source_id": "36950726",
+        "title": "Loss of 5-hydroxymethylcytosine and ten-eleven translocation 2 protein expression in malignant melanoma.",
+        "text": "Several research groups have recently reported on markedly reduced levels of 5-hydroxymethylcytosine (5hmC) in human breast, liver, lung, pancreatic, colon, prostate, brain, and myeloid cancers. We studied benign compound nevi (BCN, n=17), dysplastic compound nevi (DCN, n=15), superficial spreading melanomas [SSM, stratified in <1 mm (n=19) and >4 mm (n=18) Breslow tumor thickness], and cutaneous metastatic disease (CMD, n=24). Immunohistochemistry included specific antibodies against 5hmC, 5-methylcytosine (5mC), and ten-eleven translocation 2 protein (TET2). Immunohistological scoring showed significantly (P<0.0001) higher median 5hmC levels in BCN and DCN than in thin SSM, thick SSM, and CMD. 5mC immunoreactivity did not differ significantly (P=0.15) between nevi and melanoma. The intensity of TET2 expression was predominantly weak but was found to be significantly (P<0.0001) more often in nevi than in thin SSM, thick SSM",
+        "start": 105,
+        "end": 1043
+      },
+      {
+        "source_id": "2405259",
+        "title": "Tet2 is required to resolve inflammation by recruiting Hdac2 to specifically repress IL-6",
+        "text": "Epigenetic modifiers have fundamental roles in defining unique cellular identity through the establishment and maintenance of lineage-specific chromatin and methylation status. Several DNA modifications such as 5-hydroxymethylcytosine (5hmC) are catalysed by the ten eleven translocation (Tet) methylcytosine dioxygenase family members, and the roles of Tet proteins in regulating chromatin architecture and gene transcription independently of DNA methylation have been gradually uncovered. However, the regulation of immunity and inflammation by Tet proteins independent of their role in modulating DNA methylation remains largely unknown. Here we show that Tet2 selectively mediates active repression of interleukin-6 (IL-6) transcription during inflammation resolution in innate myeloid cells, including dendritic cells and macrophages. Loss of Tet2 resulted in the upregulation of several inflammatory mediators, including IL-6, at late phase during the response to lipopolysaccharide challenge. Tet2-deficient mice were more susceptible to endotoxin shock and dextran-sulfate-sodium-induced colitis, displaying a more severe inflammatory phenotype and increased IL-6 production compared to wild-type mice. IκBζ, an IL-6-specific transcription factor, mediated specific targeting of Tet2 to the Il6 promoter, further indicating opposite regulatory roles of IκBζ at initial and resolution phases of inflammation. For the repression mechanism, independent of DNA methylation and",
+        "start": 90,
+        "end": 1570
+      },
+      {
+        "source_id": "2086909",
+        "title": "Tet1 is dispensable for maintaining pluripotency and its loss is compatible with embryonic and postnatal development.",
+        "text": "Tet1 is dispensable for maintaining pluripotency and its loss is compatible with embryonic and postnatal development.\nThe Tet family of enzymes (Tet1/2/3) converts 5-methylcytosine (5mC) to 5-hydroxymethylcytosine (5hmC). Mouse embryonic stem cells (mESCs) highly express Tet1 and have an elevated level of 5hmC. Tet1 has been implicated in ESC maintenance and lineage specification in vitro but its precise function in development is not well defined. To establish the role of Tet1 in pluripotency and development, we have generated Tet1 mutant mESCs and mice. Tet1(-/-) ESCs have reduced levels of 5hmC and subtle changes in global gene expression, and are pluripotent and support development of live-born mice in tetraploid complementation assay, but display skewed differentiation toward trophectoderm in vitro. Tet1 mutant mice are viable, fertile, and grossly normal, though some mutant mice have a slightly smaller body size at birth. Our data suggest that Tet1 loss leading to a partial reduction in 5hmC levels does not affect pluripotency in ESCs and is compatible with embryonic and postnatal development.",
+        "start": 0,
+        "end": 1116
+      }
+    ],
+    "evidence_tokens": 1362,
+    "evidence_budget": 1400,
+    "audit_scope": "source IDs and exact quote offsets; semantic entailment is not certified"
+  },
+  "resources_after_request": {
+    "available_gib": 4.1659698486328125,
+    "total_gib": 15.692127227783203,
+    "memory_percent": 73.5,
+    "process_rss_gib": 0.5163536071777344,
+    "cpu_threads": 2,
+    "min_available_gib": 2.0,
+    "max_process_gib": 3.0,
+    "max_pair_batch": 8,
+    "heavy_jobs_serial": true,
+    "serialization_scope": "within this process; launch CLI heavy jobs sequentially"
+  },
+  "scope": "One actual localhost FastAPI auto-mode request, selected previously inspected real claim; mechanical citation checks, not independent QA accuracy or visual browser verification."
+}

@@ -1,0 +1,25 @@
+{
+  "event": "RAM guard stopped owned reranker during repeated generation diagnostics",
+  "available_ram_gib_at_stop": 1.89,
+  "owned_reranker_rss_gib_at_stop": 1.13,
+  "generator_rss_gib_observed_after_stop": 2.686,
+  "minimum_ram_guard_gib": 2.0,
+  "initial_successful_generation_cases": 6,
+  "interrupted_followup_completed_cases": 3,
+  "followup_status": "interrupted; incomplete outputs are not a completed benchmark",
+  "diagnosis": "Pinned llama.cpp b11517 --help shows default --cache-ram 8192 MiB. This allows old prompt states to accumulate across requests; ongoing run observed generator RSS growth.",
+  "mitigation": "Disable server RAM prompt cache and context checkpoints for both model services; retain 2 GiB RAM reserve and 3 GiB child RSS guard.",
+  "limits": "The guard samples every 2 seconds; this is not an operating-system memory cap. Cache disabling changes reuse cost, not foundation weights.",
+  "qwen4_initial_load": {
+    "status": "stopped by RAM guards before first diagnostic case completed",
+    "generator_gpu_layers": 24,
+    "generator_load_mode": "auto (mmap)",
+    "generator_context": 3072,
+    "generator_available_gib_at_stop": 2.0,
+    "generator_rss_gib_at_stop": 2.64,
+    "reranker_available_gib_at_stop": 1.99,
+    "reranker_rss_gib_at_stop": 0.95,
+    "completed_cases": 0,
+    "mitigation": "30 generator GPU layers and --load-mode none; same 2 GiB reserve and 3 GiB RSS guard; remeasure after repeated requests."
+  }
+}

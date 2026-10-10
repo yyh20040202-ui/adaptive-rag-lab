@@ -1,0 +1,36 @@
+{
+  "artifacts": {
+    "checkpoints\\config.json": "54b5167bdf5f5f3af0c55eb3164b80a954c3ffad2dc5c3e50156a8cc6c70333e",
+    "checkpoints\\ranker.safetensors": "dd51f0899d457d899c691cc0c080c2ef3d3619ca27c79dd3dd8633906a531c25",
+    "checkpoints\\router.safetensors": "7a1c0ab85502502a30538a3992e0e052f6b0d539a24d2a380a110c4de55eabad",
+    "checkpoints\\retriever_lora\\adapter_model.safetensors": "4fad7e9b7ff432d41176ee32673fda9a16d95c3540b58ff4487893cbb2ae81e2",
+    "checkpoints\\retriever_lora\\adapter_config.json": "1b228996228016019bc2da2950226c62a5e4ff1de1a8b17345b2289645a9352e"
+  },
+  "source_code": {
+    "adaptive_rag\\__init__.py": "4959c6c3126cca7da6eae248ece1e706ba924499c16b10c32e843b726ee5cae7",
+    "adaptive_rag\\analysis.py": "98f510e63c10e13964f38161eb5b58e43e2858590d53ab50bed6cc5119bcf9cf",
+    "adaptive_rag\\answerability.py": "8e209b48c8f4498eda5e54a4df5df950c0ce725662a9aaa8cde7a5a31fb4b2ad",
+    "adaptive_rag\\benchmark.py": "a93284267ca1f19fdd0f24ab60049e7251c39aa1ba6f0675680c901a098e0427",
+    "adaptive_rag\\data.py": "d6a03cf73f1e5474d7b52e74ad6f3bfe1aef927abd565ae1896c90e9c4a748df",
+    "adaptive_rag\\encoder.py": "692b2a10c0e923fc8fbd276166cc805093e69862f0534f9b0ad30069ce93eb84",
+    "adaptive_rag\\engine.py": "3e7f6a181729fd1098ab8fff14199df9fd0debebe64f202480ccf4228455e19c",
+    "adaptive_rag\\evidence.py": "82e1c3e3bb9c2e069a6bfe827d249a24b9cdde4b6ffcbbd27e1b29ff5e79b57e",
+    "adaptive_rag\\generation_eval.py": "0b7c6b32d2daaa1b512056df4c4bbf7f77f5dad20e870203f3e5898405300cd2",
+    "adaptive_rag\\generator.py": "d03a68dac879adf3fc640164a2cc369e2edab2063abffc656012a9eb8082f1ed",
+    "adaptive_rag\\index.py": "f258547b7dc24618e74dc4a62d3925034e694b56f1cbf8a4b65bdc30388a4db5",
+    "adaptive_rag\\metrics.py": "7936ad8dc36bafac9d5888c72e93cf744c685fc5713d778e66817cfc31de23b9",
+    "adaptive_rag\\prepare.py": "0d09882b45efcdca49eae8d994f7ee2870f55011a7e9e381d3e65c515c72cd40",
+    "adaptive_rag\\ranking.py": "80e27cea6d545dcea6086994d8eea7e4ea3e3cdbea2a53bb5a20dfd0395e7e0c",
+    "adaptive_rag\\real_generation.py": "6996a7d12c3638d86c47d1969a2f122bd29a4356d45e364929a3becb0a1997db",
+    "adaptive_rag\\retrieval.py": "b13280dcc13c0247ceea975cad5d25318ee9e603767539e3fe5f82289c07d1fa",
+    "adaptive_rag\\service.py": "f7d7575c01cc1b705ac362cfae2398e434414dfedb4a64c584de48c30c8149ad",
+    "adaptive_rag\\train.py": "7a75b0b6030dedd0b81b47311ce4d5a1009e047b56df7366fcaca45f08c9b303",
+    "adaptive_rag\\verify_reference.py": "7039e5d4ed78948d5e990bc9f197a97a8b706bda9d2456449c563e17e0384ca8"
+  },
+  "input_sha256": {
+    "corpus.jsonl": "dec31c8182f3d744c7d2c09423756fd1d17cbef75808db13ba01cc0aab4d1ac6",
+    "queries.jsonl": "8ff84a7c903f722981cd8d595c022660140c51867b27608a6d4910db86080313",
+    "qrels\\train.tsv": "a53f2114831916c096b6c37d9e54da68cef4efdcdbd5ed46533601af972acf1d",
+    "qrels\\test.tsv": "0864bb985e0ca2367ba217977e72004d549054b2b06666ed9d4825ac7c21284c"
+  }
+}

@@ -1,0 +1,2538 @@
+{
+  "validation_queries": 163,
+  "grid": [
+    {
+      "variant": "l6",
+      "model_path": "models/cross_encoder_l6",
+      "model": "cross-encoder/ms-marco-MiniLM-L6-v2",
+      "revision": "233902d25c440f23af6f7d6e94d2946bac0bee0a",
+      "rerank_depth": 20,
+      "alpha": 0.0,
+      "max_length": 384,
+      "inference": "dynamic-int8-linear",
+      "backend": "torch_cpu",
+      "model_file": "model.safetensors",
+      "candidate_depth": 100,
+      "rrf_constant": 60,
+      "validation_metrics": {
+        "ndcg@10": 0.6851699615567124,
+        "mrr@10": 0.6525878858700944,
+        "recall@10": 0.8175869120654395,
+        "recall@5": 0.7233128834355829
+      },
+      "embedding_fingerprint": {
+        "schema": 2,
+        "documents": {
+          "count": 5183,
+          "ids_sha256": "3df87dafd673a62a3ec6cb9ecc42d65916bff917e3fa539778ed543a2d72fe26",
+          "texts_sha256": "7b1dc0a5ca2f5b019468505af285f84821205986bfcbe225cd3970790c94bad7"
+        },
+        "queries": {
+          "count": 1109,
+          "ids_sha256": "574b5c6a26e2e5d1a99ef82f257c842eaacb8be6a3884fd3a219c0374c5bdbe1",
+          "texts_sha256": "7a81bd430f5b2c0088e5f73c1cd6b5c42648af67a8ee93849a873a7f34d9749a"
+        },
+        "encoder": {
+          "model_id": "sentence-transformers/all-MiniLM-L6-v2",
+          "revision": "1110a243fdf4706b3f48f1d95db1a4f5529b4d41",
+          "files_sha256": {
+            "config.json": "953f9c0d463486b10a6871cc2fd59f223b2c70184f49815e7efbcab5d8908b41",
+            "model.safetensors": "53aa51172d142c89d9012cce15ae4d6cc0ca6895895114379cacb4fab128d9db",
+            "tokenizer.json": "be50c3628f2bf5bb5e3a7f17b1f74611b2561a3a27eeab05e5aa30f411572037",
+            "tokenizer_config.json": "acb92769e8195aabd29b7b2137a9e6d6e25c476a4f15aa4355c233426c61576b",
+            "special_tokens_map.json": "303df45a03609e4ead04bc3dc1536d0ab19b5358db685b6f3da123d05ec200e3",
+            "vocab.txt": "07eced375cec144d27c900241f3e339478dec958f92fddbc551f295c992038a3"
+          },
+          "max_length": 192,
+          "dimension": 384,
+          "pooling": "attention-mask-mean-l2-v1",
+          "dtype": "float32"
+        },
+        "adapter": {
+          "adapter_config.json": "1b228996228016019bc2da2950226c62a5e4ff1de1a8b17345b2289645a9352e",
+          "adapter_model.safetensors": "4fad7e9b7ff432d41176ee32673fda9a16d95c3540b58ff4487893cbb2ae81e2"
+        },
+        "fingerprint_sha256": "55e93cc1aaadb6f94055e9ed5b38ce75d327d0c4cb35b8db5e2d0855ab818bfc"
+      }
+    },
+    {
+      "variant": "l6",
+      "model_path": "models/cross_encoder_l6",
+      "model": "cross-encoder/ms-marco-MiniLM-L6-v2",
+      "revision": "233902d25c440f23af6f7d6e94d2946bac0bee0a",
+      "rerank_depth": 20,
+      "alpha": 0.25,
+      "max_length": 384,
+      "inference": "dynamic-int8-linear",
+      "backend": "torch_cpu",
+      "model_file": "model.safetensors",
+      "candidate_depth": 100,
+      "rrf_constant": 60,
+      "validation_metrics": {
+        "ndcg@10": 0.705822849253092,
+        "mrr@10": 0.676558087447658,
+        "recall@10": 0.823721881390593,
+        "recall@5": 0.7376278118609407
+      },
+      "embedding_fingerprint": {
+        "schema": 2,
+        "documents": {
+          "count": 5183,
+          "ids_sha256": "3df87dafd673a62a3ec6cb9ecc42d65916bff917e3fa539778ed543a2d72fe26",
+          "texts_sha256": "7b1dc0a5ca2f5b019468505af285f84821205986bfcbe225cd3970790c94bad7"
+        },
+        "queries": {
+          "count": 1109,
+          "ids_sha256": "574b5c6a26e2e5d1a99ef82f257c842eaacb8be6a3884fd3a219c0374c5bdbe1",
+          "texts_sha256": "7a81bd430f5b2c0088e5f73c1cd6b5c42648af67a8ee93849a873a7f34d9749a"
+        },
+        "encoder": {
+          "model_id": "sentence-transformers/all-MiniLM-L6-v2",
+          "revision": "1110a243fdf4706b3f48f1d95db1a4f5529b4d41",
+          "files_sha256": {
+            "config.json": "953f9c0d463486b10a6871cc2fd59f223b2c70184f49815e7efbcab5d8908b41",
+            "model.safetensors": "53aa51172d142c89d9012cce15ae4d6cc0ca6895895114379cacb4fab128d9db",
+            "tokenizer.json": "be50c3628f2bf5bb5e3a7f17b1f74611b2561a3a27eeab05e5aa30f411572037",
+            "tokenizer_config.json": "acb92769e8195aabd29b7b2137a9e6d6e25c476a4f15aa4355c233426c61576b",
+            "special_tokens_map.json": "303df45a03609e4ead04bc3dc1536d0ab19b5358db685b6f3da123d05ec200e3",
+            "vocab.txt": "07eced375cec144d27c900241f3e339478dec958f92fddbc551f295c992038a3"
+          },
+          "max_length": 192,
+          "dimension": 384,
+          "pooling": "attention-mask-mean-l2-v1",
+          "dtype": "float32"
+        },
+        "adapter": {
+          "adapter_config.json": "1b228996228016019bc2da2950226c62a5e4ff1de1a8b17345b2289645a9352e",
+          "adapter_model.safetensors": "4fad7e9b7ff432d41176ee32673fda9a16d95c3540b58ff4487893cbb2ae81e2"
+        },
+        "fingerprint_sha256": "55e93cc1aaadb6f94055e9ed5b38ce75d327d0c4cb35b8db5e2d0855ab818bfc"
+      }
+    },
+    {
+      "variant": "l6",
+      "model_path": "models/cross_encoder_l6",
+      "model": "cross-encoder/ms-marco-MiniLM-L6-v2",
+      "revision": "233902d25c440f23af6f7d6e94d2946bac0bee0a",
+      "rerank_depth": 20,
+      "alpha": 0.5,
+      "max_length": 384,
+      "inference": "dynamic-int8-linear",
+      "backend": "torch_cpu",
+      "model_file": "model.safetensors",
+      "candidate_depth": 100,
+      "rrf_constant": 60,
+      "validation_metrics": {
+        "ndcg@10": 0.7126256389984797,
+        "mrr@10": 0.6825494205862305,
+        "recall@10": 0.823721881390593,
+        "recall@5": 0.7734151329243354
+      },
+      "embedding_fingerprint": {
+        "schema": 2,
+        "documents": {
+          "count": 5183,
+          "ids_sha256": "3df87dafd673a62a3ec6cb9ecc42d65916bff917e3fa539778ed543a2d72fe26",
+          "texts_sha256": "7b1dc0a5ca2f5b019468505af285f84821205986bfcbe225cd3970790c94bad7"
+        },
+        "queries": {
+          "count": 1109,
+          "ids_sha256": "574b5c6a26e2e5d1a99ef82f257c842eaacb8be6a3884fd3a219c0374c5bdbe1",
+          "texts_sha256": "7a81bd430f5b2c0088e5f73c1cd6b5c42648af67a8ee93849a873a7f34d9749a"
+        },
+        "encoder": {
+          "model_id": "sentence-transformers/all-MiniLM-L6-v2",
+          "revision": "1110a243fdf4706b3f48f1d95db1a4f5529b4d41",
+          "files_sha256": {
+            "config.json": "953f9c0d463486b10a6871cc2fd59f223b2c70184f49815e7efbcab5d8908b41",
+            "model.safetensors": "53aa51172d142c89d9012cce15ae4d6cc0ca6895895114379cacb4fab128d9db",
+            "tokenizer.json": "be50c3628f2bf5bb5e3a7f17b1f74611b2561a3a27eeab05e5aa30f411572037",
+            "tokenizer_config.json": "acb92769e8195aabd29b7b2137a9e6d6e25c476a4f15aa4355c233426c61576b",
+            "special_tokens_map.json": "303df45a03609e4ead04bc3dc1536d0ab19b5358db685b6f3da123d05ec200e3",
+            "vocab.txt": "07eced375cec144d27c900241f3e339478dec958f92fddbc551f295c992038a3"
+          },
+          "max_length": 192,
+          "dimension": 384,
+          "pooling": "attention-mask-mean-l2-v1",
+          "dtype": "float32"
+        },
+        "adapter": {
+          "adapter_config.json": "1b228996228016019bc2da2950226c62a5e4ff1de1a8b17345b2289645a9352e",
+          "adapter_model.safetensors": "4fad7e9b7ff432d41176ee32673fda9a16d95c3540b58ff4487893cbb2ae81e2"
+        },
+        "fingerprint_sha256": "55e93cc1aaadb6f94055e9ed5b38ce75d327d0c4cb35b8db5e2d0855ab818bfc"
+      }
+    },
+    {
+      "variant": "l6",
+      "model_path": "models/cross_encoder_l6",
+      "model": "cross-encoder/ms-marco-MiniLM-L6-v2",
+      "revision": "233902d25c440f23af6f7d6e94d2946bac0bee0a",
+      "rerank_depth": 20,
+      "alpha": 0.75,
+      "max_length": 384,
+      "inference": "dynamic-int8-linear",
+      "backend": "torch_cpu",
+      "model_file": "model.safetensors",
+      "candidate_depth": 100,
+      "rrf_constant": 60,
+      "validation_metrics": {
+        "ndcg@10": 0.7161797940756233,
+        "mrr@10": 0.6860064271107216,
+        "recall@10": 0.8206543967280163,
+        "recall@5": 0.7521472392638037
+      },
+      "embedding_fingerprint": {
+        "schema": 2,
+        "documents": {
+          "count": 5183,
+          "ids_sha256": "3df87dafd673a62a3ec6cb9ecc42d65916bff917e3fa539778ed543a2d72fe26",
+          "texts_sha256": "7b1dc0a5ca2f5b019468505af285f84821205986bfcbe225cd3970790c94bad7"
+        },
+        "queries": {
+          "count": 1109,
+          "ids_sha256": "574b5c6a26e2e5d1a99ef82f257c842eaacb8be6a3884fd3a219c0374c5bdbe1",
+          "texts_sha256": "7a81bd430f5b2c0088e5f73c1cd6b5c42648af67a8ee93849a873a7f34d9749a"
+        },
+        "encoder": {
+          "model_id": "sentence-transformers/all-MiniLM-L6-v2",
+          "revision": "1110a243fdf4706b3f48f1d95db1a4f5529b4d41",
+          "files_sha256": {
+            "config.json": "953f9c0d463486b10a6871cc2fd59f223b2c70184f49815e7efbcab5d8908b41",
+            "model.safetensors": "53aa51172d142c89d9012cce15ae4d6cc0ca6895895114379cacb4fab128d9db",
+            "tokenizer.json": "be50c3628f2bf5bb5e3a7f17b1f74611b2561a3a27eeab05e5aa30f411572037",
+            "tokenizer_config.json": "acb92769e8195aabd29b7b2137a9e6d6e25c476a4f15aa4355c233426c61576b",
+            "special_tokens_map.json": "303df45a03609e4ead04bc3dc1536d0ab19b5358db685b6f3da123d05ec200e3",
+            "vocab.txt": "07eced375cec144d27c900241f3e339478dec958f92fddbc551f295c992038a3"
+          },
+          "max_length": 192,
+          "dimension": 384,
+          "pooling": "attention-mask-mean-l2-v1",
+          "dtype": "float32"
+        },
+        "adapter": {
+          "adapter_config.json": "1b228996228016019bc2da2950226c62a5e4ff1de1a8b17345b2289645a9352e",
+          "adapter_model.safetensors": "4fad7e9b7ff432d41176ee32673fda9a16d95c3540b58ff4487893cbb2ae81e2"
+        },
+        "fingerprint_sha256": "55e93cc1aaadb6f94055e9ed5b38ce75d327d0c4cb35b8db5e2d0855ab818bfc"
+      }
+    },
+    {
+      "variant": "l6",
+      "model_path": "models/cross_encoder_l6",
+      "model": "cross-encoder/ms-marco-MiniLM-L6-v2",
+      "revision": "233902d25c440f23af6f7d6e94d2946bac0bee0a",
+      "rerank_depth": 20,
+      "alpha": 1.0,
+      "max_length": 384,
+      "inference": "dynamic-int8-linear",
+      "backend": "torch_cpu",
+      "model_file": "model.safetensors",
+      "candidate_depth": 100,
+      "rrf_constant": 60,
+      "validation_metrics": {
+        "ndcg@10": 0.6984627574509381,
+        "mrr@10": 0.6633654688869413,
+        "recall@10": 0.8145194274028629,
+        "recall@5": 0.7398773006134969
+      },
+      "embedding_fingerprint": {
+        "schema": 2,
+        "documents": {
+          "count": 5183,
+          "ids_sha256": "3df87dafd673a62a3ec6cb9ecc42d65916bff917e3fa539778ed543a2d72fe26",
+          "texts_sha256": "7b1dc0a5ca2f5b019468505af285f84821205986bfcbe225cd3970790c94bad7"
+        },
+        "queries": {
+          "count": 1109,
+          "ids_sha256": "574b5c6a26e2e5d1a99ef82f257c842eaacb8be6a3884fd3a219c0374c5bdbe1",
+          "texts_sha256": "7a81bd430f5b2c0088e5f73c1cd6b5c42648af67a8ee93849a873a7f34d9749a"
+        },
+        "encoder": {
+          "model_id": "sentence-transformers/all-MiniLM-L6-v2",
+          "revision": "1110a243fdf4706b3f48f1d95db1a4f5529b4d41",
+          "files_sha256": {
+            "config.json": "953f9c0d463486b10a6871cc2fd59f223b2c70184f49815e7efbcab5d8908b41",
+            "model.safetensors": "53aa51172d142c89d9012cce15ae4d6cc0ca6895895114379cacb4fab128d9db",
+            "tokenizer.json": "be50c3628f2bf5bb5e3a7f17b1f74611b2561a3a27eeab05e5aa30f411572037",
+            "tokenizer_config.json": "acb92769e8195aabd29b7b2137a9e6d6e25c476a4f15aa4355c233426c61576b",
+            "special_tokens_map.json": "303df45a03609e4ead04bc3dc1536d0ab19b5358db685b6f3da123d05ec200e3",
+            "vocab.txt": "07eced375cec144d27c900241f3e339478dec958f92fddbc551f295c992038a3"
+          },
+          "max_length": 192,
+          "dimension": 384,
+          "pooling": "attention-mask-mean-l2-v1",
+          "dtype": "float32"
+        },
+        "adapter": {
+          "adapter_config.json": "1b228996228016019bc2da2950226c62a5e4ff1de1a8b17345b2289645a9352e",
+          "adapter_model.safetensors": "4fad7e9b7ff432d41176ee32673fda9a16d95c3540b58ff4487893cbb2ae81e2"
+        },
+        "fingerprint_sha256": "55e93cc1aaadb6f94055e9ed5b38ce75d327d0c4cb35b8db5e2d0855ab818bfc"
+      }
+    },
+    {
+      "variant": "l6",
+      "model_path": "models/cross_encoder_l6",
+      "model": "cross-encoder/ms-marco-MiniLM-L6-v2",
+      "revision": "233902d25c440f23af6f7d6e94d2946bac0bee0a",
+      "rerank_depth": 50,
+      "alpha": 0.0,
+      "max_length": 384,
+      "inference": "dynamic-int8-linear",
+      "backend": "torch_cpu",
+      "model_file": "model.safetensors",
+      "candidate_depth": 100,
+      "rrf_constant": 60,
+      "validation_metrics": {
+        "ndcg@10": 0.6851699615567124,
+        "mrr@10": 0.6525878858700944,
+        "recall@10": 0.8175869120654395,
+        "recall@5": 0.7233128834355829
+      },
+      "embedding_fingerprint": {
+        "schema": 2,
+        "documents": {
+          "count": 5183,
+          "ids_sha256": "3df87dafd673a62a3ec6cb9ecc42d65916bff917e3fa539778ed543a2d72fe26",
+          "texts_sha256": "7b1dc0a5ca2f5b019468505af285f84821205986bfcbe225cd3970790c94bad7"
+        },
+        "queries": {
+          "count": 1109,
+          "ids_sha256": "574b5c6a26e2e5d1a99ef82f257c842eaacb8be6a3884fd3a219c0374c5bdbe1",
+          "texts_sha256": "7a81bd430f5b2c0088e5f73c1cd6b5c42648af67a8ee93849a873a7f34d9749a"
+        },
+        "encoder": {
+          "model_id": "sentence-transformers/all-MiniLM-L6-v2",
+          "revision": "1110a243fdf4706b3f48f1d95db1a4f5529b4d41",
+          "files_sha256": {
+            "config.json": "953f9c0d463486b10a6871cc2fd59f223b2c70184f49815e7efbcab5d8908b41",
+            "model.safetensors": "53aa51172d142c89d9012cce15ae4d6cc0ca6895895114379cacb4fab128d9db",
+            "tokenizer.json": "be50c3628f2bf5bb5e3a7f17b1f74611b2561a3a27eeab05e5aa30f411572037",
+            "tokenizer_config.json": "acb92769e8195aabd29b7b2137a9e6d6e25c476a4f15aa4355c233426c61576b",
+            "special_tokens_map.json": "303df45a03609e4ead04bc3dc1536d0ab19b5358db685b6f3da123d05ec200e3",
+            "vocab.txt": "07eced375cec144d27c900241f3e339478dec958f92fddbc551f295c992038a3"
+          },
+          "max_length": 192,
+          "dimension": 384,
+          "pooling": "attention-mask-mean-l2-v1",
+          "dtype": "float32"
+        },
+        "adapter": {
+          "adapter_config.json": "1b228996228016019bc2da2950226c62a5e4ff1de1a8b17345b2289645a9352e",
+          "adapter_model.safetensors": "4fad7e9b7ff432d41176ee32673fda9a16d95c3540b58ff4487893cbb2ae81e2"
+        },
+        "fingerprint_sha256": "55e93cc1aaadb6f94055e9ed5b38ce75d327d0c4cb35b8db5e2d0855ab818bfc"
+      }
+    },
+    {
+      "variant": "l6",
+      "model_path": "models/cross_encoder_l6",
+      "model": "cross-encoder/ms-marco-MiniLM-L6-v2",
+      "revision": "233902d25c440f23af6f7d6e94d2946bac0bee0a",
+      "rerank_depth": 50,
+      "alpha": 0.25,
+      "max_length": 384,
+      "inference": "dynamic-int8-linear",
+      "backend": "torch_cpu",
+      "model_file": "model.safetensors",
+      "candidate_depth": 100,
+      "rrf_constant": 60,
+      "validation_metrics": {
+        "ndcg@10": 0.7060887708934734,
+        "mrr@10": 0.676767455448437,
+        "recall@10": 0.823721881390593,
+        "recall@5": 0.7376278118609407
+      },
+      "embedding_fingerprint": {
+        "schema": 2,
+        "documents": {
+          "count": 5183,
+          "ids_sha256": "3df87dafd673a62a3ec6cb9ecc42d65916bff917e3fa539778ed543a2d72fe26",
+          "texts_sha256": "7b1dc0a5ca2f5b019468505af285f84821205986bfcbe225cd3970790c94bad7"
+        },
+        "queries": {
+          "count": 1109,
+          "ids_sha256": "574b5c6a26e2e5d1a99ef82f257c842eaacb8be6a3884fd3a219c0374c5bdbe1",
+          "texts_sha256": "7a81bd430f5b2c0088e5f73c1cd6b5c42648af67a8ee93849a873a7f34d9749a"
+        },
+        "encoder": {
+          "model_id": "sentence-transformers/all-MiniLM-L6-v2",
+          "revision": "1110a243fdf4706b3f48f1d95db1a4f5529b4d41",
+          "files_sha256": {
+            "config.json": "953f9c0d463486b10a6871cc2fd59f223b2c70184f49815e7efbcab5d8908b41",
+            "model.safetensors": "53aa51172d142c89d9012cce15ae4d6cc0ca6895895114379cacb4fab128d9db",
+            "tokenizer.json": "be50c3628f2bf5bb5e3a7f17b1f74611b2561a3a27eeab05e5aa30f411572037",
+            "tokenizer_config.json": "acb92769e8195aabd29b7b2137a9e6d6e25c476a4f15aa4355c233426c61576b",
+            "special_tokens_map.json": "303df45a03609e4ead04bc3dc1536d0ab19b5358db685b6f3da123d05ec200e3",
+            "vocab.txt": "07eced375cec144d27c900241f3e339478dec958f92fddbc551f295c992038a3"
+          },
+          "max_length": 192,
+          "dimension": 384,
+          "pooling": "attention-mask-mean-l2-v1",
+          "dtype": "float32"
+        },
+        "adapter": {
+          "adapter_config.json": "1b228996228016019bc2da2950226c62a5e4ff1de1a8b17345b2289645a9352e",
+          "adapter_model.safetensors": "4fad7e9b7ff432d41176ee32673fda9a16d95c3540b58ff4487893cbb2ae81e2"
+        },
+        "fingerprint_sha256": "55e93cc1aaadb6f94055e9ed5b38ce75d327d0c4cb35b8db5e2d0855ab818bfc"
+      }
+    },
+    {
+      "variant": "l6",
+      "model_path": "models/cross_encoder_l6",
+      "model": "cross-encoder/ms-marco-MiniLM-L6-v2",
+      "revision": "233902d25c440f23af6f7d6e94d2946bac0bee0a",
+      "rerank_depth": 50,
+      "alpha": 0.5,
+      "max_length": 384,
+      "inference": "dynamic-int8-linear",
+      "backend": "torch_cpu",
+      "model_file": "model.safetensors",
+      "candidate_depth": 100,
+      "rrf_constant": 60,
+      "validation_metrics": {
+        "ndcg@10": 0.7180464222028553,
+        "mrr@10": 0.6861500632973025,
+        "recall@10": 0.8359918200408997,
+        "recall@5": 0.7775051124744377
+      },
+      "embedding_fingerprint": {
+        "schema": 2,
+        "documents": {
+          "count": 5183,
+          "ids_sha256": "3df87dafd673a62a3ec6cb9ecc42d65916bff917e3fa539778ed543a2d72fe26",
+          "texts_sha256": "7b1dc0a5ca2f5b019468505af285f84821205986bfcbe225cd3970790c94bad7"
+        },
+        "queries": {
+          "count": 1109,
+          "ids_sha256": "574b5c6a26e2e5d1a99ef82f257c842eaacb8be6a3884fd3a219c0374c5bdbe1",
+          "texts_sha256": "7a81bd430f5b2c0088e5f73c1cd6b5c42648af67a8ee93849a873a7f34d9749a"
+        },
+        "encoder": {
+          "model_id": "sentence-transformers/all-MiniLM-L6-v2",
+          "revision": "1110a243fdf4706b3f48f1d95db1a4f5529b4d41",
+          "files_sha256": {
+            "config.json": "953f9c0d463486b10a6871cc2fd59f223b2c70184f49815e7efbcab5d8908b41",
+            "model.safetensors": "53aa51172d142c89d9012cce15ae4d6cc0ca6895895114379cacb4fab128d9db",
+            "tokenizer.json": "be50c3628f2bf5bb5e3a7f17b1f74611b2561a3a27eeab05e5aa30f411572037",
+            "tokenizer_config.json": "acb92769e8195aabd29b7b2137a9e6d6e25c476a4f15aa4355c233426c61576b",
+            "special_tokens_map.json": "303df45a03609e4ead04bc3dc1536d0ab19b5358db685b6f3da123d05ec200e3",
+            "vocab.txt": "07eced375cec144d27c900241f3e339478dec958f92fddbc551f295c992038a3"
+          },
+          "max_length": 192,
+          "dimension": 384,
+          "pooling": "attention-mask-mean-l2-v1",
+          "dtype": "float32"
+        },
+        "adapter": {
+          "adapter_config.json": "1b228996228016019bc2da2950226c62a5e4ff1de1a8b17345b2289645a9352e",
+          "adapter_model.safetensors": "4fad7e9b7ff432d41176ee32673fda9a16d95c3540b58ff4487893cbb2ae81e2"
+        },
+        "fingerprint_sha256": "55e93cc1aaadb6f94055e9ed5b38ce75d327d0c4cb35b8db5e2d0855ab818bfc"
+      }
+    },
+    {
+      "variant": "l6",
+      "model_path": "models/cross_encoder_l6",
+      "model": "cross-encoder/ms-marco-MiniLM-L6-v2",
+      "revision": "233902d25c440f23af6f7d6e94d2946bac0bee0a",
+      "rerank_depth": 50,
+      "alpha": 0.75,
+      "max_length": 384,
+      "inference": "dynamic-int8-linear",
+      "backend": "torch_cpu",
+      "model_file": "model.safetensors",
+      "candidate_depth": 100,
+      "rrf_constant": 60,
+      "validation_metrics": {
+        "ndcg@10": 0.7145947521259548,
+        "mrr@10": 0.6859528678547083,
+        "recall@10": 0.8145194274028629,
+        "recall@5": 0.7521472392638037
+      },
+      "embedding_fingerprint": {
+        "schema": 2,
+        "documents": {
+          "count": 5183,
+          "ids_sha256": "3df87dafd673a62a3ec6cb9ecc42d65916bff917e3fa539778ed543a2d72fe26",
+          "texts_sha256": "7b1dc0a5ca2f5b019468505af285f84821205986bfcbe225cd3970790c94bad7"
+        },
+        "queries": {
+          "count": 1109,
+          "ids_sha256": "574b5c6a26e2e5d1a99ef82f257c842eaacb8be6a3884fd3a219c0374c5bdbe1",
+          "texts_sha256": "7a81bd430f5b2c0088e5f73c1cd6b5c42648af67a8ee93849a873a7f34d9749a"
+        },
+        "encoder": {
+          "model_id": "sentence-transformers/all-MiniLM-L6-v2",
+          "revision": "1110a243fdf4706b3f48f1d95db1a4f5529b4d41",
+          "files_sha256": {
+            "config.json": "953f9c0d463486b10a6871cc2fd59f223b2c70184f49815e7efbcab5d8908b41",
+            "model.safetensors": "53aa51172d142c89d9012cce15ae4d6cc0ca6895895114379cacb4fab128d9db",
+            "tokenizer.json": "be50c3628f2bf5bb5e3a7f17b1f74611b2561a3a27eeab05e5aa30f411572037",
+            "tokenizer_config.json": "acb92769e8195aabd29b7b2137a9e6d6e25c476a4f15aa4355c233426c61576b",
+            "special_tokens_map.json": "303df45a03609e4ead04bc3dc1536d0ab19b5358db685b6f3da123d05ec200e3",
+            "vocab.txt": "07eced375cec144d27c900241f3e339478dec958f92fddbc551f295c992038a3"
+          },
+          "max_length": 192,
+          "dimension": 384,
+          "pooling": "attention-mask-mean-l2-v1",
+          "dtype": "float32"
+        },
+        "adapter": {
+          "adapter_config.json": "1b228996228016019bc2da2950226c62a5e4ff1de1a8b17345b2289645a9352e",
+          "adapter_model.safetensors": "4fad7e9b7ff432d41176ee32673fda9a16d95c3540b58ff4487893cbb2ae81e2"
+        },
+        "fingerprint_sha256": "55e93cc1aaadb6f94055e9ed5b38ce75d327d0c4cb35b8db5e2d0855ab818bfc"
+      }
+    },
+    {
+      "variant": "l6",
+      "model_path": "models/cross_encoder_l6",
+      "model": "cross-encoder/ms-marco-MiniLM-L6-v2",
+      "revision": "233902d25c440f23af6f7d6e94d2946bac0bee0a",
+      "rerank_depth": 50,
+      "alpha": 1.0,
+      "max_length": 384,
+      "inference": "dynamic-int8-linear",
+      "backend": "torch_cpu",
+      "model_file": "model.safetensors",
+      "candidate_depth": 100,
+      "rrf_constant": 60,
+      "validation_metrics": {
+        "ndcg@10": 0.6932635838738499,
+        "mrr@10": 0.6615006329730255,
+        "recall@10": 0.8032719836400818,
+        "recall@5": 0.7460122699386502
+      },
+      "embedding_fingerprint": {
+        "schema": 2,
+        "documents": {
+          "count": 5183,
+          "ids_sha256": "3df87dafd673a62a3ec6cb9ecc42d65916bff917e3fa539778ed543a2d72fe26",
+          "texts_sha256": "7b1dc0a5ca2f5b019468505af285f84821205986bfcbe225cd3970790c94bad7"
+        },
+        "queries": {
+          "count": 1109,
+          "ids_sha256": "574b5c6a26e2e5d1a99ef82f257c842eaacb8be6a3884fd3a219c0374c5bdbe1",
+          "texts_sha256": "7a81bd430f5b2c0088e5f73c1cd6b5c42648af67a8ee93849a873a7f34d9749a"
+        },
+        "encoder": {
+          "model_id": "sentence-transformers/all-MiniLM-L6-v2",
+          "revision": "1110a243fdf4706b3f48f1d95db1a4f5529b4d41",
+          "files_sha256": {
+            "config.json": "953f9c0d463486b10a6871cc2fd59f223b2c70184f49815e7efbcab5d8908b41",
+            "model.safetensors": "53aa51172d142c89d9012cce15ae4d6cc0ca6895895114379cacb4fab128d9db",
+            "tokenizer.json": "be50c3628f2bf5bb5e3a7f17b1f74611b2561a3a27eeab05e5aa30f411572037",
+            "tokenizer_config.json": "acb92769e8195aabd29b7b2137a9e6d6e25c476a4f15aa4355c233426c61576b",
+            "special_tokens_map.json": "303df45a03609e4ead04bc3dc1536d0ab19b5358db685b6f3da123d05ec200e3",
+            "vocab.txt": "07eced375cec144d27c900241f3e339478dec958f92fddbc551f295c992038a3"
+          },
+          "max_length": 192,
+          "dimension": 384,
+          "pooling": "attention-mask-mean-l2-v1",
+          "dtype": "float32"
+        },
+        "adapter": {
+          "adapter_config.json": "1b228996228016019bc2da2950226c62a5e4ff1de1a8b17345b2289645a9352e",
+          "adapter_model.safetensors": "4fad7e9b7ff432d41176ee32673fda9a16d95c3540b58ff4487893cbb2ae81e2"
+        },
+        "fingerprint_sha256": "55e93cc1aaadb6f94055e9ed5b38ce75d327d0c4cb35b8db5e2d0855ab818bfc"
+      }
+    },
+    {
+      "variant": "l6",
+      "model_path": "models/cross_encoder_l6",
+      "model": "cross-encoder/ms-marco-MiniLM-L6-v2",
+      "revision": "233902d25c440f23af6f7d6e94d2946bac0bee0a",
+      "rerank_depth": 100,
+      "alpha": 0.0,
+      "max_length": 384,
+      "inference": "dynamic-int8-linear",
+      "backend": "torch_cpu",
+      "model_file": "model.safetensors",
+      "candidate_depth": 100,
+      "rrf_constant": 60,
+      "validation_metrics": {
+        "ndcg@10": 0.6851699615567124,
+        "mrr@10": 0.6525878858700944,
+        "recall@10": 0.8175869120654395,
+        "recall@5": 0.7233128834355829
+      },
+      "embedding_fingerprint": {
+        "schema": 2,
+        "documents": {
+          "count": 5183,
+          "ids_sha256": "3df87dafd673a62a3ec6cb9ecc42d65916bff917e3fa539778ed543a2d72fe26",
+          "texts_sha256": "7b1dc0a5ca2f5b019468505af285f84821205986bfcbe225cd3970790c94bad7"
+        },
+        "queries": {
+          "count": 1109,
+          "ids_sha256": "574b5c6a26e2e5d1a99ef82f257c842eaacb8be6a3884fd3a219c0374c5bdbe1",
+          "texts_sha256": "7a81bd430f5b2c0088e5f73c1cd6b5c42648af67a8ee93849a873a7f34d9749a"
+        },
+        "encoder": {
+          "model_id": "sentence-transformers/all-MiniLM-L6-v2",
+          "revision": "1110a243fdf4706b3f48f1d95db1a4f5529b4d41",
+          "files_sha256": {
+            "config.json": "953f9c0d463486b10a6871cc2fd59f223b2c70184f49815e7efbcab5d8908b41",
+            "model.safetensors": "53aa51172d142c89d9012cce15ae4d6cc0ca6895895114379cacb4fab128d9db",
+            "tokenizer.json": "be50c3628f2bf5bb5e3a7f17b1f74611b2561a3a27eeab05e5aa30f411572037",
+            "tokenizer_config.json": "acb92769e8195aabd29b7b2137a9e6d6e25c476a4f15aa4355c233426c61576b",
+            "special_tokens_map.json": "303df45a03609e4ead04bc3dc1536d0ab19b5358db685b6f3da123d05ec200e3",
+            "vocab.txt": "07eced375cec144d27c900241f3e339478dec958f92fddbc551f295c992038a3"
+          },
+          "max_length": 192,
+          "dimension": 384,
+          "pooling": "attention-mask-mean-l2-v1",
+          "dtype": "float32"
+        },
+        "adapter": {
+          "adapter_config.json": "1b228996228016019bc2da2950226c62a5e4ff1de1a8b17345b2289645a9352e",
+          "adapter_model.safetensors": "4fad7e9b7ff432d41176ee32673fda9a16d95c3540b58ff4487893cbb2ae81e2"
+        },
+        "fingerprint_sha256": "55e93cc1aaadb6f94055e9ed5b38ce75d327d0c4cb35b8db5e2d0855ab818bfc"
+      }
+    },
+    {
+      "variant": "l6",
+      "model_path": "models/cross_encoder_l6",
+      "model": "cross-encoder/ms-marco-MiniLM-L6-v2",
+      "revision": "233902d25c440f23af6f7d6e94d2946bac0bee0a",
+      "rerank_depth": 100,
+      "alpha": 0.25,
+      "max_length": 384,
+      "inference": "dynamic-int8-linear",
+      "backend": "torch_cpu",
+      "model_file": "model.safetensors",
+      "candidate_depth": 100,
+      "rrf_constant": 60,
+      "validation_metrics": {
+        "ndcg@10": 0.7085972746892324,
+        "mrr@10": 0.6801246469958125,
+        "recall@10": 0.823721881390593,
+        "recall@5": 0.7284253578732106
+      },
+      "embedding_fingerprint": {
+        "schema": 2,
+        "documents": {
+          "count": 5183,
+          "ids_sha256": "3df87dafd673a62a3ec6cb9ecc42d65916bff917e3fa539778ed543a2d72fe26",
+          "texts_sha256": "7b1dc0a5ca2f5b019468505af285f84821205986bfcbe225cd3970790c94bad7"
+        },
+        "queries": {
+          "count": 1109,
+          "ids_sha256": "574b5c6a26e2e5d1a99ef82f257c842eaacb8be6a3884fd3a219c0374c5bdbe1",
+          "texts_sha256": "7a81bd430f5b2c0088e5f73c1cd6b5c42648af67a8ee93849a873a7f34d9749a"
+        },
+        "encoder": {
+          "model_id": "sentence-transformers/all-MiniLM-L6-v2",
+          "revision": "1110a243fdf4706b3f48f1d95db1a4f5529b4d41",
+          "files_sha256": {
+            "config.json": "953f9c0d463486b10a6871cc2fd59f223b2c70184f49815e7efbcab5d8908b41",
+            "model.safetensors": "53aa51172d142c89d9012cce15ae4d6cc0ca6895895114379cacb4fab128d9db",
+            "tokenizer.json": "be50c3628f2bf5bb5e3a7f17b1f74611b2561a3a27eeab05e5aa30f411572037",
+            "tokenizer_config.json": "acb92769e8195aabd29b7b2137a9e6d6e25c476a4f15aa4355c233426c61576b",
+            "special_tokens_map.json": "303df45a03609e4ead04bc3dc1536d0ab19b5358db685b6f3da123d05ec200e3",
+            "vocab.txt": "07eced375cec144d27c900241f3e339478dec958f92fddbc551f295c992038a3"
+          },
+          "max_length": 192,
+          "dimension": 384,
+          "pooling": "attention-mask-mean-l2-v1",
+          "dtype": "float32"
+        },
+        "adapter": {
+          "adapter_config.json": "1b228996228016019bc2da2950226c62a5e4ff1de1a8b17345b2289645a9352e",
+          "adapter_model.safetensors": "4fad7e9b7ff432d41176ee32673fda9a16d95c3540b58ff4487893cbb2ae81e2"
+        },
+        "fingerprint_sha256": "55e93cc1aaadb6f94055e9ed5b38ce75d327d0c4cb35b8db5e2d0855ab818bfc"
+      }
+    },
+    {
+      "variant": "l6",
+      "model_path": "models/cross_encoder_l6",
+      "model": "cross-encoder/ms-marco-MiniLM-L6-v2",
+      "revision": "233902d25c440f23af6f7d6e94d2946bac0bee0a",
+      "rerank_depth": 100,
+      "alpha": 0.5,
+      "max_length": 384,
+      "inference": "dynamic-int8-linear",
+      "backend": "torch_cpu",
+      "model_file": "model.safetensors",
+      "candidate_depth": 100,
+      "rrf_constant": 60,
+      "validation_metrics": {
+        "ndcg@10": 0.7187383558227252,
+        "mrr@10": 0.6833138572402376,
+        "recall@10": 0.8390593047034763,
+        "recall@5": 0.7756646216768917
+      },
+      "embedding_fingerprint": {
+        "schema": 2,
+        "documents": {
+          "count": 5183,
+          "ids_sha256": "3df87dafd673a62a3ec6cb9ecc42d65916bff917e3fa539778ed543a2d72fe26",
+          "texts_sha256": "7b1dc0a5ca2f5b019468505af285f84821205986bfcbe225cd3970790c94bad7"
+        },
+        "queries": {
+          "count": 1109,
+          "ids_sha256": "574b5c6a26e2e5d1a99ef82f257c842eaacb8be6a3884fd3a219c0374c5bdbe1",
+          "texts_sha256": "7a81bd430f5b2c0088e5f73c1cd6b5c42648af67a8ee93849a873a7f34d9749a"
+        },
+        "encoder": {
+          "model_id": "sentence-transformers/all-MiniLM-L6-v2",
+          "revision": "1110a243fdf4706b3f48f1d95db1a4f5529b4d41",
+          "files_sha256": {
+            "config.json": "953f9c0d463486b10a6871cc2fd59f223b2c70184f49815e7efbcab5d8908b41",
+            "model.safetensors": "53aa51172d142c89d9012cce15ae4d6cc0ca6895895114379cacb4fab128d9db",
+            "tokenizer.json": "be50c3628f2bf5bb5e3a7f17b1f74611b2561a3a27eeab05e5aa30f411572037",
+            "tokenizer_config.json": "acb92769e8195aabd29b7b2137a9e6d6e25c476a4f15aa4355c233426c61576b",
+            "special_tokens_map.json": "303df45a03609e4ead04bc3dc1536d0ab19b5358db685b6f3da123d05ec200e3",
+            "vocab.txt": "07eced375cec144d27c900241f3e339478dec958f92fddbc551f295c992038a3"
+          },
+          "max_length": 192,
+          "dimension": 384,
+          "pooling": "attention-mask-mean-l2-v1",
+          "dtype": "float32"
+        },
+        "adapter": {
+          "adapter_config.json": "1b228996228016019bc2da2950226c62a5e4ff1de1a8b17345b2289645a9352e",
+          "adapter_model.safetensors": "4fad7e9b7ff432d41176ee32673fda9a16d95c3540b58ff4487893cbb2ae81e2"
+        },
+        "fingerprint_sha256": "55e93cc1aaadb6f94055e9ed5b38ce75d327d0c4cb35b8db5e2d0855ab818bfc"
+      }
+    },
+    {
+      "variant": "l6",
+      "model_path": "models/cross_encoder_l6",
+      "model": "cross-encoder/ms-marco-MiniLM-L6-v2",
+      "revision": "233902d25c440f23af6f7d6e94d2946bac0bee0a",
+      "rerank_depth": 100,
+      "alpha": 0.75,
+      "max_length": 384,
+      "inference": "dynamic-int8-linear",
+      "backend": "torch_cpu",
+      "model_file": "model.safetensors",
+      "candidate_depth": 100,
+      "rrf_constant": 60,
+      "validation_metrics": {
+        "ndcg@10": 0.7163647404564293,
+        "mrr@10": 0.6885358847015289,
+        "recall@10": 0.8145194274028629,
+        "recall@5": 0.7460122699386502
+      },
+      "embedding_fingerprint": {
+        "schema": 2,
+        "documents": {
+          "count": 5183,
+          "ids_sha256": "3df87dafd673a62a3ec6cb9ecc42d65916bff917e3fa539778ed543a2d72fe26",
+          "texts_sha256": "7b1dc0a5ca2f5b019468505af285f84821205986bfcbe225cd3970790c94bad7"
+        },
+        "queries": {
+          "count": 1109,
+          "ids_sha256": "574b5c6a26e2e5d1a99ef82f257c842eaacb8be6a3884fd3a219c0374c5bdbe1",
+          "texts_sha256": "7a81bd430f5b2c0088e5f73c1cd6b5c42648af67a8ee93849a873a7f34d9749a"
+        },
+        "encoder": {
+          "model_id": "sentence-transformers/all-MiniLM-L6-v2",
+          "revision": "1110a243fdf4706b3f48f1d95db1a4f5529b4d41",
+          "files_sha256": {
+            "config.json": "953f9c0d463486b10a6871cc2fd59f223b2c70184f49815e7efbcab5d8908b41",
+            "model.safetensors": "53aa51172d142c89d9012cce15ae4d6cc0ca6895895114379cacb4fab128d9db",
+            "tokenizer.json": "be50c3628f2bf5bb5e3a7f17b1f74611b2561a3a27eeab05e5aa30f411572037",
+            "tokenizer_config.json": "acb92769e8195aabd29b7b2137a9e6d6e25c476a4f15aa4355c233426c61576b",
+            "special_tokens_map.json": "303df45a03609e4ead04bc3dc1536d0ab19b5358db685b6f3da123d05ec200e3",
+            "vocab.txt": "07eced375cec144d27c900241f3e339478dec958f92fddbc551f295c992038a3"
+          },
+          "max_length": 192,
+          "dimension": 384,
+          "pooling": "attention-mask-mean-l2-v1",
+          "dtype": "float32"
+        },
+        "adapter": {
+          "adapter_config.json": "1b228996228016019bc2da2950226c62a5e4ff1de1a8b17345b2289645a9352e",
+          "adapter_model.safetensors": "4fad7e9b7ff432d41176ee32673fda9a16d95c3540b58ff4487893cbb2ae81e2"
+        },
+        "fingerprint_sha256": "55e93cc1aaadb6f94055e9ed5b38ce75d327d0c4cb35b8db5e2d0855ab818bfc"
+      }
+    },
+    {
+      "variant": "l6",
+      "model_path": "models/cross_encoder_l6",
+      "model": "cross-encoder/ms-marco-MiniLM-L6-v2",
+      "revision": "233902d25c440f23af6f7d6e94d2946bac0bee0a",
+      "rerank_depth": 100,
+      "alpha": 1.0,
+      "max_length": 384,
+      "inference": "dynamic-int8-linear",
+      "backend": "torch_cpu",
+      "model_file": "model.safetensors",
+      "candidate_depth": 100,
+      "rrf_constant": 60,
+      "validation_metrics": {
+        "ndcg@10": 0.6867239260959495,
+        "mrr@10": 0.6582895121238679,
+        "recall@10": 0.7848670756646217,
+        "recall@5": 0.7460122699386502
+      },
+      "embedding_fingerprint": {
+        "schema": 2,
+        "documents": {
+          "count": 5183,
+          "ids_sha256": "3df87dafd673a62a3ec6cb9ecc42d65916bff917e3fa539778ed543a2d72fe26",
+          "texts_sha256": "7b1dc0a5ca2f5b019468505af285f84821205986bfcbe225cd3970790c94bad7"
+        },
+        "queries": {
+          "count": 1109,
+          "ids_sha256": "574b5c6a26e2e5d1a99ef82f257c842eaacb8be6a3884fd3a219c0374c5bdbe1",
+          "texts_sha256": "7a81bd430f5b2c0088e5f73c1cd6b5c42648af67a8ee93849a873a7f34d9749a"
+        },
+        "encoder": {
+          "model_id": "sentence-transformers/all-MiniLM-L6-v2",
+          "revision": "1110a243fdf4706b3f48f1d95db1a4f5529b4d41",
+          "files_sha256": {
+            "config.json": "953f9c0d463486b10a6871cc2fd59f223b2c70184f49815e7efbcab5d8908b41",
+            "model.safetensors": "53aa51172d142c89d9012cce15ae4d6cc0ca6895895114379cacb4fab128d9db",
+            "tokenizer.json": "be50c3628f2bf5bb5e3a7f17b1f74611b2561a3a27eeab05e5aa30f411572037",
+            "tokenizer_config.json": "acb92769e8195aabd29b7b2137a9e6d6e25c476a4f15aa4355c233426c61576b",
+            "special_tokens_map.json": "303df45a03609e4ead04bc3dc1536d0ab19b5358db685b6f3da123d05ec200e3",
+            "vocab.txt": "07eced375cec144d27c900241f3e339478dec958f92fddbc551f295c992038a3"
+          },
+          "max_length": 192,
+          "dimension": 384,
+          "pooling": "attention-mask-mean-l2-v1",
+          "dtype": "float32"
+        },
+        "adapter": {
+          "adapter_config.json": "1b228996228016019bc2da2950226c62a5e4ff1de1a8b17345b2289645a9352e",
+          "adapter_model.safetensors": "4fad7e9b7ff432d41176ee32673fda9a16d95c3540b58ff4487893cbb2ae81e2"
+        },
+        "fingerprint_sha256": "55e93cc1aaadb6f94055e9ed5b38ce75d327d0c4cb35b8db5e2d0855ab818bfc"
+      }
+    },
+    {
+      "variant": "l12",
+      "model_path": "models/cross_encoder_l12",
+      "model": "cross-encoder/ms-marco-MiniLM-L12-v2",
+      "revision": "7b0235231ca2674cb8ca8f022859a6eba2b1c968",
+      "rerank_depth": 20,
+      "alpha": 0.0,
+      "max_length": 384,
+      "inference": "dynamic-int8-linear",
+      "backend": "torch_cpu",
+      "model_file": "model.safetensors",
+      "candidate_depth": 100,
+      "rrf_constant": 60,
+      "validation_metrics": {
+        "ndcg@10": 0.6851699615567124,
+        "mrr@10": 0.6525878858700944,
+        "recall@10": 0.8175869120654395,
+        "recall@5": 0.7233128834355829
+      },
+      "embedding_fingerprint": {
+        "schema": 2,
+        "documents": {
+          "count": 5183,
+          "ids_sha256": "3df87dafd673a62a3ec6cb9ecc42d65916bff917e3fa539778ed543a2d72fe26",
+          "texts_sha256": "7b1dc0a5ca2f5b019468505af285f84821205986bfcbe225cd3970790c94bad7"
+        },
+        "queries": {
+          "count": 1109,
+          "ids_sha256": "574b5c6a26e2e5d1a99ef82f257c842eaacb8be6a3884fd3a219c0374c5bdbe1",
+          "texts_sha256": "7a81bd430f5b2c0088e5f73c1cd6b5c42648af67a8ee93849a873a7f34d9749a"
+        },
+        "encoder": {
+          "model_id": "sentence-transformers/all-MiniLM-L6-v2",
+          "revision": "1110a243fdf4706b3f48f1d95db1a4f5529b4d41",
+          "files_sha256": {
+            "config.json": "953f9c0d463486b10a6871cc2fd59f223b2c70184f49815e7efbcab5d8908b41",
+            "model.safetensors": "53aa51172d142c89d9012cce15ae4d6cc0ca6895895114379cacb4fab128d9db",
+            "tokenizer.json": "be50c3628f2bf5bb5e3a7f17b1f74611b2561a3a27eeab05e5aa30f411572037",
+            "tokenizer_config.json": "acb92769e8195aabd29b7b2137a9e6d6e25c476a4f15aa4355c233426c61576b",
+            "special_tokens_map.json": "303df45a03609e4ead04bc3dc1536d0ab19b5358db685b6f3da123d05ec200e3",
+            "vocab.txt": "07eced375cec144d27c900241f3e339478dec958f92fddbc551f295c992038a3"
+          },
+          "max_length": 192,
+          "dimension": 384,
+          "pooling": "attention-mask-mean-l2-v1",
+          "dtype": "float32"
+        },
+        "adapter": {
+          "adapter_config.json": "1b228996228016019bc2da2950226c62a5e4ff1de1a8b17345b2289645a9352e",
+          "adapter_model.safetensors": "4fad7e9b7ff432d41176ee32673fda9a16d95c3540b58ff4487893cbb2ae81e2"
+        },
+        "fingerprint_sha256": "55e93cc1aaadb6f94055e9ed5b38ce75d327d0c4cb35b8db5e2d0855ab818bfc"
+      }
+    },
+    {
+      "variant": "l12",
+      "model_path": "models/cross_encoder_l12",
+      "model": "cross-encoder/ms-marco-MiniLM-L12-v2",
+      "revision": "7b0235231ca2674cb8ca8f022859a6eba2b1c968",
+      "rerank_depth": 20,
+      "alpha": 0.25,
+      "max_length": 384,
+      "inference": "dynamic-int8-linear",
+      "backend": "torch_cpu",
+      "model_file": "model.safetensors",
+      "candidate_depth": 100,
+      "rrf_constant": 60,
+      "validation_metrics": {
+        "ndcg@10": 0.7118002619515555,
+        "mrr@10": 0.6815585743499853,
+        "recall@10": 0.8359918200408997,
+        "recall@5": 0.7468302658486707
+      },
+      "embedding_fingerprint": {
+        "schema": 2,
+        "documents": {
+          "count": 5183,
+          "ids_sha256": "3df87dafd673a62a3ec6cb9ecc42d65916bff917e3fa539778ed543a2d72fe26",
+          "texts_sha256": "7b1dc0a5ca2f5b019468505af285f84821205986bfcbe225cd3970790c94bad7"
+        },
+        "queries": {
+          "count": 1109,
+          "ids_sha256": "574b5c6a26e2e5d1a99ef82f257c842eaacb8be6a3884fd3a219c0374c5bdbe1",
+          "texts_sha256": "7a81bd430f5b2c0088e5f73c1cd6b5c42648af67a8ee93849a873a7f34d9749a"
+        },
+        "encoder": {
+          "model_id": "sentence-transformers/all-MiniLM-L6-v2",
+          "revision": "1110a243fdf4706b3f48f1d95db1a4f5529b4d41",
+          "files_sha256": {
+            "config.json": "953f9c0d463486b10a6871cc2fd59f223b2c70184f49815e7efbcab5d8908b41",
+            "model.safetensors": "53aa51172d142c89d9012cce15ae4d6cc0ca6895895114379cacb4fab128d9db",
+            "tokenizer.json": "be50c3628f2bf5bb5e3a7f17b1f74611b2561a3a27eeab05e5aa30f411572037",
+            "tokenizer_config.json": "acb92769e8195aabd29b7b2137a9e6d6e25c476a4f15aa4355c233426c61576b",
+            "special_tokens_map.json": "303df45a03609e4ead04bc3dc1536d0ab19b5358db685b6f3da123d05ec200e3",
+            "vocab.txt": "07eced375cec144d27c900241f3e339478dec958f92fddbc551f295c992038a3"
+          },
+          "max_length": 192,
+          "dimension": 384,
+          "pooling": "attention-mask-mean-l2-v1",
+          "dtype": "float32"
+        },
+        "adapter": {
+          "adapter_config.json": "1b228996228016019bc2da2950226c62a5e4ff1de1a8b17345b2289645a9352e",
+          "adapter_model.safetensors": "4fad7e9b7ff432d41176ee32673fda9a16d95c3540b58ff4487893cbb2ae81e2"
+        },
+        "fingerprint_sha256": "55e93cc1aaadb6f94055e9ed5b38ce75d327d0c4cb35b8db5e2d0855ab818bfc"
+      }
+    },
+    {
+      "variant": "l12",
+      "model_path": "models/cross_encoder_l12",
+      "model": "cross-encoder/ms-marco-MiniLM-L12-v2",
+      "revision": "7b0235231ca2674cb8ca8f022859a6eba2b1c968",
+      "rerank_depth": 20,
+      "alpha": 0.5,
+      "max_length": 384,
+      "inference": "dynamic-int8-linear",
+      "backend": "torch_cpu",
+      "model_file": "model.safetensors",
+      "candidate_depth": 100,
+      "rrf_constant": 60,
+      "validation_metrics": {
+        "ndcg@10": 0.7173709849137024,
+        "mrr@10": 0.6849182004089981,
+        "recall@10": 0.8421267893660531,
+        "recall@5": 0.783640081799591
+      },
+      "embedding_fingerprint": {
+        "schema": 2,
+        "documents": {
+          "count": 5183,
+          "ids_sha256": "3df87dafd673a62a3ec6cb9ecc42d65916bff917e3fa539778ed543a2d72fe26",
+          "texts_sha256": "7b1dc0a5ca2f5b019468505af285f84821205986bfcbe225cd3970790c94bad7"
+        },
+        "queries": {
+          "count": 1109,
+          "ids_sha256": "574b5c6a26e2e5d1a99ef82f257c842eaacb8be6a3884fd3a219c0374c5bdbe1",
+          "texts_sha256": "7a81bd430f5b2c0088e5f73c1cd6b5c42648af67a8ee93849a873a7f34d9749a"
+        },
+        "encoder": {
+          "model_id": "sentence-transformers/all-MiniLM-L6-v2",
+          "revision": "1110a243fdf4706b3f48f1d95db1a4f5529b4d41",
+          "files_sha256": {
+            "config.json": "953f9c0d463486b10a6871cc2fd59f223b2c70184f49815e7efbcab5d8908b41",
+            "model.safetensors": "53aa51172d142c89d9012cce15ae4d6cc0ca6895895114379cacb4fab128d9db",
+            "tokenizer.json": "be50c3628f2bf5bb5e3a7f17b1f74611b2561a3a27eeab05e5aa30f411572037",
+            "tokenizer_config.json": "acb92769e8195aabd29b7b2137a9e6d6e25c476a4f15aa4355c233426c61576b",
+            "special_tokens_map.json": "303df45a03609e4ead04bc3dc1536d0ab19b5358db685b6f3da123d05ec200e3",
+            "vocab.txt": "07eced375cec144d27c900241f3e339478dec958f92fddbc551f295c992038a3"
+          },
+          "max_length": 192,
+          "dimension": 384,
+          "pooling": "attention-mask-mean-l2-v1",
+          "dtype": "float32"
+        },
+        "adapter": {
+          "adapter_config.json": "1b228996228016019bc2da2950226c62a5e4ff1de1a8b17345b2289645a9352e",
+          "adapter_model.safetensors": "4fad7e9b7ff432d41176ee32673fda9a16d95c3540b58ff4487893cbb2ae81e2"
+        },
+        "fingerprint_sha256": "55e93cc1aaadb6f94055e9ed5b38ce75d327d0c4cb35b8db5e2d0855ab818bfc"
+      }
+    },
+    {
+      "variant": "l12",
+      "model_path": "models/cross_encoder_l12",
+      "model": "cross-encoder/ms-marco-MiniLM-L12-v2",
+      "revision": "7b0235231ca2674cb8ca8f022859a6eba2b1c968",
+      "rerank_depth": 20,
+      "alpha": 0.75,
+      "max_length": 384,
+      "inference": "dynamic-int8-linear",
+      "backend": "torch_cpu",
+      "model_file": "model.safetensors",
+      "candidate_depth": 100,
+      "rrf_constant": 60,
+      "validation_metrics": {
+        "ndcg@10": 0.7281523650165865,
+        "mrr@10": 0.6939964943032427,
+        "recall@10": 0.8543967280163598,
+        "recall@5": 0.781799591002045
+      },
+      "embedding_fingerprint": {
+        "schema": 2,
+        "documents": {
+          "count": 5183,
+          "ids_sha256": "3df87dafd673a62a3ec6cb9ecc42d65916bff917e3fa539778ed543a2d72fe26",
+          "texts_sha256": "7b1dc0a5ca2f5b019468505af285f84821205986bfcbe225cd3970790c94bad7"
+        },
+        "queries": {
+          "count": 1109,
+          "ids_sha256": "574b5c6a26e2e5d1a99ef82f257c842eaacb8be6a3884fd3a219c0374c5bdbe1",
+          "texts_sha256": "7a81bd430f5b2c0088e5f73c1cd6b5c42648af67a8ee93849a873a7f34d9749a"
+        },
+        "encoder": {
+          "model_id": "sentence-transformers/all-MiniLM-L6-v2",
+          "revision": "1110a243fdf4706b3f48f1d95db1a4f5529b4d41",
+          "files_sha256": {
+            "config.json": "953f9c0d463486b10a6871cc2fd59f223b2c70184f49815e7efbcab5d8908b41",
+            "model.safetensors": "53aa51172d142c89d9012cce15ae4d6cc0ca6895895114379cacb4fab128d9db",
+            "tokenizer.json": "be50c3628f2bf5bb5e3a7f17b1f74611b2561a3a27eeab05e5aa30f411572037",
+            "tokenizer_config.json": "acb92769e8195aabd29b7b2137a9e6d6e25c476a4f15aa4355c233426c61576b",
+            "special_tokens_map.json": "303df45a03609e4ead04bc3dc1536d0ab19b5358db685b6f3da123d05ec200e3",
+            "vocab.txt": "07eced375cec144d27c900241f3e339478dec958f92fddbc551f295c992038a3"
+          },
+          "max_length": 192,
+          "dimension": 384,
+          "pooling": "attention-mask-mean-l2-v1",
+          "dtype": "float32"
+        },
+        "adapter": {
+          "adapter_config.json": "1b228996228016019bc2da2950226c62a5e4ff1de1a8b17345b2289645a9352e",
+          "adapter_model.safetensors": "4fad7e9b7ff432d41176ee32673fda9a16d95c3540b58ff4487893cbb2ae81e2"
+        },
+        "fingerprint_sha256": "55e93cc1aaadb6f94055e9ed5b38ce75d327d0c4cb35b8db5e2d0855ab818bfc"
+      }
+    },
+    {
+      "variant": "l12",
+      "model_path": "models/cross_encoder_l12",
+      "model": "cross-encoder/ms-marco-MiniLM-L12-v2",
+      "revision": "7b0235231ca2674cb8ca8f022859a6eba2b1c968",
+      "rerank_depth": 20,
+      "alpha": 1.0,
+      "max_length": 384,
+      "inference": "dynamic-int8-linear",
+      "backend": "torch_cpu",
+      "model_file": "model.safetensors",
+      "candidate_depth": 100,
+      "rrf_constant": 60,
+      "validation_metrics": {
+        "ndcg@10": 0.7001282422562625,
+        "mrr@10": 0.6609285227383386,
+        "recall@10": 0.832924335378323,
+        "recall@5": 0.7683026584867075
+      },
+      "embedding_fingerprint": {
+        "schema": 2,
+        "documents": {
+          "count": 5183,
+          "ids_sha256": "3df87dafd673a62a3ec6cb9ecc42d65916bff917e3fa539778ed543a2d72fe26",
+          "texts_sha256": "7b1dc0a5ca2f5b019468505af285f84821205986bfcbe225cd3970790c94bad7"
+        },
+        "queries": {
+          "count": 1109,
+          "ids_sha256": "574b5c6a26e2e5d1a99ef82f257c842eaacb8be6a3884fd3a219c0374c5bdbe1",
+          "texts_sha256": "7a81bd430f5b2c0088e5f73c1cd6b5c42648af67a8ee93849a873a7f34d9749a"
+        },
+        "encoder": {
+          "model_id": "sentence-transformers/all-MiniLM-L6-v2",
+          "revision": "1110a243fdf4706b3f48f1d95db1a4f5529b4d41",
+          "files_sha256": {
+            "config.json": "953f9c0d463486b10a6871cc2fd59f223b2c70184f49815e7efbcab5d8908b41",
+            "model.safetensors": "53aa51172d142c89d9012cce15ae4d6cc0ca6895895114379cacb4fab128d9db",
+            "tokenizer.json": "be50c3628f2bf5bb5e3a7f17b1f74611b2561a3a27eeab05e5aa30f411572037",
+            "tokenizer_config.json": "acb92769e8195aabd29b7b2137a9e6d6e25c476a4f15aa4355c233426c61576b",
+            "special_tokens_map.json": "303df45a03609e4ead04bc3dc1536d0ab19b5358db685b6f3da123d05ec200e3",
+            "vocab.txt": "07eced375cec144d27c900241f3e339478dec958f92fddbc551f295c992038a3"
+          },
+          "max_length": 192,
+          "dimension": 384,
+          "pooling": "attention-mask-mean-l2-v1",
+          "dtype": "float32"
+        },
+        "adapter": {
+          "adapter_config.json": "1b228996228016019bc2da2950226c62a5e4ff1de1a8b17345b2289645a9352e",
+          "adapter_model.safetensors": "4fad7e9b7ff432d41176ee32673fda9a16d95c3540b58ff4487893cbb2ae81e2"
+        },
+        "fingerprint_sha256": "55e93cc1aaadb6f94055e9ed5b38ce75d327d0c4cb35b8db5e2d0855ab818bfc"
+      }
+    },
+    {
+      "variant": "l12",
+      "model_path": "models/cross_encoder_l12",
+      "model": "cross-encoder/ms-marco-MiniLM-L12-v2",
+      "revision": "7b0235231ca2674cb8ca8f022859a6eba2b1c968",
+      "rerank_depth": 50,
+      "alpha": 0.0,
+      "max_length": 384,
+      "inference": "dynamic-int8-linear",
+      "backend": "torch_cpu",
+      "model_file": "model.safetensors",
+      "candidate_depth": 100,
+      "rrf_constant": 60,
+      "validation_metrics": {
+        "ndcg@10": 0.6851699615567124,
+        "mrr@10": 0.6525878858700944,
+        "recall@10": 0.8175869120654395,
+        "recall@5": 0.7233128834355829
+      },
+      "embedding_fingerprint": {
+        "schema": 2,
+        "documents": {
+          "count": 5183,
+          "ids_sha256": "3df87dafd673a62a3ec6cb9ecc42d65916bff917e3fa539778ed543a2d72fe26",
+          "texts_sha256": "7b1dc0a5ca2f5b019468505af285f84821205986bfcbe225cd3970790c94bad7"
+        },
+        "queries": {
+          "count": 1109,
+          "ids_sha256": "574b5c6a26e2e5d1a99ef82f257c842eaacb8be6a3884fd3a219c0374c5bdbe1",
+          "texts_sha256": "7a81bd430f5b2c0088e5f73c1cd6b5c42648af67a8ee93849a873a7f34d9749a"
+        },
+        "encoder": {
+          "model_id": "sentence-transformers/all-MiniLM-L6-v2",
+          "revision": "1110a243fdf4706b3f48f1d95db1a4f5529b4d41",
+          "files_sha256": {
+            "config.json": "953f9c0d463486b10a6871cc2fd59f223b2c70184f49815e7efbcab5d8908b41",
+            "model.safetensors": "53aa51172d142c89d9012cce15ae4d6cc0ca6895895114379cacb4fab128d9db",
+            "tokenizer.json": "be50c3628f2bf5bb5e3a7f17b1f74611b2561a3a27eeab05e5aa30f411572037",
+            "tokenizer_config.json": "acb92769e8195aabd29b7b2137a9e6d6e25c476a4f15aa4355c233426c61576b",
+            "special_tokens_map.json": "303df45a03609e4ead04bc3dc1536d0ab19b5358db685b6f3da123d05ec200e3",
+            "vocab.txt": "07eced375cec144d27c900241f3e339478dec958f92fddbc551f295c992038a3"
+          },
+          "max_length": 192,
+          "dimension": 384,
+          "pooling": "attention-mask-mean-l2-v1",
+          "dtype": "float32"
+        },
+        "adapter": {
+          "adapter_config.json": "1b228996228016019bc2da2950226c62a5e4ff1de1a8b17345b2289645a9352e",
+          "adapter_model.safetensors": "4fad7e9b7ff432d41176ee32673fda9a16d95c3540b58ff4487893cbb2ae81e2"
+        },
+        "fingerprint_sha256": "55e93cc1aaadb6f94055e9ed5b38ce75d327d0c4cb35b8db5e2d0855ab818bfc"
+      }
+    },
+    {
+      "variant": "l12",
+      "model_path": "models/cross_encoder_l12",
+      "model": "cross-encoder/ms-marco-MiniLM-L12-v2",
+      "revision": "7b0235231ca2674cb8ca8f022859a6eba2b1c968",
+      "rerank_depth": 50,
+      "alpha": 0.25,
+      "max_length": 384,
+      "inference": "dynamic-int8-linear",
+      "backend": "torch_cpu",
+      "model_file": "model.safetensors",
+      "candidate_depth": 100,
+      "rrf_constant": 60,
+      "validation_metrics": {
+        "ndcg@10": 0.7128984581433507,
+        "mrr@10": 0.6820162625377348,
+        "recall@10": 0.8359918200408997,
+        "recall@5": 0.7529652351738242
+      },
+      "embedding_fingerprint": {
+        "schema": 2,
+        "documents": {
+          "count": 5183,
+          "ids_sha256": "3df87dafd673a62a3ec6cb9ecc42d65916bff917e3fa539778ed543a2d72fe26",
+          "texts_sha256": "7b1dc0a5ca2f5b019468505af285f84821205986bfcbe225cd3970790c94bad7"
+        },
+        "queries": {
+          "count": 1109,
+          "ids_sha256": "574b5c6a26e2e5d1a99ef82f257c842eaacb8be6a3884fd3a219c0374c5bdbe1",
+          "texts_sha256": "7a81bd430f5b2c0088e5f73c1cd6b5c42648af67a8ee93849a873a7f34d9749a"
+        },
+        "encoder": {
+          "model_id": "sentence-transformers/all-MiniLM-L6-v2",
+          "revision": "1110a243fdf4706b3f48f1d95db1a4f5529b4d41",
+          "files_sha256": {
+            "config.json": "953f9c0d463486b10a6871cc2fd59f223b2c70184f49815e7efbcab5d8908b41",
+            "model.safetensors": "53aa51172d142c89d9012cce15ae4d6cc0ca6895895114379cacb4fab128d9db",
+            "tokenizer.json": "be50c3628f2bf5bb5e3a7f17b1f74611b2561a3a27eeab05e5aa30f411572037",
+            "tokenizer_config.json": "acb92769e8195aabd29b7b2137a9e6d6e25c476a4f15aa4355c233426c61576b",
+            "special_tokens_map.json": "303df45a03609e4ead04bc3dc1536d0ab19b5358db685b6f3da123d05ec200e3",
+            "vocab.txt": "07eced375cec144d27c900241f3e339478dec958f92fddbc551f295c992038a3"
+          },
+          "max_length": 192,
+          "dimension": 384,
+          "pooling": "attention-mask-mean-l2-v1",
+          "dtype": "float32"
+        },
+        "adapter": {
+          "adapter_config.json": "1b228996228016019bc2da2950226c62a5e4ff1de1a8b17345b2289645a9352e",
+          "adapter_model.safetensors": "4fad7e9b7ff432d41176ee32673fda9a16d95c3540b58ff4487893cbb2ae81e2"
+        },
+        "fingerprint_sha256": "55e93cc1aaadb6f94055e9ed5b38ce75d327d0c4cb35b8db5e2d0855ab818bfc"
+      }
+    },
+    {
+      "variant": "l12",
+      "model_path": "models/cross_encoder_l12",
+      "model": "cross-encoder/ms-marco-MiniLM-L12-v2",
+      "revision": "7b0235231ca2674cb8ca8f022859a6eba2b1c968",
+      "rerank_depth": 50,
+      "alpha": 0.5,
+      "max_length": 384,
+      "inference": "dynamic-int8-linear",
+      "backend": "torch_cpu",
+      "model_file": "model.safetensors",
+      "candidate_depth": 100,
+      "rrf_constant": 60,
+      "validation_metrics": {
+        "ndcg@10": 0.717908290112763,
+        "mrr@10": 0.6859406952965236,
+        "recall@10": 0.8390593047034763,
+        "recall@5": 0.7775051124744377
+      },
+      "embedding_fingerprint": {
+        "schema": 2,
+        "documents": {
+          "count": 5183,
+          "ids_sha256": "3df87dafd673a62a3ec6cb9ecc42d65916bff917e3fa539778ed543a2d72fe26",
+          "texts_sha256": "7b1dc0a5ca2f5b019468505af285f84821205986bfcbe225cd3970790c94bad7"
+        },
+        "queries": {
+          "count": 1109,
+          "ids_sha256": "574b5c6a26e2e5d1a99ef82f257c842eaacb8be6a3884fd3a219c0374c5bdbe1",
+          "texts_sha256": "7a81bd430f5b2c0088e5f73c1cd6b5c42648af67a8ee93849a873a7f34d9749a"
+        },
+        "encoder": {
+          "model_id": "sentence-transformers/all-MiniLM-L6-v2",
+          "revision": "1110a243fdf4706b3f48f1d95db1a4f5529b4d41",
+          "files_sha256": {
+            "config.json": "953f9c0d463486b10a6871cc2fd59f223b2c70184f49815e7efbcab5d8908b41",
+            "model.safetensors": "53aa51172d142c89d9012cce15ae4d6cc0ca6895895114379cacb4fab128d9db",
+            "tokenizer.json": "be50c3628f2bf5bb5e3a7f17b1f74611b2561a3a27eeab05e5aa30f411572037",
+            "tokenizer_config.json": "acb92769e8195aabd29b7b2137a9e6d6e25c476a4f15aa4355c233426c61576b",
+            "special_tokens_map.json": "303df45a03609e4ead04bc3dc1536d0ab19b5358db685b6f3da123d05ec200e3",
+            "vocab.txt": "07eced375cec144d27c900241f3e339478dec958f92fddbc551f295c992038a3"
+          },
+          "max_length": 192,
+          "dimension": 384,
+          "pooling": "attention-mask-mean-l2-v1",
+          "dtype": "float32"
+        },
+        "adapter": {
+          "adapter_config.json": "1b228996228016019bc2da2950226c62a5e4ff1de1a8b17345b2289645a9352e",
+          "adapter_model.safetensors": "4fad7e9b7ff432d41176ee32673fda9a16d95c3540b58ff4487893cbb2ae81e2"
+        },
+        "fingerprint_sha256": "55e93cc1aaadb6f94055e9ed5b38ce75d327d0c4cb35b8db5e2d0855ab818bfc"
+      }
+    },
+    {
+      "variant": "l12",
+      "model_path": "models/cross_encoder_l12",
+      "model": "cross-encoder/ms-marco-MiniLM-L12-v2",
+      "revision": "7b0235231ca2674cb8ca8f022859a6eba2b1c968",
+      "rerank_depth": 50,
+      "alpha": 0.75,
+      "max_length": 384,
+      "inference": "dynamic-int8-linear",
+      "backend": "torch_cpu",
+      "model_file": "model.safetensors",
+      "candidate_depth": 100,
+      "rrf_constant": 60,
+      "validation_metrics": {
+        "ndcg@10": 0.7267096089452104,
+        "mrr@10": 0.6916812737364885,
+        "recall@10": 0.8574642126789365,
+        "recall@5": 0.7756646216768917
+      },
+      "embedding_fingerprint": {
+        "schema": 2,
+        "documents": {
+          "count": 5183,
+          "ids_sha256": "3df87dafd673a62a3ec6cb9ecc42d65916bff917e3fa539778ed543a2d72fe26",
+          "texts_sha256": "7b1dc0a5ca2f5b019468505af285f84821205986bfcbe225cd3970790c94bad7"
+        },
+        "queries": {
+          "count": 1109,
+          "ids_sha256": "574b5c6a26e2e5d1a99ef82f257c842eaacb8be6a3884fd3a219c0374c5bdbe1",
+          "texts_sha256": "7a81bd430f5b2c0088e5f73c1cd6b5c42648af67a8ee93849a873a7f34d9749a"
+        },
+        "encoder": {
+          "model_id": "sentence-transformers/all-MiniLM-L6-v2",
+          "revision": "1110a243fdf4706b3f48f1d95db1a4f5529b4d41",
+          "files_sha256": {
+            "config.json": "953f9c0d463486b10a6871cc2fd59f223b2c70184f49815e7efbcab5d8908b41",
+            "model.safetensors": "53aa51172d142c89d9012cce15ae4d6cc0ca6895895114379cacb4fab128d9db",
+            "tokenizer.json": "be50c3628f2bf5bb5e3a7f17b1f74611b2561a3a27eeab05e5aa30f411572037",
+            "tokenizer_config.json": "acb92769e8195aabd29b7b2137a9e6d6e25c476a4f15aa4355c233426c61576b",
+            "special_tokens_map.json": "303df45a03609e4ead04bc3dc1536d0ab19b5358db685b6f3da123d05ec200e3",
+            "vocab.txt": "07eced375cec144d27c900241f3e339478dec958f92fddbc551f295c992038a3"
+          },
+          "max_length": 192,
+          "dimension": 384,
+          "pooling": "attention-mask-mean-l2-v1",
+          "dtype": "float32"
+        },
+        "adapter": {
+          "adapter_config.json": "1b228996228016019bc2da2950226c62a5e4ff1de1a8b17345b2289645a9352e",
+          "adapter_model.safetensors": "4fad7e9b7ff432d41176ee32673fda9a16d95c3540b58ff4487893cbb2ae81e2"
+        },
+        "fingerprint_sha256": "55e93cc1aaadb6f94055e9ed5b38ce75d327d0c4cb35b8db5e2d0855ab818bfc"
+      }
+    },
+    {
+      "variant": "l12",
+      "model_path": "models/cross_encoder_l12",
+      "model": "cross-encoder/ms-marco-MiniLM-L12-v2",
+      "revision": "7b0235231ca2674cb8ca8f022859a6eba2b1c968",
+      "rerank_depth": 50,
+      "alpha": 1.0,
+      "max_length": 384,
+      "inference": "dynamic-int8-linear",
+      "backend": "torch_cpu",
+      "model_file": "model.safetensors",
+      "candidate_depth": 100,
+      "rrf_constant": 60,
+      "validation_metrics": {
+        "ndcg@10": 0.6968983124506593,
+        "mrr@10": 0.6599498490602785,
+        "recall@10": 0.8247443762781186,
+        "recall@5": 0.7683026584867075
+      },
+      "embedding_fingerprint": {
+        "schema": 2,
+        "documents": {
+          "count": 5183,
+          "ids_sha256": "3df87dafd673a62a3ec6cb9ecc42d65916bff917e3fa539778ed543a2d72fe26",
+          "texts_sha256": "7b1dc0a5ca2f5b019468505af285f84821205986bfcbe225cd3970790c94bad7"
+        },
+        "queries": {
+          "count": 1109,
+          "ids_sha256": "574b5c6a26e2e5d1a99ef82f257c842eaacb8be6a3884fd3a219c0374c5bdbe1",
+          "texts_sha256": "7a81bd430f5b2c0088e5f73c1cd6b5c42648af67a8ee93849a873a7f34d9749a"
+        },
+        "encoder": {
+          "model_id": "sentence-transformers/all-MiniLM-L6-v2",
+          "revision": "1110a243fdf4706b3f48f1d95db1a4f5529b4d41",
+          "files_sha256": {
+            "config.json": "953f9c0d463486b10a6871cc2fd59f223b2c70184f49815e7efbcab5d8908b41",
+            "model.safetensors": "53aa51172d142c89d9012cce15ae4d6cc0ca6895895114379cacb4fab128d9db",
+            "tokenizer.json": "be50c3628f2bf5bb5e3a7f17b1f74611b2561a3a27eeab05e5aa30f411572037",
+            "tokenizer_config.json": "acb92769e8195aabd29b7b2137a9e6d6e25c476a4f15aa4355c233426c61576b",
+            "special_tokens_map.json": "303df45a03609e4ead04bc3dc1536d0ab19b5358db685b6f3da123d05ec200e3",
+            "vocab.txt": "07eced375cec144d27c900241f3e339478dec958f92fddbc551f295c992038a3"
+          },
+          "max_length": 192,
+          "dimension": 384,
+          "pooling": "attention-mask-mean-l2-v1",
+          "dtype": "float32"
+        },
+        "adapter": {
+          "adapter_config.json": "1b228996228016019bc2da2950226c62a5e4ff1de1a8b17345b2289645a9352e",
+          "adapter_model.safetensors": "4fad7e9b7ff432d41176ee32673fda9a16d95c3540b58ff4487893cbb2ae81e2"
+        },
+        "fingerprint_sha256": "55e93cc1aaadb6f94055e9ed5b38ce75d327d0c4cb35b8db5e2d0855ab818bfc"
+      }
+    },
+    {
+      "variant": "l12",
+      "model_path": "models/cross_encoder_l12",
+      "model": "cross-encoder/ms-marco-MiniLM-L12-v2",
+      "revision": "7b0235231ca2674cb8ca8f022859a6eba2b1c968",
+      "rerank_depth": 100,
+      "alpha": 0.0,
+      "max_length": 384,
+      "inference": "dynamic-int8-linear",
+      "backend": "torch_cpu",
+      "model_file": "model.safetensors",
+      "candidate_depth": 100,
+      "rrf_constant": 60,
+      "validation_metrics": {
+        "ndcg@10": 0.6851699615567124,
+        "mrr@10": 0.6525878858700944,
+        "recall@10": 0.8175869120654395,
+        "recall@5": 0.7233128834355829
+      },
+      "embedding_fingerprint": {
+        "schema": 2,
+        "documents": {
+          "count": 5183,
+          "ids_sha256": "3df87dafd673a62a3ec6cb9ecc42d65916bff917e3fa539778ed543a2d72fe26",
+          "texts_sha256": "7b1dc0a5ca2f5b019468505af285f84821205986bfcbe225cd3970790c94bad7"
+        },
+        "queries": {
+          "count": 1109,
+          "ids_sha256": "574b5c6a26e2e5d1a99ef82f257c842eaacb8be6a3884fd3a219c0374c5bdbe1",
+          "texts_sha256": "7a81bd430f5b2c0088e5f73c1cd6b5c42648af67a8ee93849a873a7f34d9749a"
+        },
+        "encoder": {
+          "model_id": "sentence-transformers/all-MiniLM-L6-v2",
+          "revision": "1110a243fdf4706b3f48f1d95db1a4f5529b4d41",
+          "files_sha256": {
+            "config.json": "953f9c0d463486b10a6871cc2fd59f223b2c70184f49815e7efbcab5d8908b41",
+            "model.safetensors": "53aa51172d142c89d9012cce15ae4d6cc0ca6895895114379cacb4fab128d9db",
+            "tokenizer.json": "be50c3628f2bf5bb5e3a7f17b1f74611b2561a3a27eeab05e5aa30f411572037",
+            "tokenizer_config.json": "acb92769e8195aabd29b7b2137a9e6d6e25c476a4f15aa4355c233426c61576b",
+            "special_tokens_map.json": "303df45a03609e4ead04bc3dc1536d0ab19b5358db685b6f3da123d05ec200e3",
+            "vocab.txt": "07eced375cec144d27c900241f3e339478dec958f92fddbc551f295c992038a3"
+          },
+          "max_length": 192,
+          "dimension": 384,
+          "pooling": "attention-mask-mean-l2-v1",
+          "dtype": "float32"
+        },
+        "adapter": {
+          "adapter_config.json": "1b228996228016019bc2da2950226c62a5e4ff1de1a8b17345b2289645a9352e",
+          "adapter_model.safetensors": "4fad7e9b7ff432d41176ee32673fda9a16d95c3540b58ff4487893cbb2ae81e2"
+        },
+        "fingerprint_sha256": "55e93cc1aaadb6f94055e9ed5b38ce75d327d0c4cb35b8db5e2d0855ab818bfc"
+      }
+    },
+    {
+      "variant": "l12",
+      "model_path": "models/cross_encoder_l12",
+      "model": "cross-encoder/ms-marco-MiniLM-L12-v2",
+      "revision": "7b0235231ca2674cb8ca8f022859a6eba2b1c968",
+      "rerank_depth": 100,
+      "alpha": 0.25,
+      "max_length": 384,
+      "inference": "dynamic-int8-linear",
+      "backend": "torch_cpu",
+      "model_file": "model.safetensors",
+      "candidate_depth": 100,
+      "rrf_constant": 60,
+      "validation_metrics": {
+        "ndcg@10": 0.7103828843386324,
+        "mrr@10": 0.6798982374135748,
+        "recall@10": 0.8298568507157463,
+        "recall@5": 0.7498977505112474
+      },
+      "embedding_fingerprint": {
+        "schema": 2,
+        "documents": {
+          "count": 5183,
+          "ids_sha256": "3df87dafd673a62a3ec6cb9ecc42d65916bff917e3fa539778ed543a2d72fe26",
+          "texts_sha256": "7b1dc0a5ca2f5b019468505af285f84821205986bfcbe225cd3970790c94bad7"
+        },
+        "queries": {
+          "count": 1109,
+          "ids_sha256": "574b5c6a26e2e5d1a99ef82f257c842eaacb8be6a3884fd3a219c0374c5bdbe1",
+          "texts_sha256": "7a81bd430f5b2c0088e5f73c1cd6b5c42648af67a8ee93849a873a7f34d9749a"
+        },
+        "encoder": {
+          "model_id": "sentence-transformers/all-MiniLM-L6-v2",
+          "revision": "1110a243fdf4706b3f48f1d95db1a4f5529b4d41",
+          "files_sha256": {
+            "config.json": "953f9c0d463486b10a6871cc2fd59f223b2c70184f49815e7efbcab5d8908b41",
+            "model.safetensors": "53aa51172d142c89d9012cce15ae4d6cc0ca6895895114379cacb4fab128d9db",
+            "tokenizer.json": "be50c3628f2bf5bb5e3a7f17b1f74611b2561a3a27eeab05e5aa30f411572037",
+            "tokenizer_config.json": "acb92769e8195aabd29b7b2137a9e6d6e25c476a4f15aa4355c233426c61576b",
+            "special_tokens_map.json": "303df45a03609e4ead04bc3dc1536d0ab19b5358db685b6f3da123d05ec200e3",
+            "vocab.txt": "07eced375cec144d27c900241f3e339478dec958f92fddbc551f295c992038a3"
+          },
+          "max_length": 192,
+          "dimension": 384,
+          "pooling": "attention-mask-mean-l2-v1",
+          "dtype": "float32"
+        },
+        "adapter": {
+          "adapter_config.json": "1b228996228016019bc2da2950226c62a5e4ff1de1a8b17345b2289645a9352e",
+          "adapter_model.safetensors": "4fad7e9b7ff432d41176ee32673fda9a16d95c3540b58ff4487893cbb2ae81e2"
+        },
+        "fingerprint_sha256": "55e93cc1aaadb6f94055e9ed5b38ce75d327d0c4cb35b8db5e2d0855ab818bfc"
+      }
+    },
+    {
+      "variant": "l12",
+      "model_path": "models/cross_encoder_l12",
+      "model": "cross-encoder/ms-marco-MiniLM-L12-v2",
+      "revision": "7b0235231ca2674cb8ca8f022859a6eba2b1c968",
+      "rerank_depth": 100,
+      "alpha": 0.5,
+      "max_length": 384,
+      "inference": "dynamic-int8-linear",
+      "backend": "torch_cpu",
+      "model_file": "model.safetensors",
+      "candidate_depth": 100,
+      "rrf_constant": 60,
+      "validation_metrics": {
+        "ndcg@10": 0.7240595588943717,
+        "mrr@10": 0.6940257084428864,
+        "recall@10": 0.8390593047034763,
+        "recall@5": 0.7787321063394683
+      },
+      "embedding_fingerprint": {
+        "schema": 2,
+        "documents": {
+          "count": 5183,
+          "ids_sha256": "3df87dafd673a62a3ec6cb9ecc42d65916bff917e3fa539778ed543a2d72fe26",
+          "texts_sha256": "7b1dc0a5ca2f5b019468505af285f84821205986bfcbe225cd3970790c94bad7"
+        },
+        "queries": {
+          "count": 1109,
+          "ids_sha256": "574b5c6a26e2e5d1a99ef82f257c842eaacb8be6a3884fd3a219c0374c5bdbe1",
+          "texts_sha256": "7a81bd430f5b2c0088e5f73c1cd6b5c42648af67a8ee93849a873a7f34d9749a"
+        },
+        "encoder": {
+          "model_id": "sentence-transformers/all-MiniLM-L6-v2",
+          "revision": "1110a243fdf4706b3f48f1d95db1a4f5529b4d41",
+          "files_sha256": {
+            "config.json": "953f9c0d463486b10a6871cc2fd59f223b2c70184f49815e7efbcab5d8908b41",
+            "model.safetensors": "53aa51172d142c89d9012cce15ae4d6cc0ca6895895114379cacb4fab128d9db",
+            "tokenizer.json": "be50c3628f2bf5bb5e3a7f17b1f74611b2561a3a27eeab05e5aa30f411572037",
+            "tokenizer_config.json": "acb92769e8195aabd29b7b2137a9e6d6e25c476a4f15aa4355c233426c61576b",
+            "special_tokens_map.json": "303df45a03609e4ead04bc3dc1536d0ab19b5358db685b6f3da123d05ec200e3",
+            "vocab.txt": "07eced375cec144d27c900241f3e339478dec958f92fddbc551f295c992038a3"
+          },
+          "max_length": 192,
+          "dimension": 384,
+          "pooling": "attention-mask-mean-l2-v1",
+          "dtype": "float32"
+        },
+        "adapter": {
+          "adapter_config.json": "1b228996228016019bc2da2950226c62a5e4ff1de1a8b17345b2289645a9352e",
+          "adapter_model.safetensors": "4fad7e9b7ff432d41176ee32673fda9a16d95c3540b58ff4487893cbb2ae81e2"
+        },
+        "fingerprint_sha256": "55e93cc1aaadb6f94055e9ed5b38ce75d327d0c4cb35b8db5e2d0855ab818bfc"
+      }
+    },
+    {
+      "variant": "l12",
+      "model_path": "models/cross_encoder_l12",
+      "model": "cross-encoder/ms-marco-MiniLM-L12-v2",
+      "revision": "7b0235231ca2674cb8ca8f022859a6eba2b1c968",
+      "rerank_depth": 100,
+      "alpha": 0.75,
+      "max_length": 384,
+      "inference": "dynamic-int8-linear",
+      "backend": "torch_cpu",
+      "model_file": "model.safetensors",
+      "candidate_depth": 100,
+      "rrf_constant": 60,
+      "validation_metrics": {
+        "ndcg@10": 0.7301262846203179,
+        "mrr@10": 0.6961291264972246,
+        "recall@10": 0.8574642126789365,
+        "recall@5": 0.781799591002045
+      },
+      "embedding_fingerprint": {
+        "schema": 2,
+        "documents": {
+          "count": 5183,
+          "ids_sha256": "3df87dafd673a62a3ec6cb9ecc42d65916bff917e3fa539778ed543a2d72fe26",
+          "texts_sha256": "7b1dc0a5ca2f5b019468505af285f84821205986bfcbe225cd3970790c94bad7"
+        },
+        "queries": {
+          "count": 1109,
+          "ids_sha256": "574b5c6a26e2e5d1a99ef82f257c842eaacb8be6a3884fd3a219c0374c5bdbe1",
+          "texts_sha256": "7a81bd430f5b2c0088e5f73c1cd6b5c42648af67a8ee93849a873a7f34d9749a"
+        },
+        "encoder": {
+          "model_id": "sentence-transformers/all-MiniLM-L6-v2",
+          "revision": "1110a243fdf4706b3f48f1d95db1a4f5529b4d41",
+          "files_sha256": {
+            "config.json": "953f9c0d463486b10a6871cc2fd59f223b2c70184f49815e7efbcab5d8908b41",
+            "model.safetensors": "53aa51172d142c89d9012cce15ae4d6cc0ca6895895114379cacb4fab128d9db",
+            "tokenizer.json": "be50c3628f2bf5bb5e3a7f17b1f74611b2561a3a27eeab05e5aa30f411572037",
+            "tokenizer_config.json": "acb92769e8195aabd29b7b2137a9e6d6e25c476a4f15aa4355c233426c61576b",
+            "special_tokens_map.json": "303df45a03609e4ead04bc3dc1536d0ab19b5358db685b6f3da123d05ec200e3",
+            "vocab.txt": "07eced375cec144d27c900241f3e339478dec958f92fddbc551f295c992038a3"
+          },
+          "max_length": 192,
+          "dimension": 384,
+          "pooling": "attention-mask-mean-l2-v1",
+          "dtype": "float32"
+        },
+        "adapter": {
+          "adapter_config.json": "1b228996228016019bc2da2950226c62a5e4ff1de1a8b17345b2289645a9352e",
+          "adapter_model.safetensors": "4fad7e9b7ff432d41176ee32673fda9a16d95c3540b58ff4487893cbb2ae81e2"
+        },
+        "fingerprint_sha256": "55e93cc1aaadb6f94055e9ed5b38ce75d327d0c4cb35b8db5e2d0855ab818bfc"
+      }
+    },
+    {
+      "variant": "l12",
+      "model_path": "models/cross_encoder_l12",
+      "model": "cross-encoder/ms-marco-MiniLM-L12-v2",
+      "revision": "7b0235231ca2674cb8ca8f022859a6eba2b1c968",
+      "rerank_depth": 100,
+      "alpha": 1.0,
+      "max_length": 384,
+      "inference": "dynamic-int8-linear",
+      "backend": "torch_cpu",
+      "model_file": "model.safetensors",
+      "candidate_depth": 100,
+      "rrf_constant": 60,
+      "validation_metrics": {
+        "ndcg@10": 0.6937809822485681,
+        "mrr@10": 0.6562859090466452,
+        "recall@10": 0.8247443762781186,
+        "recall@5": 0.7683026584867075
+      },
+      "embedding_fingerprint": {
+        "schema": 2,
+        "documents": {
+          "count": 5183,
+          "ids_sha256": "3df87dafd673a62a3ec6cb9ecc42d65916bff917e3fa539778ed543a2d72fe26",
+          "texts_sha256": "7b1dc0a5ca2f5b019468505af285f84821205986bfcbe225cd3970790c94bad7"
+        },
+        "queries": {
+          "count": 1109,
+          "ids_sha256": "574b5c6a26e2e5d1a99ef82f257c842eaacb8be6a3884fd3a219c0374c5bdbe1",
+          "texts_sha256": "7a81bd430f5b2c0088e5f73c1cd6b5c42648af67a8ee93849a873a7f34d9749a"
+        },
+        "encoder": {
+          "model_id": "sentence-transformers/all-MiniLM-L6-v2",
+          "revision": "1110a243fdf4706b3f48f1d95db1a4f5529b4d41",
+          "files_sha256": {
+            "config.json": "953f9c0d463486b10a6871cc2fd59f223b2c70184f49815e7efbcab5d8908b41",
+            "model.safetensors": "53aa51172d142c89d9012cce15ae4d6cc0ca6895895114379cacb4fab128d9db",
+            "tokenizer.json": "be50c3628f2bf5bb5e3a7f17b1f74611b2561a3a27eeab05e5aa30f411572037",
+            "tokenizer_config.json": "acb92769e8195aabd29b7b2137a9e6d6e25c476a4f15aa4355c233426c61576b",
+            "special_tokens_map.json": "303df45a03609e4ead04bc3dc1536d0ab19b5358db685b6f3da123d05ec200e3",
+            "vocab.txt": "07eced375cec144d27c900241f3e339478dec958f92fddbc551f295c992038a3"
+          },
+          "max_length": 192,
+          "dimension": 384,
+          "pooling": "attention-mask-mean-l2-v1",
+          "dtype": "float32"
+        },
+        "adapter": {
+          "adapter_config.json": "1b228996228016019bc2da2950226c62a5e4ff1de1a8b17345b2289645a9352e",
+          "adapter_model.safetensors": "4fad7e9b7ff432d41176ee32673fda9a16d95c3540b58ff4487893cbb2ae81e2"
+        },
+        "fingerprint_sha256": "55e93cc1aaadb6f94055e9ed5b38ce75d327d0c4cb35b8db5e2d0855ab818bfc"
+      }
+    },
+    {
+      "variant": "bge",
+      "model_path": "models/bge_reranker",
+      "model": "gpustack/bge-reranker-v2-m3-GGUF",
+      "revision": "3093af03b1a635e67b084b1d8c03c5f5e020fd05",
+      "rerank_depth": 20,
+      "alpha": 0.0,
+      "max_length": 384,
+      "inference": "GGUF-Q8_0-Vulkan",
+      "backend": "llama_vulkan",
+      "model_file": "bge-reranker-v2-m3-Q8_0.gguf",
+      "candidate_depth": 100,
+      "rrf_constant": 60,
+      "validation_metrics": {
+        "ndcg@10": 0.6851699615567124,
+        "mrr@10": 0.6525878858700944,
+        "recall@10": 0.8175869120654395,
+        "recall@5": 0.7233128834355829
+      },
+      "embedding_fingerprint": {
+        "schema": 2,
+        "documents": {
+          "count": 5183,
+          "ids_sha256": "3df87dafd673a62a3ec6cb9ecc42d65916bff917e3fa539778ed543a2d72fe26",
+          "texts_sha256": "7b1dc0a5ca2f5b019468505af285f84821205986bfcbe225cd3970790c94bad7"
+        },
+        "queries": {
+          "count": 1109,
+          "ids_sha256": "574b5c6a26e2e5d1a99ef82f257c842eaacb8be6a3884fd3a219c0374c5bdbe1",
+          "texts_sha256": "7a81bd430f5b2c0088e5f73c1cd6b5c42648af67a8ee93849a873a7f34d9749a"
+        },
+        "encoder": {
+          "model_id": "sentence-transformers/all-MiniLM-L6-v2",
+          "revision": "1110a243fdf4706b3f48f1d95db1a4f5529b4d41",
+          "files_sha256": {
+            "config.json": "953f9c0d463486b10a6871cc2fd59f223b2c70184f49815e7efbcab5d8908b41",
+            "model.safetensors": "53aa51172d142c89d9012cce15ae4d6cc0ca6895895114379cacb4fab128d9db",
+            "tokenizer.json": "be50c3628f2bf5bb5e3a7f17b1f74611b2561a3a27eeab05e5aa30f411572037",
+            "tokenizer_config.json": "acb92769e8195aabd29b7b2137a9e6d6e25c476a4f15aa4355c233426c61576b",
+            "special_tokens_map.json": "303df45a03609e4ead04bc3dc1536d0ab19b5358db685b6f3da123d05ec200e3",
+            "vocab.txt": "07eced375cec144d27c900241f3e339478dec958f92fddbc551f295c992038a3"
+          },
+          "max_length": 192,
+          "dimension": 384,
+          "pooling": "attention-mask-mean-l2-v1",
+          "dtype": "float32"
+        },
+        "adapter": {
+          "adapter_config.json": "1b228996228016019bc2da2950226c62a5e4ff1de1a8b17345b2289645a9352e",
+          "adapter_model.safetensors": "4fad7e9b7ff432d41176ee32673fda9a16d95c3540b58ff4487893cbb2ae81e2"
+        },
+        "fingerprint_sha256": "55e93cc1aaadb6f94055e9ed5b38ce75d327d0c4cb35b8db5e2d0855ab818bfc"
+      }
+    },
+    {
+      "variant": "bge",
+      "model_path": "models/bge_reranker",
+      "model": "gpustack/bge-reranker-v2-m3-GGUF",
+      "revision": "3093af03b1a635e67b084b1d8c03c5f5e020fd05",
+      "rerank_depth": 20,
+      "alpha": 0.25,
+      "max_length": 384,
+      "inference": "GGUF-Q8_0-Vulkan",
+      "backend": "llama_vulkan",
+      "model_file": "bge-reranker-v2-m3-Q8_0.gguf",
+      "candidate_depth": 100,
+      "rrf_constant": 60,
+      "validation_metrics": {
+        "ndcg@10": 0.7182392785999161,
+        "mrr@10": 0.6849717596650112,
+        "recall@10": 0.8359918200408997,
+        "recall@5": 0.7449897750511247
+      },
+      "embedding_fingerprint": {
+        "schema": 2,
+        "documents": {
+          "count": 5183,
+          "ids_sha256": "3df87dafd673a62a3ec6cb9ecc42d65916bff917e3fa539778ed543a2d72fe26",
+          "texts_sha256": "7b1dc0a5ca2f5b019468505af285f84821205986bfcbe225cd3970790c94bad7"
+        },
+        "queries": {
+          "count": 1109,
+          "ids_sha256": "574b5c6a26e2e5d1a99ef82f257c842eaacb8be6a3884fd3a219c0374c5bdbe1",
+          "texts_sha256": "7a81bd430f5b2c0088e5f73c1cd6b5c42648af67a8ee93849a873a7f34d9749a"
+        },
+        "encoder": {
+          "model_id": "sentence-transformers/all-MiniLM-L6-v2",
+          "revision": "1110a243fdf4706b3f48f1d95db1a4f5529b4d41",
+          "files_sha256": {
+            "config.json": "953f9c0d463486b10a6871cc2fd59f223b2c70184f49815e7efbcab5d8908b41",
+            "model.safetensors": "53aa51172d142c89d9012cce15ae4d6cc0ca6895895114379cacb4fab128d9db",
+            "tokenizer.json": "be50c3628f2bf5bb5e3a7f17b1f74611b2561a3a27eeab05e5aa30f411572037",
+            "tokenizer_config.json": "acb92769e8195aabd29b7b2137a9e6d6e25c476a4f15aa4355c233426c61576b",
+            "special_tokens_map.json": "303df45a03609e4ead04bc3dc1536d0ab19b5358db685b6f3da123d05ec200e3",
+            "vocab.txt": "07eced375cec144d27c900241f3e339478dec958f92fddbc551f295c992038a3"
+          },
+          "max_length": 192,
+          "dimension": 384,
+          "pooling": "attention-mask-mean-l2-v1",
+          "dtype": "float32"
+        },
+        "adapter": {
+          "adapter_config.json": "1b228996228016019bc2da2950226c62a5e4ff1de1a8b17345b2289645a9352e",
+          "adapter_model.safetensors": "4fad7e9b7ff432d41176ee32673fda9a16d95c3540b58ff4487893cbb2ae81e2"
+        },
+        "fingerprint_sha256": "55e93cc1aaadb6f94055e9ed5b38ce75d327d0c4cb35b8db5e2d0855ab818bfc"
+      }
+    },
+    {
+      "variant": "bge",
+      "model_path": "models/bge_reranker",
+      "model": "gpustack/bge-reranker-v2-m3-GGUF",
+      "revision": "3093af03b1a635e67b084b1d8c03c5f5e020fd05",
+      "rerank_depth": 20,
+      "alpha": 0.5,
+      "max_length": 384,
+      "inference": "GGUF-Q8_0-Vulkan",
+      "backend": "llama_vulkan",
+      "model_file": "bge-reranker-v2-m3-Q8_0.gguf",
+      "candidate_depth": 100,
+      "rrf_constant": 60,
+      "validation_metrics": {
+        "ndcg@10": 0.7437226044736742,
+        "mrr@10": 0.7140593047034764,
+        "recall@10": 0.8543967280163598,
+        "recall@5": 0.8002044989775051
+      },
+      "embedding_fingerprint": {
+        "schema": 2,
+        "documents": {
+          "count": 5183,
+          "ids_sha256": "3df87dafd673a62a3ec6cb9ecc42d65916bff917e3fa539778ed543a2d72fe26",
+          "texts_sha256": "7b1dc0a5ca2f5b019468505af285f84821205986bfcbe225cd3970790c94bad7"
+        },
+        "queries": {
+          "count": 1109,
+          "ids_sha256": "574b5c6a26e2e5d1a99ef82f257c842eaacb8be6a3884fd3a219c0374c5bdbe1",
+          "texts_sha256": "7a81bd430f5b2c0088e5f73c1cd6b5c42648af67a8ee93849a873a7f34d9749a"
+        },
+        "encoder": {
+          "model_id": "sentence-transformers/all-MiniLM-L6-v2",
+          "revision": "1110a243fdf4706b3f48f1d95db1a4f5529b4d41",
+          "files_sha256": {
+            "config.json": "953f9c0d463486b10a6871cc2fd59f223b2c70184f49815e7efbcab5d8908b41",
+            "model.safetensors": "53aa51172d142c89d9012cce15ae4d6cc0ca6895895114379cacb4fab128d9db",
+            "tokenizer.json": "be50c3628f2bf5bb5e3a7f17b1f74611b2561a3a27eeab05e5aa30f411572037",
+            "tokenizer_config.json": "acb92769e8195aabd29b7b2137a9e6d6e25c476a4f15aa4355c233426c61576b",
+            "special_tokens_map.json": "303df45a03609e4ead04bc3dc1536d0ab19b5358db685b6f3da123d05ec200e3",
+            "vocab.txt": "07eced375cec144d27c900241f3e339478dec958f92fddbc551f295c992038a3"
+          },
+          "max_length": 192,
+          "dimension": 384,
+          "pooling": "attention-mask-mean-l2-v1",
+          "dtype": "float32"
+        },
+        "adapter": {
+          "adapter_config.json": "1b228996228016019bc2da2950226c62a5e4ff1de1a8b17345b2289645a9352e",
+          "adapter_model.safetensors": "4fad7e9b7ff432d41176ee32673fda9a16d95c3540b58ff4487893cbb2ae81e2"
+        },
+        "fingerprint_sha256": "55e93cc1aaadb6f94055e9ed5b38ce75d327d0c4cb35b8db5e2d0855ab818bfc"
+      }
+    },
+    {
+      "variant": "bge",
+      "model_path": "models/bge_reranker",
+      "model": "gpustack/bge-reranker-v2-m3-GGUF",
+      "revision": "3093af03b1a635e67b084b1d8c03c5f5e020fd05",
+      "rerank_depth": 20,
+      "alpha": 0.75,
+      "max_length": 384,
+      "inference": "GGUF-Q8_0-Vulkan",
+      "backend": "llama_vulkan",
+      "model_file": "bge-reranker-v2-m3-Q8_0.gguf",
+      "candidate_depth": 100,
+      "rrf_constant": 60,
+      "validation_metrics": {
+        "ndcg@10": 0.7602877832279976,
+        "mrr@10": 0.730740578439965,
+        "recall@10": 0.8676891615541923,
+        "recall@5": 0.8155419222903886
+      },
+      "embedding_fingerprint": {
+        "schema": 2,
+        "documents": {
+          "count": 5183,
+          "ids_sha256": "3df87dafd673a62a3ec6cb9ecc42d65916bff917e3fa539778ed543a2d72fe26",
+          "texts_sha256": "7b1dc0a5ca2f5b019468505af285f84821205986bfcbe225cd3970790c94bad7"
+        },
+        "queries": {
+          "count": 1109,
+          "ids_sha256": "574b5c6a26e2e5d1a99ef82f257c842eaacb8be6a3884fd3a219c0374c5bdbe1",
+          "texts_sha256": "7a81bd430f5b2c0088e5f73c1cd6b5c42648af67a8ee93849a873a7f34d9749a"
+        },
+        "encoder": {
+          "model_id": "sentence-transformers/all-MiniLM-L6-v2",
+          "revision": "1110a243fdf4706b3f48f1d95db1a4f5529b4d41",
+          "files_sha256": {
+            "config.json": "953f9c0d463486b10a6871cc2fd59f223b2c70184f49815e7efbcab5d8908b41",
+            "model.safetensors": "53aa51172d142c89d9012cce15ae4d6cc0ca6895895114379cacb4fab128d9db",
+            "tokenizer.json": "be50c3628f2bf5bb5e3a7f17b1f74611b2561a3a27eeab05e5aa30f411572037",
+            "tokenizer_config.json": "acb92769e8195aabd29b7b2137a9e6d6e25c476a4f15aa4355c233426c61576b",
+            "special_tokens_map.json": "303df45a03609e4ead04bc3dc1536d0ab19b5358db685b6f3da123d05ec200e3",
+            "vocab.txt": "07eced375cec144d27c900241f3e339478dec958f92fddbc551f295c992038a3"
+          },
+          "max_length": 192,
+          "dimension": 384,
+          "pooling": "attention-mask-mean-l2-v1",
+          "dtype": "float32"
+        },
+        "adapter": {
+          "adapter_config.json": "1b228996228016019bc2da2950226c62a5e4ff1de1a8b17345b2289645a9352e",
+          "adapter_model.safetensors": "4fad7e9b7ff432d41176ee32673fda9a16d95c3540b58ff4487893cbb2ae81e2"
+        },
+        "fingerprint_sha256": "55e93cc1aaadb6f94055e9ed5b38ce75d327d0c4cb35b8db5e2d0855ab818bfc"
+      }
+    },
+    {
+      "variant": "bge",
+      "model_path": "models/bge_reranker",
+      "model": "gpustack/bge-reranker-v2-m3-GGUF",
+      "revision": "3093af03b1a635e67b084b1d8c03c5f5e020fd05",
+      "rerank_depth": 20,
+      "alpha": 1.0,
+      "max_length": 384,
+      "inference": "GGUF-Q8_0-Vulkan",
+      "backend": "llama_vulkan",
+      "model_file": "bge-reranker-v2-m3-Q8_0.gguf",
+      "candidate_depth": 100,
+      "rrf_constant": 60,
+      "validation_metrics": {
+        "ndcg@10": 0.7542684572778595,
+        "mrr@10": 0.721530820917324,
+        "recall@10": 0.8738241308793456,
+        "recall@5": 0.814314928425358
+      },
+      "embedding_fingerprint": {
+        "schema": 2,
+        "documents": {
+          "count": 5183,
+          "ids_sha256": "3df87dafd673a62a3ec6cb9ecc42d65916bff917e3fa539778ed543a2d72fe26",
+          "texts_sha256": "7b1dc0a5ca2f5b019468505af285f84821205986bfcbe225cd3970790c94bad7"
+        },
+        "queries": {
+          "count": 1109,
+          "ids_sha256": "574b5c6a26e2e5d1a99ef82f257c842eaacb8be6a3884fd3a219c0374c5bdbe1",
+          "texts_sha256": "7a81bd430f5b2c0088e5f73c1cd6b5c42648af67a8ee93849a873a7f34d9749a"
+        },
+        "encoder": {
+          "model_id": "sentence-transformers/all-MiniLM-L6-v2",
+          "revision": "1110a243fdf4706b3f48f1d95db1a4f5529b4d41",
+          "files_sha256": {
+            "config.json": "953f9c0d463486b10a6871cc2fd59f223b2c70184f49815e7efbcab5d8908b41",
+            "model.safetensors": "53aa51172d142c89d9012cce15ae4d6cc0ca6895895114379cacb4fab128d9db",
+            "tokenizer.json": "be50c3628f2bf5bb5e3a7f17b1f74611b2561a3a27eeab05e5aa30f411572037",
+            "tokenizer_config.json": "acb92769e8195aabd29b7b2137a9e6d6e25c476a4f15aa4355c233426c61576b",
+            "special_tokens_map.json": "303df45a03609e4ead04bc3dc1536d0ab19b5358db685b6f3da123d05ec200e3",
+            "vocab.txt": "07eced375cec144d27c900241f3e339478dec958f92fddbc551f295c992038a3"
+          },
+          "max_length": 192,
+          "dimension": 384,
+          "pooling": "attention-mask-mean-l2-v1",
+          "dtype": "float32"
+        },
+        "adapter": {
+          "adapter_config.json": "1b228996228016019bc2da2950226c62a5e4ff1de1a8b17345b2289645a9352e",
+          "adapter_model.safetensors": "4fad7e9b7ff432d41176ee32673fda9a16d95c3540b58ff4487893cbb2ae81e2"
+        },
+        "fingerprint_sha256": "55e93cc1aaadb6f94055e9ed5b38ce75d327d0c4cb35b8db5e2d0855ab818bfc"
+      }
+    },
+    {
+      "variant": "bge",
+      "model_path": "models/bge_reranker",
+      "model": "gpustack/bge-reranker-v2-m3-GGUF",
+      "revision": "3093af03b1a635e67b084b1d8c03c5f5e020fd05",
+      "rerank_depth": 50,
+      "alpha": 0.0,
+      "max_length": 384,
+      "inference": "GGUF-Q8_0-Vulkan",
+      "backend": "llama_vulkan",
+      "model_file": "bge-reranker-v2-m3-Q8_0.gguf",
+      "candidate_depth": 100,
+      "rrf_constant": 60,
+      "validation_metrics": {
+        "ndcg@10": 0.6851699615567124,
+        "mrr@10": 0.6525878858700944,
+        "recall@10": 0.8175869120654395,
+        "recall@5": 0.7233128834355829
+      },
+      "embedding_fingerprint": {
+        "schema": 2,
+        "documents": {
+          "count": 5183,
+          "ids_sha256": "3df87dafd673a62a3ec6cb9ecc42d65916bff917e3fa539778ed543a2d72fe26",
+          "texts_sha256": "7b1dc0a5ca2f5b019468505af285f84821205986bfcbe225cd3970790c94bad7"
+        },
+        "queries": {
+          "count": 1109,
+          "ids_sha256": "574b5c6a26e2e5d1a99ef82f257c842eaacb8be6a3884fd3a219c0374c5bdbe1",
+          "texts_sha256": "7a81bd430f5b2c0088e5f73c1cd6b5c42648af67a8ee93849a873a7f34d9749a"
+        },
+        "encoder": {
+          "model_id": "sentence-transformers/all-MiniLM-L6-v2",
+          "revision": "1110a243fdf4706b3f48f1d95db1a4f5529b4d41",
+          "files_sha256": {
+            "config.json": "953f9c0d463486b10a6871cc2fd59f223b2c70184f49815e7efbcab5d8908b41",
+            "model.safetensors": "53aa51172d142c89d9012cce15ae4d6cc0ca6895895114379cacb4fab128d9db",
+            "tokenizer.json": "be50c3628f2bf5bb5e3a7f17b1f74611b2561a3a27eeab05e5aa30f411572037",
+            "tokenizer_config.json": "acb92769e8195aabd29b7b2137a9e6d6e25c476a4f15aa4355c233426c61576b",
+            "special_tokens_map.json": "303df45a03609e4ead04bc3dc1536d0ab19b5358db685b6f3da123d05ec200e3",
+            "vocab.txt": "07eced375cec144d27c900241f3e339478dec958f92fddbc551f295c992038a3"
+          },
+          "max_length": 192,
+          "dimension": 384,
+          "pooling": "attention-mask-mean-l2-v1",
+          "dtype": "float32"
+        },
+        "adapter": {
+          "adapter_config.json": "1b228996228016019bc2da2950226c62a5e4ff1de1a8b17345b2289645a9352e",
+          "adapter_model.safetensors": "4fad7e9b7ff432d41176ee32673fda9a16d95c3540b58ff4487893cbb2ae81e2"
+        },
+        "fingerprint_sha256": "55e93cc1aaadb6f94055e9ed5b38ce75d327d0c4cb35b8db5e2d0855ab818bfc"
+      }
+    },
+    {
+      "variant": "bge",
+      "model_path": "models/bge_reranker",
+      "model": "gpustack/bge-reranker-v2-m3-GGUF",
+      "revision": "3093af03b1a635e67b084b1d8c03c5f5e020fd05",
+      "rerank_depth": 50,
+      "alpha": 0.25,
+      "max_length": 384,
+      "inference": "GGUF-Q8_0-Vulkan",
+      "backend": "llama_vulkan",
+      "model_file": "bge-reranker-v2-m3-Q8_0.gguf",
+      "candidate_depth": 100,
+      "rrf_constant": 60,
+      "validation_metrics": {
+        "ndcg@10": 0.7242472980018888,
+        "mrr@10": 0.6916106728990165,
+        "recall@10": 0.8421267893660531,
+        "recall@5": 0.7419222903885481
+      },
+      "embedding_fingerprint": {
+        "schema": 2,
+        "documents": {
+          "count": 5183,
+          "ids_sha256": "3df87dafd673a62a3ec6cb9ecc42d65916bff917e3fa539778ed543a2d72fe26",
+          "texts_sha256": "7b1dc0a5ca2f5b019468505af285f84821205986bfcbe225cd3970790c94bad7"
+        },
+        "queries": {
+          "count": 1109,
+          "ids_sha256": "574b5c6a26e2e5d1a99ef82f257c842eaacb8be6a3884fd3a219c0374c5bdbe1",
+          "texts_sha256": "7a81bd430f5b2c0088e5f73c1cd6b5c42648af67a8ee93849a873a7f34d9749a"
+        },
+        "encoder": {
+          "model_id": "sentence-transformers/all-MiniLM-L6-v2",
+          "revision": "1110a243fdf4706b3f48f1d95db1a4f5529b4d41",
+          "files_sha256": {
+            "config.json": "953f9c0d463486b10a6871cc2fd59f223b2c70184f49815e7efbcab5d8908b41",
+            "model.safetensors": "53aa51172d142c89d9012cce15ae4d6cc0ca6895895114379cacb4fab128d9db",
+            "tokenizer.json": "be50c3628f2bf5bb5e3a7f17b1f74611b2561a3a27eeab05e5aa30f411572037",
+            "tokenizer_config.json": "acb92769e8195aabd29b7b2137a9e6d6e25c476a4f15aa4355c233426c61576b",
+            "special_tokens_map.json": "303df45a03609e4ead04bc3dc1536d0ab19b5358db685b6f3da123d05ec200e3",
+            "vocab.txt": "07eced375cec144d27c900241f3e339478dec958f92fddbc551f295c992038a3"
+          },
+          "max_length": 192,
+          "dimension": 384,
+          "pooling": "attention-mask-mean-l2-v1",
+          "dtype": "float32"
+        },
+        "adapter": {
+          "adapter_config.json": "1b228996228016019bc2da2950226c62a5e4ff1de1a8b17345b2289645a9352e",
+          "adapter_model.safetensors": "4fad7e9b7ff432d41176ee32673fda9a16d95c3540b58ff4487893cbb2ae81e2"
+        },
+        "fingerprint_sha256": "55e93cc1aaadb6f94055e9ed5b38ce75d327d0c4cb35b8db5e2d0855ab818bfc"
+      }
+    },
+    {
+      "variant": "bge",
+      "model_path": "models/bge_reranker",
+      "model": "gpustack/bge-reranker-v2-m3-GGUF",
+      "revision": "3093af03b1a635e67b084b1d8c03c5f5e020fd05",
+      "rerank_depth": 50,
+      "alpha": 0.5,
+      "max_length": 384,
+      "inference": "GGUF-Q8_0-Vulkan",
+      "backend": "llama_vulkan",
+      "model_file": "bge-reranker-v2-m3-Q8_0.gguf",
+      "candidate_depth": 100,
+      "rrf_constant": 60,
+      "validation_metrics": {
+        "ndcg@10": 0.7457924269532246,
+        "mrr@10": 0.7166666666666667,
+        "recall@10": 0.8543967280163598,
+        "recall@5": 0.8155419222903886
+      },
+      "embedding_fingerprint": {
+        "schema": 2,
+        "documents": {
+          "count": 5183,
+          "ids_sha256": "3df87dafd673a62a3ec6cb9ecc42d65916bff917e3fa539778ed543a2d72fe26",
+          "texts_sha256": "7b1dc0a5ca2f5b019468505af285f84821205986bfcbe225cd3970790c94bad7"
+        },
+        "queries": {
+          "count": 1109,
+          "ids_sha256": "574b5c6a26e2e5d1a99ef82f257c842eaacb8be6a3884fd3a219c0374c5bdbe1",
+          "texts_sha256": "7a81bd430f5b2c0088e5f73c1cd6b5c42648af67a8ee93849a873a7f34d9749a"
+        },
+        "encoder": {
+          "model_id": "sentence-transformers/all-MiniLM-L6-v2",
+          "revision": "1110a243fdf4706b3f48f1d95db1a4f5529b4d41",
+          "files_sha256": {
+            "config.json": "953f9c0d463486b10a6871cc2fd59f223b2c70184f49815e7efbcab5d8908b41",
+            "model.safetensors": "53aa51172d142c89d9012cce15ae4d6cc0ca6895895114379cacb4fab128d9db",
+            "tokenizer.json": "be50c3628f2bf5bb5e3a7f17b1f74611b2561a3a27eeab05e5aa30f411572037",
+            "tokenizer_config.json": "acb92769e8195aabd29b7b2137a9e6d6e25c476a4f15aa4355c233426c61576b",
+            "special_tokens_map.json": "303df45a03609e4ead04bc3dc1536d0ab19b5358db685b6f3da123d05ec200e3",
+            "vocab.txt": "07eced375cec144d27c900241f3e339478dec958f92fddbc551f295c992038a3"
+          },
+          "max_length": 192,
+          "dimension": 384,
+          "pooling": "attention-mask-mean-l2-v1",
+          "dtype": "float32"
+        },
+        "adapter": {
+          "adapter_config.json": "1b228996228016019bc2da2950226c62a5e4ff1de1a8b17345b2289645a9352e",
+          "adapter_model.safetensors": "4fad7e9b7ff432d41176ee32673fda9a16d95c3540b58ff4487893cbb2ae81e2"
+        },
+        "fingerprint_sha256": "55e93cc1aaadb6f94055e9ed5b38ce75d327d0c4cb35b8db5e2d0855ab818bfc"
+      }
+    },
+    {
+      "variant": "bge",
+      "model_path": "models/bge_reranker",
+      "model": "gpustack/bge-reranker-v2-m3-GGUF",
+      "revision": "3093af03b1a635e67b084b1d8c03c5f5e020fd05",
+      "rerank_depth": 50,
+      "alpha": 0.75,
+      "max_length": 384,
+      "inference": "GGUF-Q8_0-Vulkan",
+      "backend": "llama_vulkan",
+      "model_file": "bge-reranker-v2-m3-Q8_0.gguf",
+      "candidate_depth": 100,
+      "rrf_constant": 60,
+      "validation_metrics": {
+        "ndcg@10": 0.7662334351699481,
+        "mrr@10": 0.7352760736196319,
+        "recall@10": 0.879959100204499,
+        "recall@5": 0.8278118609406954
+      },
+      "embedding_fingerprint": {
+        "schema": 2,
+        "documents": {
+          "count": 5183,
+          "ids_sha256": "3df87dafd673a62a3ec6cb9ecc42d65916bff917e3fa539778ed543a2d72fe26",
+          "texts_sha256": "7b1dc0a5ca2f5b019468505af285f84821205986bfcbe225cd3970790c94bad7"
+        },
+        "queries": {
+          "count": 1109,
+          "ids_sha256": "574b5c6a26e2e5d1a99ef82f257c842eaacb8be6a3884fd3a219c0374c5bdbe1",
+          "texts_sha256": "7a81bd430f5b2c0088e5f73c1cd6b5c42648af67a8ee93849a873a7f34d9749a"
+        },
+        "encoder": {
+          "model_id": "sentence-transformers/all-MiniLM-L6-v2",
+          "revision": "1110a243fdf4706b3f48f1d95db1a4f5529b4d41",
+          "files_sha256": {
+            "config.json": "953f9c0d463486b10a6871cc2fd59f223b2c70184f49815e7efbcab5d8908b41",
+            "model.safetensors": "53aa51172d142c89d9012cce15ae4d6cc0ca6895895114379cacb4fab128d9db",
+            "tokenizer.json": "be50c3628f2bf5bb5e3a7f17b1f74611b2561a3a27eeab05e5aa30f411572037",
+            "tokenizer_config.json": "acb92769e8195aabd29b7b2137a9e6d6e25c476a4f15aa4355c233426c61576b",
+            "special_tokens_map.json": "303df45a03609e4ead04bc3dc1536d0ab19b5358db685b6f3da123d05ec200e3",
+            "vocab.txt": "07eced375cec144d27c900241f3e339478dec958f92fddbc551f295c992038a3"
+          },
+          "max_length": 192,
+          "dimension": 384,
+          "pooling": "attention-mask-mean-l2-v1",
+          "dtype": "float32"
+        },
+        "adapter": {
+          "adapter_config.json": "1b228996228016019bc2da2950226c62a5e4ff1de1a8b17345b2289645a9352e",
+          "adapter_model.safetensors": "4fad7e9b7ff432d41176ee32673fda9a16d95c3540b58ff4487893cbb2ae81e2"
+        },
+        "fingerprint_sha256": "55e93cc1aaadb6f94055e9ed5b38ce75d327d0c4cb35b8db5e2d0855ab818bfc"
+      }
+    },
+    {
+      "variant": "bge",
+      "model_path": "models/bge_reranker",
+      "model": "gpustack/bge-reranker-v2-m3-GGUF",
+      "revision": "3093af03b1a635e67b084b1d8c03c5f5e020fd05",
+      "rerank_depth": 50,
+      "alpha": 1.0,
+      "max_length": 384,
+      "inference": "GGUF-Q8_0-Vulkan",
+      "backend": "llama_vulkan",
+      "model_file": "bge-reranker-v2-m3-Q8_0.gguf",
+      "candidate_depth": 100,
+      "rrf_constant": 60,
+      "validation_metrics": {
+        "ndcg@10": 0.7502249423108782,
+        "mrr@10": 0.7167421365274126,
+        "recall@10": 0.8738241308793456,
+        "recall@5": 0.80920245398773
+      },
+      "embedding_fingerprint": {
+        "schema": 2,
+        "documents": {
+          "count": 5183,
+          "ids_sha256": "3df87dafd673a62a3ec6cb9ecc42d65916bff917e3fa539778ed543a2d72fe26",
+          "texts_sha256": "7b1dc0a5ca2f5b019468505af285f84821205986bfcbe225cd3970790c94bad7"
+        },
+        "queries": {
+          "count": 1109,
+          "ids_sha256": "574b5c6a26e2e5d1a99ef82f257c842eaacb8be6a3884fd3a219c0374c5bdbe1",
+          "texts_sha256": "7a81bd430f5b2c0088e5f73c1cd6b5c42648af67a8ee93849a873a7f34d9749a"
+        },
+        "encoder": {
+          "model_id": "sentence-transformers/all-MiniLM-L6-v2",
+          "revision": "1110a243fdf4706b3f48f1d95db1a4f5529b4d41",
+          "files_sha256": {
+            "config.json": "953f9c0d463486b10a6871cc2fd59f223b2c70184f49815e7efbcab5d8908b41",
+            "model.safetensors": "53aa51172d142c89d9012cce15ae4d6cc0ca6895895114379cacb4fab128d9db",
+            "tokenizer.json": "be50c3628f2bf5bb5e3a7f17b1f74611b2561a3a27eeab05e5aa30f411572037",
+            "tokenizer_config.json": "acb92769e8195aabd29b7b2137a9e6d6e25c476a4f15aa4355c233426c61576b",
+            "special_tokens_map.json": "303df45a03609e4ead04bc3dc1536d0ab19b5358db685b6f3da123d05ec200e3",
+            "vocab.txt": "07eced375cec144d27c900241f3e339478dec958f92fddbc551f295c992038a3"
+          },
+          "max_length": 192,
+          "dimension": 384,
+          "pooling": "attention-mask-mean-l2-v1",
+          "dtype": "float32"
+        },
+        "adapter": {
+          "adapter_config.json": "1b228996228016019bc2da2950226c62a5e4ff1de1a8b17345b2289645a9352e",
+          "adapter_model.safetensors": "4fad7e9b7ff432d41176ee32673fda9a16d95c3540b58ff4487893cbb2ae81e2"
+        },
+        "fingerprint_sha256": "55e93cc1aaadb6f94055e9ed5b38ce75d327d0c4cb35b8db5e2d0855ab818bfc"
+      }
+    },
+    {
+      "variant": "bge",
+      "model_path": "models/bge_reranker",
+      "model": "gpustack/bge-reranker-v2-m3-GGUF",
+      "revision": "3093af03b1a635e67b084b1d8c03c5f5e020fd05",
+      "rerank_depth": 100,
+      "alpha": 0.0,
+      "max_length": 384,
+      "inference": "GGUF-Q8_0-Vulkan",
+      "backend": "llama_vulkan",
+      "model_file": "bge-reranker-v2-m3-Q8_0.gguf",
+      "candidate_depth": 100,
+      "rrf_constant": 60,
+      "validation_metrics": {
+        "ndcg@10": 0.6851699615567124,
+        "mrr@10": 0.6525878858700944,
+        "recall@10": 0.8175869120654395,
+        "recall@5": 0.7233128834355829
+      },
+      "embedding_fingerprint": {
+        "schema": 2,
+        "documents": {
+          "count": 5183,
+          "ids_sha256": "3df87dafd673a62a3ec6cb9ecc42d65916bff917e3fa539778ed543a2d72fe26",
+          "texts_sha256": "7b1dc0a5ca2f5b019468505af285f84821205986bfcbe225cd3970790c94bad7"
+        },
+        "queries": {
+          "count": 1109,
+          "ids_sha256": "574b5c6a26e2e5d1a99ef82f257c842eaacb8be6a3884fd3a219c0374c5bdbe1",
+          "texts_sha256": "7a81bd430f5b2c0088e5f73c1cd6b5c42648af67a8ee93849a873a7f34d9749a"
+        },
+        "encoder": {
+          "model_id": "sentence-transformers/all-MiniLM-L6-v2",
+          "revision": "1110a243fdf4706b3f48f1d95db1a4f5529b4d41",
+          "files_sha256": {
+            "config.json": "953f9c0d463486b10a6871cc2fd59f223b2c70184f49815e7efbcab5d8908b41",
+            "model.safetensors": "53aa51172d142c89d9012cce15ae4d6cc0ca6895895114379cacb4fab128d9db",
+            "tokenizer.json": "be50c3628f2bf5bb5e3a7f17b1f74611b2561a3a27eeab05e5aa30f411572037",
+            "tokenizer_config.json": "acb92769e8195aabd29b7b2137a9e6d6e25c476a4f15aa4355c233426c61576b",
+            "special_tokens_map.json": "303df45a03609e4ead04bc3dc1536d0ab19b5358db685b6f3da123d05ec200e3",
+            "vocab.txt": "07eced375cec144d27c900241f3e339478dec958f92fddbc551f295c992038a3"
+          },
+          "max_length": 192,
+          "dimension": 384,
+          "pooling": "attention-mask-mean-l2-v1",
+          "dtype": "float32"
+        },
+        "adapter": {
+          "adapter_config.json": "1b228996228016019bc2da2950226c62a5e4ff1de1a8b17345b2289645a9352e",
+          "adapter_model.safetensors": "4fad7e9b7ff432d41176ee32673fda9a16d95c3540b58ff4487893cbb2ae81e2"
+        },
+        "fingerprint_sha256": "55e93cc1aaadb6f94055e9ed5b38ce75d327d0c4cb35b8db5e2d0855ab818bfc"
+      }
+    },
+    {
+      "variant": "bge",
+      "model_path": "models/bge_reranker",
+      "model": "gpustack/bge-reranker-v2-m3-GGUF",
+      "revision": "3093af03b1a635e67b084b1d8c03c5f5e020fd05",
+      "rerank_depth": 100,
+      "alpha": 0.25,
+      "max_length": 384,
+      "inference": "GGUF-Q8_0-Vulkan",
+      "backend": "llama_vulkan",
+      "model_file": "bge-reranker-v2-m3-Q8_0.gguf",
+      "candidate_depth": 100,
+      "rrf_constant": 60,
+      "validation_metrics": {
+        "ndcg@10": 0.724793353457042,
+        "mrr@10": 0.692207128250073,
+        "recall@10": 0.8421267893660531,
+        "recall@5": 0.7419222903885481
+      },
+      "embedding_fingerprint": {
+        "schema": 2,
+        "documents": {
+          "count": 5183,
+          "ids_sha256": "3df87dafd673a62a3ec6cb9ecc42d65916bff917e3fa539778ed543a2d72fe26",
+          "texts_sha256": "7b1dc0a5ca2f5b019468505af285f84821205986bfcbe225cd3970790c94bad7"
+        },
+        "queries": {
+          "count": 1109,
+          "ids_sha256": "574b5c6a26e2e5d1a99ef82f257c842eaacb8be6a3884fd3a219c0374c5bdbe1",
+          "texts_sha256": "7a81bd430f5b2c0088e5f73c1cd6b5c42648af67a8ee93849a873a7f34d9749a"
+        },
+        "encoder": {
+          "model_id": "sentence-transformers/all-MiniLM-L6-v2",
+          "revision": "1110a243fdf4706b3f48f1d95db1a4f5529b4d41",
+          "files_sha256": {
+            "config.json": "953f9c0d463486b10a6871cc2fd59f223b2c70184f49815e7efbcab5d8908b41",
+            "model.safetensors": "53aa51172d142c89d9012cce15ae4d6cc0ca6895895114379cacb4fab128d9db",
+            "tokenizer.json": "be50c3628f2bf5bb5e3a7f17b1f74611b2561a3a27eeab05e5aa30f411572037",
+            "tokenizer_config.json": "acb92769e8195aabd29b7b2137a9e6d6e25c476a4f15aa4355c233426c61576b",
+            "special_tokens_map.json": "303df45a03609e4ead04bc3dc1536d0ab19b5358db685b6f3da123d05ec200e3",
+            "vocab.txt": "07eced375cec144d27c900241f3e339478dec958f92fddbc551f295c992038a3"
+          },
+          "max_length": 192,
+          "dimension": 384,
+          "pooling": "attention-mask-mean-l2-v1",
+          "dtype": "float32"
+        },
+        "adapter": {
+          "adapter_config.json": "1b228996228016019bc2da2950226c62a5e4ff1de1a8b17345b2289645a9352e",
+          "adapter_model.safetensors": "4fad7e9b7ff432d41176ee32673fda9a16d95c3540b58ff4487893cbb2ae81e2"
+        },
+        "fingerprint_sha256": "55e93cc1aaadb6f94055e9ed5b38ce75d327d0c4cb35b8db5e2d0855ab818bfc"
+      }
+    },
+    {
+      "variant": "bge",
+      "model_path": "models/bge_reranker",
+      "model": "gpustack/bge-reranker-v2-m3-GGUF",
+      "revision": "3093af03b1a635e67b084b1d8c03c5f5e020fd05",
+      "rerank_depth": 100,
+      "alpha": 0.5,
+      "max_length": 384,
+      "inference": "GGUF-Q8_0-Vulkan",
+      "backend": "llama_vulkan",
+      "model_file": "bge-reranker-v2-m3-Q8_0.gguf",
+      "candidate_depth": 100,
+      "rrf_constant": 60,
+      "validation_metrics": {
+        "ndcg@10": 0.7471743843944488,
+        "mrr@10": 0.7182588372772422,
+        "recall@10": 0.8543967280163598,
+        "recall@5": 0.8216768916155419
+      },
+      "embedding_fingerprint": {
+        "schema": 2,
+        "documents": {
+          "count": 5183,
+          "ids_sha256": "3df87dafd673a62a3ec6cb9ecc42d65916bff917e3fa539778ed543a2d72fe26",
+          "texts_sha256": "7b1dc0a5ca2f5b019468505af285f84821205986bfcbe225cd3970790c94bad7"
+        },
+        "queries": {
+          "count": 1109,
+          "ids_sha256": "574b5c6a26e2e5d1a99ef82f257c842eaacb8be6a3884fd3a219c0374c5bdbe1",
+          "texts_sha256": "7a81bd430f5b2c0088e5f73c1cd6b5c42648af67a8ee93849a873a7f34d9749a"
+        },
+        "encoder": {
+          "model_id": "sentence-transformers/all-MiniLM-L6-v2",
+          "revision": "1110a243fdf4706b3f48f1d95db1a4f5529b4d41",
+          "files_sha256": {
+            "config.json": "953f9c0d463486b10a6871cc2fd59f223b2c70184f49815e7efbcab5d8908b41",
+            "model.safetensors": "53aa51172d142c89d9012cce15ae4d6cc0ca6895895114379cacb4fab128d9db",
+            "tokenizer.json": "be50c3628f2bf5bb5e3a7f17b1f74611b2561a3a27eeab05e5aa30f411572037",
+            "tokenizer_config.json": "acb92769e8195aabd29b7b2137a9e6d6e25c476a4f15aa4355c233426c61576b",
+            "special_tokens_map.json": "303df45a03609e4ead04bc3dc1536d0ab19b5358db685b6f3da123d05ec200e3",
+            "vocab.txt": "07eced375cec144d27c900241f3e339478dec958f92fddbc551f295c992038a3"
+          },
+          "max_length": 192,
+          "dimension": 384,
+          "pooling": "attention-mask-mean-l2-v1",
+          "dtype": "float32"
+        },
+        "adapter": {
+          "adapter_config.json": "1b228996228016019bc2da2950226c62a5e4ff1de1a8b17345b2289645a9352e",
+          "adapter_model.safetensors": "4fad7e9b7ff432d41176ee32673fda9a16d95c3540b58ff4487893cbb2ae81e2"
+        },
+        "fingerprint_sha256": "55e93cc1aaadb6f94055e9ed5b38ce75d327d0c4cb35b8db5e2d0855ab818bfc"
+      }
+    },
+    {
+      "variant": "bge",
+      "model_path": "models/bge_reranker",
+      "model": "gpustack/bge-reranker-v2-m3-GGUF",
+      "revision": "3093af03b1a635e67b084b1d8c03c5f5e020fd05",
+      "rerank_depth": 100,
+      "alpha": 0.75,
+      "max_length": 384,
+      "inference": "GGUF-Q8_0-Vulkan",
+      "backend": "llama_vulkan",
+      "model_file": "bge-reranker-v2-m3-Q8_0.gguf",
+      "candidate_depth": 100,
+      "rrf_constant": 60,
+      "validation_metrics": {
+        "ndcg@10": 0.7595193458264369,
+        "mrr@10": 0.7284423994546694,
+        "recall@10": 0.8738241308793456,
+        "recall@5": 0.8257668711656442
+      },
+      "embedding_fingerprint": {
+        "schema": 2,
+        "documents": {
+          "count": 5183,
+          "ids_sha256": "3df87dafd673a62a3ec6cb9ecc42d65916bff917e3fa539778ed543a2d72fe26",
+          "texts_sha256": "7b1dc0a5ca2f5b019468505af285f84821205986bfcbe225cd3970790c94bad7"
+        },
+        "queries": {
+          "count": 1109,
+          "ids_sha256": "574b5c6a26e2e5d1a99ef82f257c842eaacb8be6a3884fd3a219c0374c5bdbe1",
+          "texts_sha256": "7a81bd430f5b2c0088e5f73c1cd6b5c42648af67a8ee93849a873a7f34d9749a"
+        },
+        "encoder": {
+          "model_id": "sentence-transformers/all-MiniLM-L6-v2",
+          "revision": "1110a243fdf4706b3f48f1d95db1a4f5529b4d41",
+          "files_sha256": {
+            "config.json": "953f9c0d463486b10a6871cc2fd59f223b2c70184f49815e7efbcab5d8908b41",
+            "model.safetensors": "53aa51172d142c89d9012cce15ae4d6cc0ca6895895114379cacb4fab128d9db",
+            "tokenizer.json": "be50c3628f2bf5bb5e3a7f17b1f74611b2561a3a27eeab05e5aa30f411572037",
+            "tokenizer_config.json": "acb92769e8195aabd29b7b2137a9e6d6e25c476a4f15aa4355c233426c61576b",
+            "special_tokens_map.json": "303df45a03609e4ead04bc3dc1536d0ab19b5358db685b6f3da123d05ec200e3",
+            "vocab.txt": "07eced375cec144d27c900241f3e339478dec958f92fddbc551f295c992038a3"
+          },
+          "max_length": 192,
+          "dimension": 384,
+          "pooling": "attention-mask-mean-l2-v1",
+          "dtype": "float32"
+        },
+        "adapter": {
+          "adapter_config.json": "1b228996228016019bc2da2950226c62a5e4ff1de1a8b17345b2289645a9352e",
+          "adapter_model.safetensors": "4fad7e9b7ff432d41176ee32673fda9a16d95c3540b58ff4487893cbb2ae81e2"
+        },
+        "fingerprint_sha256": "55e93cc1aaadb6f94055e9ed5b38ce75d327d0c4cb35b8db5e2d0855ab818bfc"
+      }
+    },
+    {
+      "variant": "bge",
+      "model_path": "models/bge_reranker",
+      "model": "gpustack/bge-reranker-v2-m3-GGUF",
+      "revision": "3093af03b1a635e67b084b1d8c03c5f5e020fd05",
+      "rerank_depth": 100,
+      "alpha": 1.0,
+      "max_length": 384,
+      "inference": "GGUF-Q8_0-Vulkan",
+      "backend": "llama_vulkan",
+      "model_file": "bge-reranker-v2-m3-Q8_0.gguf",
+      "candidate_depth": 100,
+      "rrf_constant": 60,
+      "validation_metrics": {
+        "ndcg@10": 0.7379653343478028,
+        "mrr@10": 0.7068580192813322,
+        "recall@10": 0.8492842535787322,
+        "recall@5": 0.8071574642126789
+      },
+      "embedding_fingerprint": {
+        "schema": 2,
+        "documents": {
+          "count": 5183,
+          "ids_sha256": "3df87dafd673a62a3ec6cb9ecc42d65916bff917e3fa539778ed543a2d72fe26",
+          "texts_sha256": "7b1dc0a5ca2f5b019468505af285f84821205986bfcbe225cd3970790c94bad7"
+        },
+        "queries": {
+          "count": 1109,
+          "ids_sha256": "574b5c6a26e2e5d1a99ef82f257c842eaacb8be6a3884fd3a219c0374c5bdbe1",
+          "texts_sha256": "7a81bd430f5b2c0088e5f73c1cd6b5c42648af67a8ee93849a873a7f34d9749a"
+        },
+        "encoder": {
+          "model_id": "sentence-transformers/all-MiniLM-L6-v2",
+          "revision": "1110a243fdf4706b3f48f1d95db1a4f5529b4d41",
+          "files_sha256": {
+            "config.json": "953f9c0d463486b10a6871cc2fd59f223b2c70184f49815e7efbcab5d8908b41",
+            "model.safetensors": "53aa51172d142c89d9012cce15ae4d6cc0ca6895895114379cacb4fab128d9db",
+            "tokenizer.json": "be50c3628f2bf5bb5e3a7f17b1f74611b2561a3a27eeab05e5aa30f411572037",
+            "tokenizer_config.json": "acb92769e8195aabd29b7b2137a9e6d6e25c476a4f15aa4355c233426c61576b",
+            "special_tokens_map.json": "303df45a03609e4ead04bc3dc1536d0ab19b5358db685b6f3da123d05ec200e3",
+            "vocab.txt": "07eced375cec144d27c900241f3e339478dec958f92fddbc551f295c992038a3"
+          },
+          "max_length": 192,
+          "dimension": 384,
+          "pooling": "attention-mask-mean-l2-v1",
+          "dtype": "float32"
+        },
+        "adapter": {
+          "adapter_config.json": "1b228996228016019bc2da2950226c62a5e4ff1de1a8b17345b2289645a9352e",
+          "adapter_model.safetensors": "4fad7e9b7ff432d41176ee32673fda9a16d95c3540b58ff4487893cbb2ae81e2"
+        },
+        "fingerprint_sha256": "55e93cc1aaadb6f94055e9ed5b38ce75d327d0c4cb35b8db5e2d0855ab818bfc"
+      }
+    }
+  ],
+  "selected": {
+    "variant": "bge",
+    "model_path": "models/bge_reranker",
+    "model": "gpustack/bge-reranker-v2-m3-GGUF",
+    "revision": "3093af03b1a635e67b084b1d8c03c5f5e020fd05",
+    "rerank_depth": 50,
+    "alpha": 0.75,
+    "max_length": 384,
+    "inference": "GGUF-Q8_0-Vulkan",
+    "backend": "llama_vulkan",
+    "model_file": "bge-reranker-v2-m3-Q8_0.gguf",
+    "candidate_depth": 100,
+    "rrf_constant": 60,
+    "validation_metrics": {
+      "ndcg@10": 0.7662334351699481,
+      "mrr@10": 0.7352760736196319,
+      "recall@10": 0.879959100204499,
+      "recall@5": 0.8278118609406954
+    },
+    "embedding_fingerprint": {
+      "schema": 2,
+      "documents": {
+        "count": 5183,
+        "ids_sha256": "3df87dafd673a62a3ec6cb9ecc42d65916bff917e3fa539778ed543a2d72fe26",
+        "texts_sha256": "7b1dc0a5ca2f5b019468505af285f84821205986bfcbe225cd3970790c94bad7"
+      },
+      "queries": {
+        "count": 1109,
+        "ids_sha256": "574b5c6a26e2e5d1a99ef82f257c842eaacb8be6a3884fd3a219c0374c5bdbe1",
+        "texts_sha256": "7a81bd430f5b2c0088e5f73c1cd6b5c42648af67a8ee93849a873a7f34d9749a"
+      },
+      "encoder": {
+        "model_id": "sentence-transformers/all-MiniLM-L6-v2",
+        "revision": "1110a243fdf4706b3f48f1d95db1a4f5529b4d41",
+        "files_sha256": {
+          "config.json": "953f9c0d463486b10a6871cc2fd59f223b2c70184f49815e7efbcab5d8908b41",
+          "model.safetensors": "53aa51172d142c89d9012cce15ae4d6cc0ca6895895114379cacb4fab128d9db",
+          "tokenizer.json": "be50c3628f2bf5bb5e3a7f17b1f74611b2561a3a27eeab05e5aa30f411572037",
+          "tokenizer_config.json": "acb92769e8195aabd29b7b2137a9e6d6e25c476a4f15aa4355c233426c61576b",
+          "special_tokens_map.json": "303df45a03609e4ead04bc3dc1536d0ab19b5358db685b6f3da123d05ec200e3",
+          "vocab.txt": "07eced375cec144d27c900241f3e339478dec958f92fddbc551f295c992038a3"
+        },
+        "max_length": 192,
+        "dimension": 384,
+        "pooling": "attention-mask-mean-l2-v1",
+        "dtype": "float32"
+      },
+      "adapter": {
+        "adapter_config.json": "1b228996228016019bc2da2950226c62a5e4ff1de1a8b17345b2289645a9352e",
+        "adapter_model.safetensors": "4fad7e9b7ff432d41176ee32673fda9a16d95c3540b58ff4487893cbb2ae81e2"
+      },
+      "fingerprint_sha256": "55e93cc1aaadb6f94055e9ed5b38ce75d327d0c4cb35b8db5e2d0855ab818bfc"
+    }
+  },
+  "resources": {
+    "l6": {
+      "resources": {
+        "peak_observed_process_rss_gib": 0.6536293029785156,
+        "minimum_observed_available_gib": 4.388149261474609,
+        "samples": 328,
+        "seconds": 47.08384090000072,
+        "cpu_threads": 2,
+        "batch_limit": 8,
+        "minimum_available_gib_guard": 2.0,
+        "note": "Sampled before batches, not an OS-enforced hard allocation cap; other apps can change available RAM."
+      },
+      "score_fingerprint": "44ff2135c8e236dacb9b33a7d4fe9c16e1c15c251fbe72fe2f6dd7e0e5769ab6",
+      "full_scores_reused": true,
+      "resource_scope": "This invocation only; CPU full score caches may be reused and prefix tails recomputed"
+    },
+    "l12": {
+      "resources": {
+        "peak_observed_process_rss_gib": 0.739288330078125,
+        "minimum_observed_available_gib": 4.337615966796875,
+        "samples": 328,
+        "seconds": 92.71793230000003,
+        "cpu_threads": 2,
+        "batch_limit": 8,
+        "minimum_available_gib_guard": 2.0,
+        "note": "Sampled before batches, not an OS-enforced hard allocation cap; other apps can change available RAM."
+      },
+      "score_fingerprint": "e63d22a082ba731946db4657b94e019a0c3aa920fd2b9385201d3a1de8596a64",
+      "full_scores_reused": true,
+      "resource_scope": "This invocation only; CPU full score caches may be reused and prefix tails recomputed"
+    },
+    "bge": {
+      "resources": {
+        "peak_observed_process_rss_gib": 0.75616455078125,
+        "minimum_observed_available_gib": 4.17059326171875,
+        "samples": 2120,
+        "seconds": 872.7040699999998,
+        "cpu_threads": 2,
+        "batch_limit": 8,
+        "minimum_available_gib_guard": 2.0,
+        "note": "Sampled before batches, not an OS-enforced hard allocation cap; other apps can change available RAM."
+      },
+      "score_fingerprint": "099d70a9ba8a460b50e96c92c67e9586746983989e43604f158ebd85cbbe0142",
+      "full_scores_reused": false,
+      "resource_scope": "This invocation only; CPU full score caches may be reused and prefix tails recomputed"
+    }
+  },
+  "selection_protocol": "163 document-grouped official train queries; nDCG@10 primary; depth and model ties prefer less work; no test labels used for config selection",
+  "seconds": 1018.3605439000003
+}

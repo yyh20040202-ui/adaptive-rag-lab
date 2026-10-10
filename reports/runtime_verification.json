@@ -1,0 +1,306 @@
+{
+  "passed": true,
+  "checked_queries": 4,
+  "rankings": [
+    {
+      "query_id": "1",
+      "expected": [
+        "10931595",
+        "13231899",
+        "36637129",
+        "10786948",
+        "40212412",
+        "43385013",
+        "86129154",
+        "4346436",
+        "16532419",
+        "9675944"
+      ],
+      "actual": [
+        "10931595",
+        "13231899",
+        "36637129",
+        "10786948",
+        "40212412",
+        "43385013",
+        "86129154",
+        "4346436",
+        "16532419",
+        "9675944"
+      ],
+      "match": true
+    },
+    {
+      "query_id": "141",
+      "expected": [
+        "14437255",
+        "10624000",
+        "6955746",
+        "38794814",
+        "313394",
+        "21274919",
+        "36860856",
+        "26016929",
+        "143868995",
+        "6431384"
+      ],
+      "actual": [
+        "14437255",
+        "10624000",
+        "6955746",
+        "38794814",
+        "313394",
+        "21274919",
+        "36860856",
+        "26016929",
+        "143868995",
+        "6431384"
+      ],
+      "match": true
+    },
+    {
+      "query_id": "380",
+      "expected": [
+        "19005293",
+        "40365566",
+        "26068103",
+        "23509113",
+        "219475",
+        "12058271",
+        "30398773",
+        "12100963",
+        "3835423",
+        "6182947"
+      ],
+      "actual": [
+        "19005293",
+        "40365566",
+        "26068103",
+        "23509113",
+        "219475",
+        "12058271",
+        "30398773",
+        "12100963",
+        "3835423",
+        "6182947"
+      ],
+      "match": true
+    },
+    {
+      "query_id": "554",
+      "expected": [
+        "27093166",
+        "28015516",
+        "29399239",
+        "52925737",
+        "9878167",
+        "1049501",
+        "1800734",
+        "2236768",
+        "21372171",
+        "364522"
+      ],
+      "actual": [
+        "27093166",
+        "28015516",
+        "29399239",
+        "52925737",
+        "9878167",
+        "1049501",
+        "1800734",
+        "2236768",
+        "21372171",
+        "364522"
+      ],
+      "match": true
+    }
+  ],
+  "resources": [
+    {
+      "system": {
+        "available_gib": 4.1445770263671875,
+        "total_gib": 15.692127227783203,
+        "memory_percent": 73.6,
+        "process_rss_gib": 0.24040603637695312,
+        "cpu_threads": 2,
+        "min_available_gib": 2.0,
+        "max_process_gib": 3.0,
+        "max_pair_batch": 8,
+        "heavy_jobs_serial": true,
+        "serialization_scope": "within this process; launch CLI heavy jobs sequentially"
+      },
+      "owned_llama_processes": [
+        {
+          "port": "8087",
+          "rss_gib": 1.0000190734863281,
+          "cache_ram": "0",
+          "ctx_checkpoints": "0",
+          "gpu_layers": "30",
+          "load_mode": "none",
+          "context": "3072"
+        },
+        {
+          "port": "8089",
+          "rss_gib": 1.0232658386230469,
+          "cache_ram": "0",
+          "ctx_checkpoints": "0",
+          "gpu_layers": "99",
+          "load_mode": "auto",
+          "context": "512"
+        }
+      ],
+      "gpu_memory_used_mib": 3198,
+      "gpu_memory_total_mib": 4096,
+      "gpu_temperature_c": 52
+    },
+    {
+      "system": {
+        "available_gib": 3.795032501220703,
+        "total_gib": 15.692127227783203,
+        "memory_percent": 75.8,
+        "process_rss_gib": 0.5104598999023438,
+        "cpu_threads": 2,
+        "min_available_gib": 2.0,
+        "max_process_gib": 3.0,
+        "max_pair_batch": 8,
+        "heavy_jobs_serial": true,
+        "serialization_scope": "within this process; launch CLI heavy jobs sequentially"
+      },
+      "owned_llama_processes": [
+        {
+          "port": "8087",
+          "rss_gib": 1.0000190734863281,
+          "cache_ram": "0",
+          "ctx_checkpoints": "0",
+          "gpu_layers": "30",
+          "load_mode": "none",
+          "context": "3072"
+        },
+        {
+          "port": "8089",
+          "rss_gib": 1.023284912109375,
+          "cache_ram": "0",
+          "ctx_checkpoints": "0",
+          "gpu_layers": "99",
+          "load_mode": "auto",
+          "context": "512"
+        }
+      ],
+      "gpu_memory_used_mib": 3197,
+      "gpu_memory_total_mib": 4096,
+      "gpu_temperature_c": 55
+    },
+    {
+      "system": {
+        "available_gib": 3.8351783752441406,
+        "total_gib": 15.692127227783203,
+        "memory_percent": 75.6,
+        "process_rss_gib": 0.5117912292480469,
+        "cpu_threads": 2,
+        "min_available_gib": 2.0,
+        "max_process_gib": 3.0,
+        "max_pair_batch": 8,
+        "heavy_jobs_serial": true,
+        "serialization_scope": "within this process; launch CLI heavy jobs sequentially"
+      },
+      "owned_llama_processes": [
+        {
+          "port": "8087",
+          "rss_gib": 1.0000190734863281,
+          "cache_ram": "0",
+          "ctx_checkpoints": "0",
+          "gpu_layers": "30",
+          "load_mode": "none",
+          "context": "3072"
+        },
+        {
+          "port": "8089",
+          "rss_gib": 1.0233039855957031,
+          "cache_ram": "0",
+          "ctx_checkpoints": "0",
+          "gpu_layers": "99",
+          "load_mode": "auto",
+          "context": "512"
+        }
+      ],
+      "gpu_memory_used_mib": 3197,
+      "gpu_memory_total_mib": 4096,
+      "gpu_temperature_c": 55
+    },
+    {
+      "system": {
+        "available_gib": 3.833454132080078,
+        "total_gib": 15.692127227783203,
+        "memory_percent": 75.6,
+        "process_rss_gib": 0.5128707885742188,
+        "cpu_threads": 2,
+        "min_available_gib": 2.0,
+        "max_process_gib": 3.0,
+        "max_pair_batch": 8,
+        "heavy_jobs_serial": true,
+        "serialization_scope": "within this process; launch CLI heavy jobs sequentially"
+      },
+      "owned_llama_processes": [
+        {
+          "port": "8087",
+          "rss_gib": 1.0000190734863281,
+          "cache_ram": "0",
+          "ctx_checkpoints": "0",
+          "gpu_layers": "30",
+          "load_mode": "none",
+          "context": "3072"
+        },
+        {
+          "port": "8089",
+          "rss_gib": 1.0233230590820312,
+          "cache_ram": "0",
+          "ctx_checkpoints": "0",
+          "gpu_layers": "99",
+          "load_mode": "auto",
+          "context": "512"
+        }
+      ],
+      "gpu_memory_used_mib": 3197,
+      "gpu_memory_total_mib": 4096,
+      "gpu_temperature_c": 56
+    },
+    {
+      "system": {
+        "available_gib": 3.8453750610351562,
+        "total_gib": 15.692127227783203,
+        "memory_percent": 75.5,
+        "process_rss_gib": 0.5145072937011719,
+        "cpu_threads": 2,
+        "min_available_gib": 2.0,
+        "max_process_gib": 3.0,
+        "max_pair_batch": 8,
+        "heavy_jobs_serial": true,
+        "serialization_scope": "within this process; launch CLI heavy jobs sequentially"
+      },
+      "owned_llama_processes": [
+        {
+          "port": "8087",
+          "rss_gib": 1.0000190734863281,
+          "cache_ram": "0",
+          "ctx_checkpoints": "0",
+          "gpu_layers": "30",
+          "load_mode": "none",
+          "context": "3072"
+        },
+        {
+          "port": "8089",
+          "rss_gib": 1.0233421325683594,
+          "cache_ram": "0",
+          "ctx_checkpoints": "0",
+          "gpu_layers": "99",
+          "load_mode": "auto",
+          "context": "512"
+        }
+      ],
+      "gpu_memory_used_mib": 3197,
+      "gpu_memory_total_mib": 4096,
+      "gpu_temperature_c": 56
+    }
+  ],
+  "scope": "Same fixed queries used previously. Checks serving rank identity after cache settings; not a new 300-query benchmark or QA evaluation. Memory values are sampled, not continuous peaks."
+}

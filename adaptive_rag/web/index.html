@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light">
+  <meta name="theme-color" content="#151c29">
+  <title>Adaptive RAG Lab · 检索与证据工作台</title>
+  <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+  <a class="skip-link" href="#main-content">跳到工作台</a>
+  <aside class="sidebar">
+    <a class="brand" href="/" aria-label="Adaptive RAG Lab 首页"><span class="brand-mark" aria-hidden="true"><svg viewBox="0 0 32 32"><path d="M5 25 16 6l11 19H5Zm7-6h8M16 14v11"/></svg></span><span>ADAPTIVE<b>RAG LAB</b></span></a>
+    <div class="sidebar-label">RESEARCH WORKSPACE</div>
+    <nav aria-label="主导航">
+      <button class="nav active" data-tab="workspace" aria-current="page"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 4h16v12H9l-5 4V4Zm4 4h8M8 12h5"/></svg><span>问答工作台</span><kbd>01</kbd></button>
+      <button class="nav" data-tab="experiments"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20V4m0 16h16M8 16v-5m5 5V7m5 9v-8"/></svg><span>评测与对照</span><kbd>02</kbd></button>
+      <button class="nav" data-tab="knowledge"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 3h10l4 4v14H5V3Zm10 0v5h4M9 12h6m-6 4h6"/></svg><span>资料管理</span><kbd>03</kbd></button>
+    </nav>
+    <div class="sidebar-section"><div class="sidebar-label">CURRENT SESSION</div><div class="sidebar-fact"><span class="live-dot"></span> 本地私有运行</div><p>文档和问题在本机处理<br>所有指标来自已保存的实验</p></div>
+    <div class="sidebar-bottom"><div class="sidebar-version"><span class="version-square">R</span><div><b>Research build</b><span>检索 · 重排序 · 引用核验</span></div></div><a class="repo-link" href="https://github.com/yyh20040202-ui/adaptive-rag-lab" target="_blank" rel="noreferrer">查看项目源码 <span aria-hidden="true">↗</span></a></div>
+  </aside>
+  <main id="main-content">
+    <header class="topbar"><div class="breadcrumbs">WORKSPACE <span>/</span> <b id="breadcrumb">问答工作台</b></div><div class="topbar-right"><span class="local-badge"><span class="live-dot"></span> LOCAL</span><button id="refresh-status" class="status-button" type="button" title="刷新模型与资源状态"><span id="model-status" class="status neutral"><i></i><span>检查模型状态</span></span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 7v5h-5M4 17v-5h5m10-4a7 7 0 0 0-12-2M5 16a7 7 0 0 0 12 2"/></svg></button></div></header>
+    <section id="workspace" class="tab active" aria-labelledby="workspace-title">
+      <div class="page-heading"><div><div class="eyebrow"><span></span> RETRIEVAL &amp; GROUNDED GENERATION</div><h1 id="workspace-title">从问题，到可核验的证据。</h1><p>在真实文献上比较检索路径，让回答、引用和计算开销都可观察。</p></div><button class="button secondary heading-action" type="button" data-open-tab="experiments">查看实测对照 <span>↗</span></button></div>
+      <div class="metrics-row" aria-label="已保存实验的真实指标">
+        <div class="metric-card"><div class="metric-label">真实文献语料 <span class="metric-icon">▤</span></div><strong id="corpus-count">—</strong><div class="metric-caption">BEIR / SciFact <span>公开基准</span></div></div>
+        <div class="metric-card"><div class="metric-label">最佳检索 nDCG@10 <span class="metric-icon">↗</span></div><strong id="best-ndcg">—</strong><div class="metric-caption" id="best-method">等待实测报告</div></div>
+        <div class="metric-card"><div class="metric-label">相对 BM25 的提升 <span class="metric-icon">＋</span></div><strong id="quality-gain">—</strong><div class="metric-caption">nDCG@10 相对变化 <span>保留测试集</span></div></div>
+        <div class="metric-card"><div class="metric-label">LoRA 可训练比例 <span class="metric-icon">⌘</span></div><strong id="lora-fraction">—</strong><div class="metric-caption">MiniLM 检索编码器 <span id="test-count">— 条测试查询</span></div></div>
+      </div>
+      <div class="workspace-grid">
+        <div class="main-column">
+          <form id="query-form" class="card query-card">
+            <div class="card-top"><div class="section-title"><span class="step-number">01</span><h2>提出问题</h2></div><label class="corpus-label"><span class="sr-only">查询语料</span><select id="corpus"><option value="scifact">SciFact 真实文献</option><option value="demo">我的导入资料</option></select></label></div>
+            <div class="query-input-wrap"><label class="sr-only" for="query">检索问题或科学论断</label><textarea id="query" maxlength="1000" placeholder="输入英文科学问题或论断，检索相关研究文献…" required></textarea><div class="query-input-footer"><span>问题与文档仅在本机处理</span><span><kbd>Ctrl</kbd> + <kbd>Enter</kbd> 运行 <b id="query-length">0 / 1000</b></span></div></div>
+            <div class="examples-header"><span id="examples-label">来自真实评测集的查询</span><button type="button" id="shuffle-examples" class="text-button">换一组 ↻</button></div><div class="examples" id="examples"><span class="subtle">正在载入公开查询…</span></div>
+            <div class="query-options"><label><span>检索策略</span><select id="mode"><option value="cross_encoder" disabled>质量优先 · Cross-Encoder</option><option value="neural_rerank" selected>质量优先 · 神经重排序</option><option value="hybrid_lora">混合检索 + LoRA</option><option value="adaptive">预算优先 · 自适应路由</option><option value="bm25">快速检索 · BM25</option></select></label><label><span>证据预算</span><select id="budget"><option value="600">600 tokens</option><option value="1000">1,000 tokens</option><option value="1400" selected>1,400 tokens</option><option value="1800">1,800 tokens</option></select></label><label><span>检索数量</span><select id="top-k"><option value="5" selected>Top 5</option><option value="10">Top 10</option><option value="20">Top 20</option></select></label></div>
+            <div class="strategy-note"><span class="strategy-dot"></span><span id="mode-note">在混合候选上运行神经重排序，优先查看检索质量。</span></div>
+            <div class="query-footer"><span id="domain-note">真实科学文献；样例来自公开评测查询。</span><div><button type="button" class="button secondary" id="search-only"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10" cy="10" r="6"/><path d="m15 15 5 5"/></svg>只检索</button><button type="submit" class="button primary" id="ask-button">检索并回答 <span>↗</span></button></div></div>
+          </form>
+          <div id="progress" class="progress hidden" role="status" aria-live="polite"><div class="progress-icon"><span class="spinner"></span></div><div><b id="progress-label">正在执行查询</b><p id="progress-note">本地模型首个请求可能需要加载；这里显示实际等待时间。</p></div><time id="elapsed">0.0s</time></div>
+          <div id="error" class="error hidden" role="alert"><span aria-hidden="true">!</span><div><b>本次请求未完成</b><p id="error-text"></p></div><button id="retry-query" class="button secondary" type="button">重试</button></div>
+          <section id="initial-state" class="card initial-state"><div class="empty-orbit" aria-hidden="true"><span>⌕</span><i></i><i></i></div><h2>开始一条真实查询</h2><p>选择上方公开样例，或输入自己的问题。运行后会展示实际检索路径、来源原文和经过位置核验的引用。</p><div class="initial-steps"><span><b>01</b> 检索候选</span><span><b>02</b> 阅读证据</span><span><b>03</b> 核验引用</span></div></section>
+          <section id="answer-card" class="card answer-card hidden" aria-live="polite"><div class="card-top"><div class="section-title"><span class="step-number">02</span><h2>回答与引用</h2></div><div class="card-actions"><span id="answer-status" class="pill"></span><button id="copy-answer" type="button" class="icon-button" aria-label="复制回答" title="复制回答"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="8" y="8" width="12" height="12" rx="2"/><path d="M15 8V4H4v11h4"/></svg></button></div></div><div id="answer-text" class="answer-text"></div><div id="abstention-note" class="abstention-note hidden"></div><div id="citations" class="citations"></div><div id="answer-meta" class="answer-meta"></div><div class="audit-caption"><span>✓</span> 引用检查覆盖来源 ID、原文片段与字符位置；语义结论仍需阅读原文判断。</div></section>
+          <section id="evidence-card" class="card evidence-card hidden"><div class="card-top"><div class="section-title"><span class="step-number">03</span><h2>检索证据</h2><span id="evidence-count" class="count-badge"></span></div><button id="expand-evidence" class="text-button" type="button">展开全部</button></div><div id="result-summary" class="result-summary"></div><div id="evidence-list" class="evidence-list"></div></section>
+        </div>
+        <aside class="right-column" aria-label="执行信息">
+          <section class="card trace-card"><div class="eyebrow">EXECUTION TRACE</div><h2>实际执行路径</h2><div id="trace"><div class="trace-item waiting"><i></i><div><b>等待查询</b><p>每次运行后显示真实执行步骤</p></div></div></div><div id="route-details" class="route-details">质量优先运行完整重排序；预算优先由学习路由器决定是否调用更重的检索。</div><div id="run-stats" class="run-stats hidden"></div></section>
+          <section class="card runtime-card"><div class="side-card-top"><h2>本机运行状态</h2><span class="local-tag">LOCAL</span></div><div id="runtime-details" class="detail-list"><div class="detail-row"><span>模型</span><span>正在检测</span></div></div><div id="resource-meter" class="resource-meter hidden"><div class="meter-label"><span>系统内存占用</span><b id="memory-label">—</b></div><div class="meter-track"><div id="memory-bar"></div></div><p id="resource-note"></p></div><p class="runtime-note">页面一次提交一条请求；模型加载和重排序会计入实际等待时间。</p></section>
+          <section class="card history-card"><div class="side-card-top"><h2>最近查询</h2><button id="clear-history" class="text-button" type="button">清空</button></div><div id="history-list" class="history-list"><p class="history-empty">当前标签页还没有查询。</p></div></section>
+          <div class="note-card"><span class="note-icon">↳</span><div><h3>先检索，再判断。</h3><p>nDCG 衡量文档排名，不能直接当作问答准确率。英语科研检索结果也不代表中文企业资料的效果。</p></div></div>
+        </aside>
+      </div>
+    </section>
+    <section id="experiments" class="tab" aria-labelledby="experiments-title">
+      <div class="page-heading"><div><div class="eyebrow"><span></span> BENCHMARK &amp; ABLATION</div><h1 id="experiments-title">每一项提升，都有对照。</h1><p>统一语料和评测口径，展示已保存的真实实验结果与耗时。</p></div><button id="refresh-reports" class="button secondary" type="button">刷新报告 ↻</button></div>
+      <div class="report-banner"><div><span class="report-dot"></span><b>BEIR / SciFact</b><span id="report-subtitle">读取实测报告中</span></div><span id="report-environment">CPU · 固定随机种子</span></div>
+      <div class="card comparison-card"><div class="card-top"><div><div class="eyebrow">RETRIEVAL QUALITY</div><h2>检索流程对照</h2></div><div class="segmented" role="group" aria-label="图表指标"><button class="active" data-metric="ndcg@10" type="button">nDCG@10</button><button data-metric="mrr@10" type="button">MRR@10</button><button data-metric="recall@10" type="button">Recall@10</button></div></div><div class="comparison-layout"><div><div id="benchmark-chart" class="benchmark-chart"></div><div class="chart-axis"><span>0</span><span>0.25</span><span>0.50</span><span>0.75</span><span>1.00</span></div></div><div id="comparison-insight" class="comparison-insight"><span>MEASURED GAIN</span><strong>—</strong><p>报告载入后显示相对基线的实测变化。</p></div></div><div class="metric-explainer" id="metric-explainer">nDCG@10：相关文档排得越靠前，分数越高；取值 0–1。</div><div class="table-scroll"><table id="results-table"><caption class="sr-only">所有检索方法的真实测试指标与延迟</caption><thead><tr><th>检索流程</th><th>nDCG@10</th><th>MRR@10</th><th>Recall@10</th><th>Δ nDCG</th><th>p50 / ms</th><th>p95 / ms</th></tr></thead><tbody></tbody></table></div><p id="benchmark-protocol" class="small-note"></p></div>
+      <div class="experiment-grid"><section class="card"><div class="eyebrow">QUALITY / COMPUTE TRADE-OFF</div><h2>预算路由，把计算用在哪里？</h2><div id="route-chart" class="route-chart"></div><div id="route-legend" class="route-legend"></div><p id="routing-note" class="small-note"></p></section><section class="card"><div class="eyebrow">REPRODUCIBLE TRAINING</div><h2>训练与模型记录</h2><div id="training-details" class="detail-list"></div></section></div>
+      <section id="generation-report" class="card generation-report hidden"><div class="card-top"><div><div class="eyebrow">GENERATION CHECKS</div><h2>生成检查与实验边界</h2></div><span id="generation-label" class="pill neutral">功能检查</span></div><div id="generation-stats" class="generation-stats"></div><p id="generation-limitations" class="small-note"></p></section>
+      <div class="note-card wide"><span class="note-icon">i</span><div><h3>如何理解这些指标</h3><p id="experiment-limitations">单随机种子、单一英语科学文献基准。BEIR 的 SciFact test 对应原始数据的有标注验证集；模型预训练污染未知。检索质量、引用原文匹配和答案正确性是不同的评测对象。</p></div></div>
+    </section>
+    <section id="knowledge" class="tab" aria-labelledby="knowledge-title"><div class="page-heading"><div><div class="eyebrow"><span></span> SOURCE LIBRARY</div><h1 id="knowledge-title">让资料成为可检索的证据。</h1><p>真实文献用于公开评测；导入资料保存在本地当前进程，重启后清除。</p></div><button class="button primary" id="open-import" type="button">＋ 导入资料</button></div><div class="knowledge-toolbar"><div class="segmented corpus-tabs" role="group" aria-label="查看语料"><button type="button" data-knowledge-corpus="scifact" class="active">SciFact 文献</button><button type="button" data-knowledge-corpus="demo">我的导入资料</button></div><label class="library-filter"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10" cy="10" r="6"/><path d="m15 15 5 5"/></svg><input id="document-filter" type="search" placeholder="筛选已载入的资料…" aria-label="按标题筛选资料"></label></div><div class="library-summary"><span id="document-count">读取语料中…</span><span id="library-storage">只读公开语料</span></div><div id="document-list" class="document-grid"></div></section>
+    <footer><span class="footer-brand">ADAPTIVE RAG LAB</span><span>真实检索 · 本地推理 · 可追溯引用</span><span class="footer-last">Reproducible research workspace</span></footer>
+  </main>
+  <dialog id="import-dialog" aria-labelledby="import-title"><form id="import-form"><div class="card-top"><div><div class="eyebrow">ADD A SOURCE</div><h2 id="import-title">导入本地资料</h2></div><button type="button" id="close-import" class="icon-button close-button" aria-label="关闭">×</button></div><p class="dialog-intro">资料仅用于当前本地会话，不会发送到外部模型服务。</p><label>资料标题<input id="document-title" maxlength="180" required placeholder="例如：研究笔记 · 文献综述"></label><label>粘贴正文<textarea id="document-text" maxlength="20000" placeholder="最多 20,000 字；可粘贴制度、笔记或文献原文。"></textarea></label><div class="import-or"><span></span>或上传文件<span></span></div><label class="file-label"><span>选择文字版 PDF</span><input id="document-file" type="file" accept=".pdf,application/pdf"><small>最多 2 MiB / 30 页；扫描件需要先提取文字。</small></label><div id="import-message" class="small-note" role="status"></div><div class="dialog-actions"><button id="cancel-import" class="button secondary" type="button">取消</button><button class="button primary" type="submit">导入资料 ↗</button></div></form></dialog>
+  <div id="toast" class="toast hidden" role="status" aria-live="polite"></div>
+  <script src="/static/app.js" defer></script>
+</body>
+</html>

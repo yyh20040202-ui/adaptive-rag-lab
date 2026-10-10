@@ -1,0 +1,8 @@
+{
+  "queries": 300,
+  "live_ranking_evaluations": 1500,
+  "v1_ranking_comparisons": 1200,
+  "v1_mismatches": [],
+  "v1_rankings_preserved": true,
+  "scope": "Actual serving engine generates V2 evaluation outputs; four legacy modes compared against V1 committed rankings; CE is evaluated through live engine, not independently rerun."
+}

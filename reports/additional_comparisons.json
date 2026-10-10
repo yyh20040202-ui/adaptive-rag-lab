@@ -1,0 +1,22 @@
+{
+  "neural_rerank-vs-bm25": {
+    "delta": 0.045709008217217975,
+    "ci95": [
+      0.022328843583237765,
+      0.06956217278828881
+    ],
+    "method": "paired query bootstrap",
+    "iterations": 2000,
+    "seed": 42
+  },
+  "neural_rerank-vs-hybrid_lora": {
+    "delta": 0.017931397845555027,
+    "ci95": [
+      0.007738670910386764,
+      0.028048315670907615
+    ],
+    "method": "paired query bootstrap",
+    "iterations": 2000,
+    "seed": 42
+  }
+}

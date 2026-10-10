@@ -1,0 +1,287 @@
+{
+  "dataset": "BEIR SciFact",
+  "corpus": 5183,
+  "official_train": 809,
+  "train": 646,
+  "validation": 163,
+  "test": 300,
+  "seed": 42,
+  "metrics": {
+    "bm25": {
+      "ndcg@10": 0.6468287717744379,
+      "mrr@10": 0.6113201058201059,
+      "recall@10": 0.7711666666666667,
+      "recall@5": 0.7027777777777777
+    },
+    "dense_frozen": {
+      "ndcg@10": 0.6443494039456269,
+      "mrr@10": 0.6025171957671958,
+      "recall@10": 0.785,
+      "recall@5": 0.7211666666666666
+    },
+    "hybrid_frozen": {
+      "ndcg@10": 0.6636830424694925,
+      "mrr@10": 0.6260383597883599,
+      "recall@10": 0.7969444444444443,
+      "recall@5": 0.7382222222222222
+    },
+    "dense_lora": {
+      "ndcg@10": 0.6576437520371021,
+      "mrr@10": 0.6169060846560845,
+      "recall@10": 0.7993333333333333,
+      "recall@5": 0.7239444444444445
+    },
+    "hybrid_lora": {
+      "ndcg@10": 0.673376147991339,
+      "mrr@10": 0.6353029100529101,
+      "recall@10": 0.8136111111111111,
+      "recall@5": 0.7403333333333334
+    },
+    "neural_rerank": {
+      "ndcg@10": 0.6922617035806207,
+      "mrr@10": 0.6593677248677249,
+      "recall@10": 0.8186111111111111,
+      "recall@5": 0.746
+    },
+    "adaptive": {
+      "ndcg@10": 0.6528716401060916,
+      "mrr@10": 0.6162685185185186,
+      "recall@10": 0.7811666666666667,
+      "recall@5": 0.7077777777777777
+    }
+  },
+  "latency": {
+    "bm25": {
+      "p50_ms": 1.7649000001256354,
+      "p95_ms": 2.19102500009285,
+      "mean_ms": 1.7771250000805594,
+      "queries": 40
+    },
+    "hybrid_lora": {
+      "p50_ms": 9.825499999806198,
+      "p95_ms": 14.54033500031073,
+      "mean_ms": 10.237389999974766,
+      "queries": 40
+    },
+    "neural_rerank": {
+      "p50_ms": 11.278349999884085,
+      "p95_ms": 15.278110000235756,
+      "mean_ms": 11.507639999922503,
+      "queries": 40
+    },
+    "adaptive": {
+      "p50_ms": 2.515049999601615,
+      "p95_ms": 10.195604999853455,
+      "mean_ms": 3.478139999947416,
+      "queries": 40
+    }
+  },
+  "route_counts": {
+    "hybrid_lora": 15,
+    "bm25": 285
+  },
+  "dense_call_fraction": 0.05,
+  "paired_ndcg_comparisons": {
+    "hybrid_lora-vs-hybrid_frozen": {
+      "delta": 0.00969310552184654,
+      "ci95": [
+        0.0007598930373840479,
+        0.01888077853817324
+      ],
+      "method": "paired query bootstrap",
+      "iterations": 2000,
+      "seed": 42
+    },
+    "dense_lora-vs-dense_frozen": {
+      "delta": 0.013294348091475209,
+      "ci95": [
+        0.0018251243706996075,
+        0.02542960319900635
+      ],
+      "method": "paired query bootstrap",
+      "iterations": 2000,
+      "seed": 42
+    },
+    "adaptive-vs-bm25": {
+      "delta": 0.006042868331653681,
+      "ci95": [
+        0.00015631456348181363,
+        0.013103307677264272
+      ],
+      "method": "paired query bootstrap",
+      "iterations": 2000,
+      "seed": 42
+    },
+    "adaptive-vs-neural_rerank": {
+      "delta": -0.03939006347452893,
+      "ci95": [
+        -0.06190156566211725,
+        -0.017754176944600356
+      ],
+      "method": "paired query bootstrap",
+      "iterations": 2000,
+      "seed": 42
+    }
+  },
+  "reranker": {
+    "selected_epoch": 5,
+    "validation_bce": 1.0494972467422485,
+    "history": [
+      {
+        "epoch": 1,
+        "validation_bce": 1.1878713369369507
+      },
+      {
+        "epoch": 10,
+        "validation_bce": 1.060973882675171
+      },
+      {
+        "epoch": 20,
+        "validation_bce": 1.164897084236145
+      },
+      {
+        "epoch": 30,
+        "validation_bce": 1.3456937074661255
+      },
+      {
+        "epoch": 40,
+        "validation_bce": 1.5183131694793701
+      },
+      {
+        "epoch": 50,
+        "validation_bce": 1.6338859796524048
+      },
+      {
+        "epoch": 60,
+        "validation_bce": 2.0272574424743652
+      }
+    ],
+    "train_pairs": 5254,
+    "validation_pairs": 1328,
+    "parameters": 50465
+  },
+  "alpha_selection": [
+    {
+      "alpha": 0.0,
+      "validation_ndcg@10": 0.6874341961973783
+    },
+    {
+      "alpha": 0.15,
+      "validation_ndcg@10": 0.6886295991997702
+    },
+    {
+      "alpha": 0.35,
+      "validation_ndcg@10": 0.6885319541954121
+    },
+    {
+      "alpha": 0.65,
+      "validation_ndcg@10": 0.6882128116041878
+    },
+    {
+      "alpha": 1.0,
+      "validation_ndcg@10": 0.6650534858188468
+    }
+  ],
+  "routing_selection": [
+    {
+      "training_cost_penalty": 0.0,
+      "validation_ndcg@10": 0.6785337034540386,
+      "validation_proxy_cost": 0.09202453987730061,
+      "validation_objective": 0.6748527218589466,
+      "train_route_labels": {
+        "hybrid_lora": 132,
+        "bm25": 469,
+        "neural_rerank": 45
+      }
+    },
+    {
+      "training_cost_penalty": 0.025,
+      "validation_ndcg@10": 0.6785337034540386,
+      "validation_proxy_cost": 0.09202453987730061,
+      "validation_objective": 0.6748527218589466,
+      "train_route_labels": {
+        "hybrid_lora": 131,
+        "bm25": 471,
+        "neural_rerank": 44
+      }
+    },
+    {
+      "training_cost_penalty": 0.05,
+      "validation_ndcg@10": 0.6803594483634751,
+      "validation_proxy_cost": 0.09815950920245399,
+      "validation_objective": 0.676433067995377,
+      "train_route_labels": {
+        "hybrid_lora": 133,
+        "bm25": 475,
+        "neural_rerank": 38
+      }
+    },
+    {
+      "training_cost_penalty": 0.1,
+      "validation_ndcg@10": 0.6803594483634751,
+      "validation_proxy_cost": 0.10429447852760736,
+      "validation_objective": 0.6761876692223707,
+      "train_route_labels": {
+        "hybrid_lora": 129,
+        "bm25": 489,
+        "neural_rerank": 28
+      }
+    },
+    {
+      "training_cost_penalty": 0.2,
+      "validation_ndcg@10": 0.6885053976433192,
+      "validation_proxy_cost": 0.05521472392638037,
+      "validation_objective": 0.686296808686264,
+      "train_route_labels": {
+        "hybrid_lora": 106,
+        "bm25": 515,
+        "neural_rerank": 25
+      }
+    }
+  ],
+  "config": {
+    "seed": 42,
+    "encoder_max_length": 192,
+    "rrf_constant": 60,
+    "candidate_depth": 100,
+    "rerank_alpha": 0.15,
+    "routes": [
+      "bm25",
+      "hybrid_lora",
+      "neural_rerank"
+    ],
+    "proxy_costs": [
+      0.0,
+      1.0,
+      1.25
+    ],
+    "routing_objective_lambda": 0.04,
+    "selected_policy": {
+      "training_cost_penalty": 0.2,
+      "validation_ndcg@10": 0.6885053976433192,
+      "validation_proxy_cost": 0.05521472392638037,
+      "validation_objective": 0.686296808686264,
+      "train_route_labels": {
+        "hybrid_lora": 106,
+        "bm25": 515,
+        "neural_rerank": 25
+      }
+    },
+    "adapter_sha256": "4fad7e9b7ff432d41176ee32673fda9a16d95c3540b58ff4487893cbb2ae81e2"
+  },
+  "timing_protocol": "40 seeded test queries; warm serial CPU; includes query encoding; cached corpus embeddings; excludes startup, indexing and generation",
+  "environment": {
+    "python": "3.12.14",
+    "torch": "2.5.1+cpu",
+    "platform": "Windows-11-10.0.26200-SP0",
+    "cpu_threads": 4
+  },
+  "runtime_seconds": 257.0145639000002,
+  "limitations": [
+    "one seed and one benchmark; pretrained contamination is unknown",
+    "English biomedical retrieval does not establish Chinese enterprise generalization",
+    "BEIR test uses annotated SciFact validation, not the hidden SciFact leaderboard test",
+    "LoRA adapts MiniLM, not Qwen; reranker is pooled-feature MLP, not a cross-encoder",
+    "routing costs are proxies; use reported measured latency for operational conclusions"
+  ]
+}

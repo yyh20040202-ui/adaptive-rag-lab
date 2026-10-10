@@ -1,0 +1,613 @@
+{
+  "status": "complete",
+  "corpus": "real BEIR SciFact abstracts",
+  "cases": 6,
+  "retrieval_mode": "cross_encoder",
+  "evidence_budget": 1400,
+  "fixed_query_ids": [
+    "1",
+    "1226",
+    "141",
+    "380",
+    "554",
+    "775"
+  ],
+  "elapsed_seconds": 67.2261876,
+  "answered": 3,
+  "relevant_source_in_packed_context": 2,
+  "audit_failure_counts": {
+    "missing_query_anchor": 2,
+    "model_abstained": 1
+  },
+  "resources": {
+    "peak_observed_process_rss_gib": 0.5132789611816406,
+    "minimum_observed_available_gib": 3.6735000610351562,
+    "samples": 6,
+    "seconds": 67.22621479999998,
+    "cpu_threads": 2,
+    "batch_limit": 8,
+    "minimum_available_gib_guard": 2.0,
+    "note": "Sampled before batches, not an OS-enforced hard allocation cap; other apps can change available RAM."
+  },
+  "retrieval_config": {
+    "variant": "bge",
+    "model_path": "models/bge_reranker",
+    "model": "gpustack/bge-reranker-v2-m3-GGUF",
+    "revision": "3093af03b1a635e67b084b1d8c03c5f5e020fd05",
+    "rerank_depth": 50,
+    "alpha": 0.75,
+    "max_length": 384,
+    "inference": "GGUF-Q8_0-Vulkan",
+    "backend": "llama_vulkan",
+    "model_file": "bge-reranker-v2-m3-Q8_0.gguf",
+    "candidate_depth": 100,
+    "rrf_constant": 60,
+    "validation_metrics": {
+      "ndcg@10": 0.7662334351699481,
+      "mrr@10": 0.7352760736196319,
+      "recall@10": 0.879959100204499,
+      "recall@5": 0.8278118609406954
+    },
+    "embedding_fingerprint": {
+      "schema": 2,
+      "documents": {
+        "count": 5183,
+        "ids_sha256": "3df87dafd673a62a3ec6cb9ecc42d65916bff917e3fa539778ed543a2d72fe26",
+        "texts_sha256": "7b1dc0a5ca2f5b019468505af285f84821205986bfcbe225cd3970790c94bad7"
+      },
+      "queries": {
+        "count": 1109,
+        "ids_sha256": "574b5c6a26e2e5d1a99ef82f257c842eaacb8be6a3884fd3a219c0374c5bdbe1",
+        "texts_sha256": "7a81bd430f5b2c0088e5f73c1cd6b5c42648af67a8ee93849a873a7f34d9749a"
+      },
+      "encoder": {
+        "model_id": "sentence-transformers/all-MiniLM-L6-v2",
+        "revision": "1110a243fdf4706b3f48f1d95db1a4f5529b4d41",
+        "files_sha256": {
+          "config.json": "953f9c0d463486b10a6871cc2fd59f223b2c70184f49815e7efbcab5d8908b41",
+          "model.safetensors": "53aa51172d142c89d9012cce15ae4d6cc0ca6895895114379cacb4fab128d9db",
+          "tokenizer.json": "be50c3628f2bf5bb5e3a7f17b1f74611b2561a3a27eeab05e5aa30f411572037",
+          "tokenizer_config.json": "acb92769e8195aabd29b7b2137a9e6d6e25c476a4f15aa4355c233426c61576b",
+          "special_tokens_map.json": "303df45a03609e4ead04bc3dc1536d0ab19b5358db685b6f3da123d05ec200e3",
+          "vocab.txt": "07eced375cec144d27c900241f3e339478dec958f92fddbc551f295c992038a3"
+        },
+        "max_length": 192,
+        "dimension": 384,
+        "pooling": "attention-mask-mean-l2-v1",
+        "dtype": "float32"
+      },
+      "adapter": {
+        "adapter_config.json": "1b228996228016019bc2da2950226c62a5e4ff1de1a8b17345b2289645a9352e",
+        "adapter_model.safetensors": "4fad7e9b7ff432d41176ee32673fda9a16d95c3540b58ff4487893cbb2ae81e2"
+      },
+      "fingerprint_sha256": "55e93cc1aaadb6f94055e9ed5b38ce75d327d0c4cb35b8db5e2d0855ab818bfc"
+    }
+  },
+  "description": "Same fixed six claims as the original run; no QA correctness labels. Answered means the output passed mechanical source/quote provenance checks only. Qrels indicate retrieval relevance. Span selection constrains quotes, so quote validity is not an independently measured semantic quality score.",
+  "results": [
+    {
+      "query_id": "1",
+      "claim": "0-dimensional biomaterials show inductive properties.",
+      "retrieval_qrels": {
+        "31715818": 1
+      },
+      "relevant_source_in_packed_context": false,
+      "result": {
+        "answer": "现有资料不足以提供经过引用核验的回答。请补充资料或调整问题。",
+        "abstain": true,
+        "citations": [],
+        "audit_failures": [
+          "missing_query_anchor"
+        ],
+        "query": "0-dimensional biomaterials show inductive properties.",
+        "domain": "scifact",
+        "route": "cross_encoder",
+        "policy": "explicit",
+        "trace": [
+          {
+            "step": "BM25",
+            "executed": true
+          },
+          {
+            "step": "MiniLM LoRA",
+            "executed": true
+          },
+          {
+            "step": "Neural reranker",
+            "executed": false
+          },
+          {
+            "step": "Token cross-encoder",
+            "executed": true
+          }
+        ],
+        "retrieval_ms": 16959.696300000134,
+        "evidence": [
+          {
+            "source_id": "10931595",
+            "title": "Geometry, epistasis, and developmental patterning.",
+            "text": " The two signaling pathways are combined additively, without interactions, and epistasis only arises from the nonlinear dynamical flow in the landscape defined by the geometric model. In this way, the model quantitatively fits genetic experiments purporting to show mutual pathway repression. The model quantifies the contributions of extrinsic vs. intrinsic sources of noise in the penetrance of mutant phenotypes in signaling hypomorphs and explains available experiments with no additional parameters. Data for anchor cell ablation fix the parameters needed to define Notch autocrine signaling.",
+            "start": 934,
+            "end": 1531
+          },
+          {
+            "source_id": "13231899",
+            "title": "In situ regulation of DC subsets and T cells mediates tumor regression in mice.",
+            "text": " Here, we addressed the hypothesis that coordinated regulation of a DC network, and plasmacytoid DCs (pDCs) and CD8(+) DCs in particular, could enhance host immunity in mice. We used functionalized biomaterials incorporating various combinations of an inflammatory cytokine, immune danger signal, and tumor lysates to control the activation and localization of host DC populations in situ. The numbers of pDCs and CD8(+) DCs, and the endogenous production of interleukin-12, all correlated strongly with the magnitude of protective antitumor immunity and the generation of potent CD8(+) CTLs. Vaccination by this method maintained local and systemic CTL responses for extended periods while inhibiting FoxP3 Treg activity during antigen clearance, resulting in complete regression of distant and established melanoma tumors. The efficacy of this vaccine as a monotherapy against large invasive tumors may be a result of the local activity of pDCs and CD8(+) DCs induced by persistent danger and antigen signaling at the vaccine site. These results indicate that a critical pattern of DC subsets correlates with the evolution of therapeutic antitumor responses and provide a template for future vaccine design.",
+            "start": 533,
+            "end": 1742
+          },
+          {
+            "source_id": "36637129",
+            "title": "Optogenetics reveal delayed afferent synaptogenesis on grafted human-induced pluripotent stem cell-derived neural progenitors.",
+            "text": " Here, we present a detailed characterization of the functional properties and synaptic integration of hiPSC-derived neurons grafted in an in vitro model of hyperexcitable epileptic tissue, namely organotypic hippocampal slice cultures (OHSCs), and in adult rats in vivo. The hiPSCs were first differentiated into long-term self-renewing neuroepithelial stem (lt-NES) cells, which are known to form primarily GABAergic neurons. When differentiated in OHSCs for 6 weeks, lt-NES cell-derived neurons displayed neuronal properties such as tetrodotoxin-sensitive sodium currents and action potentials (APs), as well as both spontaneous and evoked postsynaptic currents, indicating functional afferent synaptic inputs. The grafted cells had a distinct electrophysiological profile compared to host cells in the OHSCs with higher input resistance, lower resting membrane potential, and APs with lower amplitude and longer duration. To investigate the origin of synaptic afferents to the grafted lt-NES cell-derived neurons, the host neurons were transduced with Channelrhodopsin-2 (ChR2) and optogenetically activated by blue light. Simultaneous recordings of synaptic currents in grafted lt-NES cell-derived neurons using whole-cell patch-clamp technique at 6 weeks after grafting revealed limited synaptic connections from host neurons. Longer differentiation times, up to 24 weeks after grafting in vivo, revealed more mature intrinsic properties ",
+            "start": 514,
+            "end": 1958
+          },
+          {
+            "source_id": "10786948",
+            "title": "An efficient nonviral method to generate integration-free human-induced pluripotent stem cells from cord blood and peripheral blood cells.",
+            "text": "An efficient nonviral method to generate integration-free human-induced pluripotent stem cells from cord blood and peripheral blood cells.\nThe generation of induced pluripotent stem cells (iPSCs) provides the opportunity to use patient-specific somatic cells, which are a valuable source for disease modeling and drug discovery. To promote research involving these cells, it is important to make iPSCs from easily accessible and less invasive tissues, like blood. We have recently reported the efficient generation of human iPSCs from adult fibroblasts using a combination of plasmids encoding OCT3/4, SOX2, KLF4, L-MYC, LIN28, and shRNA for TP53. We herein report a modified protocol enabling efficient iPSC induction from CD34+ cord blood cells and from peripheral blood isolated from healthy donors using these plasmid vectors. The original plasmid mixture could induce iPSCs; however, the efficiency was low. The addition of EBNA1, an essential factor for episomal amplification of the vectors, by an extra plasmid greatly increased the efficiency of iPSC induction, especially when the induction was performed from αβT cells. This improvement enabled the establishment of blood-derived iPSCs from seven healthy donors ranging in age from their 20s to their 60s. This induction method will be useful for the derivation of patient-specific integration-free iPSCs and would also be applicable to the generation of clinical-grade iPSCs in the future.",
+            "start": 0,
+            "end": 1451
+          }
+        ],
+        "evidence_tokens": 1382,
+        "evidence_budget": 1400
+      }
+    },
+    {
+      "query_id": "1226",
+      "claim": "The loss of the TET protein functions may have dire biological consequences, such as myeloid cancers.",
+      "retrieval_qrels": {
+        "13777138": 1
+      },
+      "relevant_source_in_packed_context": false,
+      "result": {
+        "answer": "Loss of TET2 function leads to myeloid and lymphoid transformations, as demonstrated in Tet2 knockout mice, where haploinsufficiency initiates tumor development. This indicates that TET2 loss has dire biological consequences, particularly in hematopoietic malignancies.",
+        "abstain": false,
+        "citations": [
+          {
+            "source_id": "11951999",
+            "title": "The Ten-Eleven Translocation-2 (TET2) gene in hematopoiesis and hematopoietic diseases",
+            "quote": "Analysis of Tet2 knockout mice, which are viable and fertile, demonstrated that Tet2 functions as a tumor suppressor whose haploinsufficiency initiates myeloid and lymphoid transformations.",
+            "start": 1473,
+            "end": 1662,
+            "quote_verified": true
+          }
+        ],
+        "audit_failures": [],
+        "query": "The loss of the TET protein functions may have dire biological consequences, such as myeloid cancers.",
+        "domain": "scifact",
+        "route": "cross_encoder",
+        "policy": "explicit",
+        "trace": [
+          {
+            "step": "BM25",
+            "executed": true
+          },
+          {
+            "step": "MiniLM LoRA",
+            "executed": true
+          },
+          {
+            "step": "Neural reranker",
+            "executed": false
+          },
+          {
+            "step": "Token cross-encoder",
+            "executed": true
+          }
+        ],
+        "retrieval_ms": 2718.09270000017,
+        "generation_ms": 18725.377500000148,
+        "usage": {
+          "completion_tokens": 77,
+          "prompt_tokens": 1740,
+          "total_tokens": 1817,
+          "prompt_tokens_details": {
+            "cached_tokens": 0
+          }
+        },
+        "finish_reason": "stop",
+        "model": "Qwen3-4B-Instruct-2507 Q4_K_M; no thinking; temperature=0",
+        "citation_method": "constrained span selection; exact quote provenance audited separately",
+        "citable_spans": 24,
+        "raw_model_output": "{\"abstain\":false,\"answer\":\"Loss of TET2 function leads to myeloid and lymphoid transformations, as demonstrated in Tet2 knockout mice, where haploinsufficiency initiates tumor development. This indicates that TET2 loss has dire biological consequences, particularly in hematopoietic malignancies.\",\"citations\":[{\"span_id\":\"s1_2\"}]}",
+        "evidence": [
+          {
+            "source_id": "11951999",
+            "title": "The Ten-Eleven Translocation-2 (TET2) gene in hematopoiesis and hematopoietic diseases",
+            "text": " TET2 has pleiotropic roles during hematopoiesis, including stem-cell self-renewal, lineage commitment and terminal differentiation of monocytes. Analysis of Tet2 knockout mice, which are viable and fertile, demonstrated that Tet2 functions as a tumor suppressor whose haploinsufficiency initiates myeloid and lymphoid transformations. This review summarizes the recently identified TET2 physiological and pathological functions and discusses how this knowledge influences our therapeutic approaches in hematological malignancies and possibly other tumor types.",
+            "start": 1327,
+            "end": 1888
+          },
+          {
+            "source_id": "36950726",
+            "title": "Loss of 5-hydroxymethylcytosine and ten-eleven translocation 2 protein expression in malignant melanoma.",
+            "text": "Several research groups have recently reported on markedly reduced levels of 5-hydroxymethylcytosine (5hmC) in human breast, liver, lung, pancreatic, colon, prostate, brain, and myeloid cancers. We studied benign compound nevi (BCN, n=17), dysplastic compound nevi (DCN, n=15), superficial spreading melanomas [SSM, stratified in <1 mm (n=19) and >4 mm (n=18) Breslow tumor thickness], and cutaneous metastatic disease (CMD, n=24). Immunohistochemistry included specific antibodies against 5hmC, 5-methylcytosine (5mC), and ten-eleven translocation 2 protein (TET2). Immunohistological scoring showed significantly (P<0.0001) higher median 5hmC levels in BCN and DCN than in thin SSM, thick SSM, and CMD. 5mC immunoreactivity did not differ significantly (P=0.15) between nevi and melanoma. The intensity of TET2 expression was predominantly weak but was found to be significantly (P<0.0001) more often in nevi than in thin SSM, thick SSM",
+            "start": 105,
+            "end": 1043
+          },
+          {
+            "source_id": "2405259",
+            "title": "Tet2 is required to resolve inflammation by recruiting Hdac2 to specifically repress IL-6",
+            "text": "Epigenetic modifiers have fundamental roles in defining unique cellular identity through the establishment and maintenance of lineage-specific chromatin and methylation status. Several DNA modifications such as 5-hydroxymethylcytosine (5hmC) are catalysed by the ten eleven translocation (Tet) methylcytosine dioxygenase family members, and the roles of Tet proteins in regulating chromatin architecture and gene transcription independently of DNA methylation have been gradually uncovered. However, the regulation of immunity and inflammation by Tet proteins independent of their role in modulating DNA methylation remains largely unknown. Here we show that Tet2 selectively mediates active repression of interleukin-6 (IL-6) transcription during inflammation resolution in innate myeloid cells, including dendritic cells and macrophages. Loss of Tet2 resulted in the upregulation of several inflammatory mediators, including IL-6, at late phase during the response to lipopolysaccharide challenge. Tet2-deficient mice were more susceptible to endotoxin shock and dextran-sulfate-sodium-induced colitis, displaying a more severe inflammatory phenotype and increased IL-6 production compared to wild-type mice. IκBζ, an IL-6-specific transcription factor, mediated specific targeting of Tet2 to the Il6 promoter, further indicating opposite regulatory roles of IκBζ at initial and resolution phases of inflammation. For the repression mechanism, independent of DNA methylation and",
+            "start": 90,
+            "end": 1570
+          },
+          {
+            "source_id": "2086909",
+            "title": "Tet1 is dispensable for maintaining pluripotency and its loss is compatible with embryonic and postnatal development.",
+            "text": "Tet1 is dispensable for maintaining pluripotency and its loss is compatible with embryonic and postnatal development.\nThe Tet family of enzymes (Tet1/2/3) converts 5-methylcytosine (5mC) to 5-hydroxymethylcytosine (5hmC). Mouse embryonic stem cells (mESCs) highly express Tet1 and have an elevated level of 5hmC. Tet1 has been implicated in ESC maintenance and lineage specification in vitro but its precise function in development is not well defined. To establish the role of Tet1 in pluripotency and development, we have generated Tet1 mutant mESCs and mice. Tet1(-/-) ESCs have reduced levels of 5hmC and subtle changes in global gene expression, and are pluripotent and support development of live-born mice in tetraploid complementation assay, but display skewed differentiation toward trophectoderm in vitro. Tet1 mutant mice are viable, fertile, and grossly normal, though some mutant mice have a slightly smaller body size at birth. Our data suggest that Tet1 loss leading to a partial reduction in 5hmC levels does not affect pluripotency in ESCs and is compatible with embryonic and postnatal development.",
+            "start": 0,
+            "end": 1116
+          }
+        ],
+        "evidence_tokens": 1362,
+        "evidence_budget": 1400,
+        "audit_scope": "source IDs and exact quote offsets; semantic entailment is not certified"
+      }
+    },
+    {
+      "query_id": "141",
+      "claim": "Auditory entrainment is strengthened when people see congruent visual and auditory information.",
+      "retrieval_qrels": {
+        "6955746": 1,
+        "14437255": 1
+      },
+      "relevant_source_in_packed_context": true,
+      "result": {
+        "answer": "Auditory entrainment is enhanced when visual and auditory speech are congruent, as shown by increased neural entrainment to the speech envelope in the brain's auditory cortex when visual and auditory signals align in timing. This synchronization is most pronounced at syllable-level time scales and reflects active cross-modal integration in real time.",
+        "abstain": false,
+        "citations": [
+          {
+            "source_id": "14437255",
+            "title": "Congruent Visual Speech Enhances Cortical Entrainment to Continuous Auditory Speech in Noise-Free Conditions.",
+            "quote": "Specifically, we show that the brain's representation of auditory speech is enhanced when the accompanying visual speech signal shares the same timing.",
+            "start": 2365,
+            "end": 2516,
+            "quote_verified": true
+          },
+          {
+            "source_id": "6955746",
+            "title": "Auditory Cortex Tracks Both Auditory and Visual Stimulus Dynamics Using Low-Frequency Neuronal Phase Modulation",
+            "quote": "In particular, the phase of the 2-7 Hz delta and theta band responses carries robust (in single trials) and usable information (for parsing the temporal structure) about stimulus dynamics in both sensory modalities concurrently.",
+            "start": 680,
+            "end": 908,
+            "quote_verified": true
+          }
+        ],
+        "audit_failures": [],
+        "query": "Auditory entrainment is strengthened when people see congruent visual and auditory information.",
+        "domain": "scifact",
+        "route": "cross_encoder",
+        "policy": "explicit",
+        "trace": [
+          {
+            "step": "BM25",
+            "executed": true
+          },
+          {
+            "step": "MiniLM LoRA",
+            "executed": true
+          },
+          {
+            "step": "Neural reranker",
+            "executed": false
+          },
+          {
+            "step": "Token cross-encoder",
+            "executed": true
+          }
+        ],
+        "retrieval_ms": 2665.418000000045,
+        "generation_ms": 8162.673399999903,
+        "usage": {
+          "completion_tokens": 92,
+          "prompt_tokens": 1655,
+          "total_tokens": 1747,
+          "prompt_tokens_details": {
+            "cached_tokens": 335
+          }
+        },
+        "finish_reason": "stop",
+        "model": "Qwen3-4B-Instruct-2507 Q4_K_M; no thinking; temperature=0",
+        "citation_method": "constrained span selection; exact quote provenance audited separately",
+        "citable_spans": 28,
+        "raw_model_output": "{\"abstain\":false,\"answer\":\"Auditory entrainment is enhanced when visual and auditory speech are congruent, as shown by increased neural entrainment to the speech envelope in the brain's auditory cortex when visual and auditory signals align in timing. This synchronization is most pronounced at syllable-level time scales and reflects active cross-modal integration in real time.\",\"citations\":[{\"span_id\":\"s1_6\"},{\"span_id\":\"s3_4\"}]}",
+        "evidence": [
+          {
+            "source_id": "14437255",
+            "title": "Congruent Visual Speech Enhances Cortical Entrainment to Continuous Auditory Speech in Noise-Free Conditions.",
+            "text": " Finally, our data suggest that neural entrainment to the speech envelope is inhibited when the auditory and visual streams are incongruent both temporally and contextually. SIGNIFICANCE STATEMENT Seeing a speaker's face as he or she talks can greatly help in understanding what the speaker is saying. This is because the speaker's facial movements relay information about what the speaker is saying, but also, importantly, when the speaker is saying it. Studying how the brain uses this timing relationship to combine information from continuous auditory and visual speech has traditionally been methodologically difficult. Here we introduce a new approach for doing this using relatively inexpensive and noninvasive scalp recordings. Specifically, we show that the brain's representation of auditory speech is enhanced when the accompanying visual speech signal shares the same timing. Furthermore, we show that this enhancement is most pronounced at a time scale that corresponds to mean syllable length.",
+            "start": 1629,
+            "end": 2636
+          },
+          {
+            "source_id": "10624000",
+            "title": "Lip movements entrain the observers’ low-frequency brain oscillations to facilitate speech intelligibility",
+            "text": "Lip movements entrain the observers’ low-frequency brain oscillations to facilitate speech intelligibility\nDuring continuous speech, lip movements provide visual temporal signals that facilitate speech processing. Here, using MEG we directly investigated how these visual signals interact with rhythmic brain activity in participants listening to and seeing the speaker. First, we investigated coherence between oscillatory brain activity and speaker's lip movements and demonstrated significant entrainment in visual cortex. We then used partial coherence to remove contributions of the coherent auditory speech signal from the lip-brain coherence. Comparing this synchronization between different attention conditions revealed that attending visual speech enhances the coherence between activity in visual cortex and the speaker's lips. Further, we identified a significant partial coherence between left motor cortex and lip movements and this partial coherence directly predicted comprehension accuracy. Our results emphasize the importance of visually entrained and attention-modulated rhythmic brain activity for the enhancement of audiovisual speech processing.",
+            "start": 0,
+            "end": 1168
+          },
+          {
+            "source_id": "6955746",
+            "title": "Auditory Cortex Tracks Both Auditory and Visual Stimulus Dynamics Using Low-Frequency Neuronal Phase Modulation",
+            "text": "Auditory Cortex Tracks Both Auditory and Visual Stimulus Dynamics Using Low-Frequency Neuronal Phase Modulation\nIntegrating information across sensory domains to construct a unified representation of multi-sensory signals is a fundamental characteristic of perception in ecological contexts. One provocative hypothesis deriving from neurophysiology suggests that there exists early and direct cross-modal phase modulation. We provide evidence, based on magnetoencephalography (MEG) recordings from participants viewing audiovisual movies, that low-frequency neuronal information lies at the basis of the synergistic coordination of information across auditory and visual streams. In particular, the phase of the 2-7 Hz delta and theta band responses carries robust (in single trials) and usable information (for parsing the temporal structure) about stimulus dynamics in both sensory modalities concurrently. These experiments are the first to show in humans that a particular cortical mechanism, delta-theta phase modulation across early sensory areas, plays an important \"active\" role in continuously tracking naturalistic audio-visual streams, carrying dynamic multi-sensory information, and reflecting cross-sensory interaction in real time.",
+            "start": 0,
+            "end": 1245
+          },
+          {
+            "source_id": "38794814",
+            "title": "Frequency modulation entrains slow neural oscillations and optimizes human listening behavior.",
+            "text": "Frequency modulation entrains slow neural oscillations and optimizes human listening behavior.\nThe human ability to continuously track dynamic environmental stimuli, in particular speech, is proposed to profit from \"entrainment\" of endogenous neural oscillations, which involves phase reorganization such that \"optimal\" phase comes into line with temporally expected critical events, resulting in improved processing. The current experiment goes beyond previous work in this domain by addressing two thus far unanswered questions. First, how general is neural entrainment to environmental rhythms: Can neural oscillations be entrained by temporal dynamics of ongoing rhythmic stimuli without abrupt onsets? Second, does neural entrainment optimize performance of the perceptual system: Does human auditory perception benefit from neural phase reorganization? In a human electroencephalography study, listeners detected short gaps distributed uniformly with respect to the phase angle of a 3-Hz frequency-modulated stimulus. Listeners' ability to detect gaps in the frequency-modulated sound was not uniformly distributed in time, but clustered in certain preferred phases of the modulation. Moreover, the optimal stimulus phase was individually determined by the neural delta oscillation entrained by the stimulus. Finally, delta phase predicted behavior better than stimulus phase or the event-related potential after the gap. This study demonstrates behavioral benefits of phase realignment in response to frequency-modulated auditory stimuli, overall suggesting that frequency fluctuations in natural environmental input provide a pacing signal for endogenous neural oscillations, thereby influencing perceptual processing.",
+            "start": 0,
+            "end": 1726
+          }
+        ],
+        "evidence_tokens": 1282,
+        "evidence_budget": 1400,
+        "audit_scope": "source IDs and exact quote offsets; semantic entailment is not certified"
+      }
+    },
+    {
+      "query_id": "380",
+      "claim": "Enhanced early production of inflammatory chemokines improves viral control in the lung.",
+      "retrieval_qrels": {
+        "19005293": 1
+      },
+      "relevant_source_in_packed_context": true,
+      "result": {
+        "answer": "Memory CD4+ T cells enhance production of inflammatory chemokines in the lung during influenza infection, leading to early viral control. This effect requires cognate antigen recognition and is optimal with TH1 or TH17-polarized cells, independent of IFN-γ or TNF-α.",
+        "abstain": false,
+        "citations": [
+          {
+            "source_id": "19005293",
+            "title": "Memory CD4+ T cells induce innate responses independently of pathogen",
+            "quote": "We found that the response of memory, but not naive, CD4+ T cells enhances production of multiple innate inflammatory cytokines and chemokines (IICs) in the lung and that, during influenza infection, this leads to early control of virus.",
+            "start": 318,
+            "end": 555,
+            "quote_verified": true
+          },
+          {
+            "source_id": "19005293",
+            "title": "Memory CD4+ T cells induce innate responses independently of pathogen",
+            "quote": "Memory CD4+ T cell–induced IICs and viral control require cognate antigen recognition and are optimal when memory cells are either T helper type 1 (TH1) or TH17 polarized but are independent of interferon-γ (IFN-γ) and tumor necrosis factor-α (TNF-α) production and do not require activation of conserved pathogen recognition pathways.",
+            "start": 556,
+            "end": 891,
+            "quote_verified": true
+          }
+        ],
+        "audit_failures": [],
+        "query": "Enhanced early production of inflammatory chemokines improves viral control in the lung.",
+        "domain": "scifact",
+        "route": "cross_encoder",
+        "policy": "explicit",
+        "trace": [
+          {
+            "step": "BM25",
+            "executed": true
+          },
+          {
+            "step": "MiniLM LoRA",
+            "executed": true
+          },
+          {
+            "step": "Neural reranker",
+            "executed": false
+          },
+          {
+            "step": "Token cross-encoder",
+            "executed": true
+          }
+        ],
+        "retrieval_ms": 2706.695399999944,
+        "generation_ms": 6645.461699999942,
+        "usage": {
+          "completion_tokens": 89,
+          "prompt_tokens": 1437,
+          "total_tokens": 1526,
+          "prompt_tokens_details": {
+            "cached_tokens": 335
+          }
+        },
+        "finish_reason": "stop",
+        "model": "Qwen3-4B-Instruct-2507 Q4_K_M; no thinking; temperature=0",
+        "citation_method": "constrained span selection; exact quote provenance audited separately",
+        "citable_spans": 20,
+        "raw_model_output": "{\"abstain\":false,\"answer\":\"Memory CD4+ T cells enhance production of inflammatory chemokines in the lung during influenza infection, leading to early viral control. This effect requires cognate antigen recognition and is optimal with TH1 or TH17-polarized cells, independent of IFN-γ or TNF-α.\",\"citations\":[{\"span_id\":\"s1_3\"},{\"span_id\":\"s1_4\"}]}",
+        "evidence": [
+          {
+            "source_id": "19005293",
+            "title": "Memory CD4+ T cells induce innate responses independently of pathogen",
+            "text": "Memory CD4+ T cells induce innate responses independently of pathogen\nInflammation induced by recognition of pathogen-associated molecular patterns markedly affects subsequent adaptive responses. We asked whether the adaptive immune system can also affect the character and magnitude of innate inflammatory responses. We found that the response of memory, but not naive, CD4+ T cells enhances production of multiple innate inflammatory cytokines and chemokines (IICs) in the lung and that, during influenza infection, this leads to early control of virus. Memory CD4+ T cell–induced IICs and viral control require cognate antigen recognition and are optimal when memory cells are either T helper type 1 (TH1) or TH17 polarized but are independent of interferon-γ (IFN-γ) and tumor necrosis factor-α (TNF-α) production and do not require activation of conserved pathogen recognition pathways. This represents a previously undescribed mechanism by which memory CD4+ T cells induce an early innate response that enhances immune protection against pathogens.",
+            "start": 0,
+            "end": 1054
+          },
+          {
+            "source_id": "40365566",
+            "title": "Conventional and monocyte-derived CD11b(+) dendritic cells initiate and maintain T helper 2 cell-mediated immunity to house dust mite allergen.",
+            "text": "Conventional and monocyte-derived CD11b(+) dendritic cells initiate and maintain T helper 2 cell-mediated immunity to house dust mite allergen.\nDendritic cells (DCs) are crucial for mounting allergic airway inflammation, but it is unclear which subset of DCs performs this task. By using CD64 and MAR-1 staining, we reliably separated CD11b(+) monocyte-derived DCs (moDCs) from conventional DCs (cDCs) and studied antigen uptake, migration, and presentation assays of lung and lymph node (LN) DCs in response to inhaled house dust mite (HDM). Mainly CD11b(+) cDCs but not CD103(+) cDCs induced T helper 2 (Th2) cell immunity in HDM-specific T cells in vitro and asthma in vivo. Studies in Flt3l(-/-) mice, lacking all cDCs, revealed that moDCs were also sufficient to induce Th2 cell-mediated immunity but only when high-dose HDM was given. The main function of moDCs was the production of proinflammatory chemokines and allergen presentation in the lung during challenge. Thus, we have identified migratory CD11b(+) cDCs as the principal subset inducing Th2 cell-mediated immunity in the LN, whereas moDCs orchestrate allergic inflammation in the lung.",
+            "start": 0,
+            "end": 1153
+          },
+          {
+            "source_id": "26068103",
+            "title": "Dual role of interleukin-10 in the regulation of respiratory syncitial virus (RSV)-induced lung inflammation.",
+            "text": " Therefore, the augmented pathological responses observed in our 'delayed' IL-10 over-expression model could be attributed to IL-10 OE alone. Taken together, our study indicated dual roles of IL-10 on RSV-induced lung inflammation which appear to depend upon the timing of when elevated IL-10 is expressed in the lung.",
+            "start": 1937,
+            "end": 2255
+          },
+          {
+            "source_id": "23509113",
+            "title": "Resolution of acute inflammation in the lung.",
+            "text": "Resolution of acute inflammation in the lung.\nAcute inflammation in the lung is essential to health. So too is its resolution. In response to invading microbes, noxious stimuli, or tissue injury, an acute inflammatory response is mounted to protect the host. To limit inflammation and prevent collateral injury of healthy, uninvolved tissue, the lung orchestrates the formation of specialized proresolving mediators, specifically lipoxins, resolvins, protectins, and maresins. These immunoresolvents are agonists for resolution that interact with specific receptors on leukocytes and structural cells to blunt further inflammation and promote catabasis. This process appears to be defective in several common lung diseases that are characterized by excess or chronic inflammation. Here, we review the molecular and cellular effectors of resolution of acute inflammation in the lung.",
+            "start": 0,
+            "end": 882
+          }
+        ],
+        "evidence_tokens": 1064,
+        "evidence_budget": 1400,
+        "audit_scope": "source IDs and exact quote offsets; semantic entailment is not certified"
+      }
+    },
+    {
+      "query_id": "554",
+      "claim": "Immune complex triggered cell death leads to extracellular release of neutrophil protein HMGB1.",
+      "retrieval_qrels": {
+        "1049501": 1
+      },
+      "relevant_source_in_packed_context": false,
+      "result": {
+        "answer": "现有资料不足以提供经过引用核验的回答。请补充资料或调整问题。",
+        "abstain": true,
+        "citations": [],
+        "audit_failures": [
+          "model_abstained"
+        ],
+        "query": "Immune complex triggered cell death leads to extracellular release of neutrophil protein HMGB1.",
+        "domain": "scifact",
+        "route": "cross_encoder",
+        "policy": "explicit",
+        "trace": [
+          {
+            "step": "BM25",
+            "executed": true
+          },
+          {
+            "step": "MiniLM LoRA",
+            "executed": true
+          },
+          {
+            "step": "Neural reranker",
+            "executed": false
+          },
+          {
+            "step": "Token cross-encoder",
+            "executed": true
+          }
+        ],
+        "retrieval_ms": 2684.7327000000405,
+        "generation_ms": 3020.845700000109,
+        "usage": {
+          "completion_tokens": 14,
+          "prompt_tokens": 1731,
+          "total_tokens": 1745,
+          "prompt_tokens_details": {
+            "cached_tokens": 334
+          }
+        },
+        "finish_reason": "stop",
+        "model": "Qwen3-4B-Instruct-2507 Q4_K_M; no thinking; temperature=0",
+        "citation_method": "constrained span selection; exact quote provenance audited separately",
+        "citable_spans": 28,
+        "raw_model_output": "{\"abstain\":true,\"answer\":\"\",\"citations\":[]}",
+        "evidence": [
+          {
+            "source_id": "27093166",
+            "title": "Ketamine reduces LPS-induced HMGB1 via activation of the Nrf2/HO-1 pathway and NF-κB suppression.",
+            "text": " METHODS Macrophages were preincubated with various concentrations of ketamine and then treated with LPS (1 μg/mL). The cell culture supernatants were collected to measure inflammatory mediators (HMGB1, nitric oxide, tumor necrosis factor-α, and interleukin 1β) by enzyme-linked immunosorbent assay. Moreover, HO-1 protein expression, the phosphorylation and degradation of IκB-α, and the nuclear translocation of nuclear factor E2-related factor 2 and nuclear factor κB (NF-κB) p65 were tested by Western blot analysis. In addition, to further identify the role of HO-1 in this process, tin protoporphyrin (SnPP), an HO-1 inhibitor, was used. RESULTS Ketamine treatment dose-dependently attenuated the increased levels of proinflammatory mediators (HMGB1, nitric oxide, tumor necrosis factor α, and interleukin 1β) and increased the HO-1",
+            "start": 412,
+            "end": 1250
+          },
+          {
+            "source_id": "28015516",
+            "title": "Netting neutrophils are major inducers of type I IFN production in pediatric systemic lupus erythematosus.",
+            "text": " Genomic approaches have shown that human SLE leukocytes homogeneously express type I interferon (IFN)-induced and neutrophil-related transcripts. Increased production and/or bioavailability of IFN-α and associated alterations in dendritic cell (DC) homeostasis have been linked to lupus pathogenesis. Although neutrophils have long been shown to be associated with lupus, their potential role in disease pathogenesis remains elusive. Here, we show that mature SLE neutrophils are primed in vivo by type I IFN and die upon exposure to SLE-derived anti-ribonucleoprotein antibodies, releasing neutrophil extracellular traps (NETs). SLE NETs contain DNA as well as large amounts of LL37 and HMGB1, neutrophil proteins that facilitate the uptake and recognition of mammalian DNA by plasmacytoid DCs (pDCs). Indeed, SLE NETs activate pDCs to produce high levels of IFN-α ",
+            "start": 277,
+            "end": 1144
+          },
+          {
+            "source_id": "29399239",
+            "title": "Neutrophil extracellular traps: Is immunity the second function of chromatin?",
+            "text": "Neutrophil extracellular traps: Is immunity the second function of chromatin?\nNeutrophil extracellular traps (NETs) are made of processed chromatin bound to granular and selected cytoplasmic proteins. NETs are released by white blood cells called neutrophils, maybe as a last resort, to control microbial infections. This release of chromatin is the result of a unique form of cell death, dubbed \"NETosis. \" Here we review our understanding of how NETs are made, their function in infections and as danger signals, and their emerging importance in autoimmunity and coagulation.",
+            "start": 0,
+            "end": 577
+          },
+          {
+            "source_id": "52925737",
+            "title": "Tumor-derived exosomes induce N2 polarization of neutrophils to promote gastric cancer cell migration",
+            "text": "Tumor-derived exosomes induce N2 polarization of neutrophils to promote gastric cancer cell migration\nBACKGROUND Exosomes are extracellular vesicles that mediate cellular communication in health and diseases. Neutrophils could be polarized to a pro-tumor phenotype by tumor. The function of tumor-derived exosomes in neutrophil regulation remains unclear. METHODS We investigated the effects of gastric cancer cell-derived exosomes (GC-Ex) on the pro-tumor activation of neutrophils and elucidated the underlying mechanisms. RESULTS GC-Ex prolonged neutrophil survival and induced expression of inflammatory factors in neutrophils. GC-Ex-activated neutrophils, in turn, promoted gastric cancer cell migration. GC-Ex transported high mobility group box-1 (HMGB1) that activated NF-κB pathway through interaction with TLR4, resulting in an increased autophagic response in neutrophils. Blocking HMGB1/TLR4 interaction, NF-κB pathway, and autophagy reversed GC-Ex-induced neutrophil activation. Silencing HMGB1 in gastric cancer cells confirmed HMGB1 as a key factor for GC-Ex-mediated neutrophil activation. Furthermore, HMGB1 expression was upregulated in gastric cancer tissues. Increased HMGB1 expression was associated with poor prognosis in patients with gastric cancer. Finally, gastric cancer tissue-derived exosomes acted similarly as exosomes derived from gastric cancer cell lines in neutrophil activation. CONCLUSION We demonstrate that gastric cancer cell-derived exosomes induce autophagy and pro-tumor activation of neutrophils via HMGB1/TLR4/NF-κB signaling, which provides new insights into mechanisms for neutrophil regulation in cancer and sheds lights on the multifaceted role of exosomes in reshaping tumor microenvironment.",
+            "start": 0,
+            "end": 1742
+          }
+        ],
+        "evidence_tokens": 1354,
+        "evidence_budget": 1400,
+        "audit_scope": "source IDs and exact quote offsets; semantic entailment is not certified"
+      }
+    },
+    {
+      "query_id": "775",
+      "claim": "Mice defective for deoxyribonucleic acid (DNA) polymerase I (polI) reveal increased sensitivity to ionizing radiation (IR).",
+      "retrieval_qrels": {
+        "32275758": 1
+      },
+      "relevant_source_in_packed_context": false,
+      "result": {
+        "answer": "现有资料不足以提供经过引用核验的回答。请补充资料或调整问题。",
+        "abstain": true,
+        "citations": [],
+        "audit_failures": [
+          "missing_query_anchor"
+        ],
+        "query": "Mice defective for deoxyribonucleic acid (DNA) polymerase I (polI) reveal increased sensitivity to ionizing radiation (IR).",
+        "domain": "scifact",
+        "route": "cross_encoder",
+        "policy": "explicit",
+        "trace": [
+          {
+            "step": "BM25",
+            "executed": true
+          },
+          {
+            "step": "MiniLM LoRA",
+            "executed": true
+          },
+          {
+            "step": "Neural reranker",
+            "executed": false
+          },
+          {
+            "step": "Token cross-encoder",
+            "executed": true
+          }
+        ],
+        "retrieval_ms": 2791.488000000072,
+        "evidence": [
+          {
+            "source_id": "31293581",
+            "title": "Ionizing radiation-induced long-term expression of senescence markers in mice is independent of p53 and immune status.",
+            "text": " We hypothesized that IR-induced senescence markers could persist long-term in vivo, possibly contributing to the permanent reduction in tissue functionality. Here, we show that mouse tissues exposed to a sublethal dose of IR display persistent (up to 45 weeks, the maximum time analyzed) DNA damage foci and increased p16(INK4a) expression, two hallmarks of cellular senescence and aging. BrdU-labeling experiments revealed that IR-induced damaged cells are preferentially eliminated, at least partially, in a tissue-dependent manner. Unexpectedly, the accumulation of damaged cells was found to occur independent from the DNA damage response modulator p53, and from an intact immune system, as their levels were similar in wild-type and Rag2(-/-) gammaC(-/-) mice, the latter being deficient in T, B, and NK cells. Together, our results provide compelling evidence that exposure to IR induces long-term expression of senescence markers in vivo, an effect that may contribute to the reduced tissue functionality observed in cancer survivors.",
+            "start": 291,
+            "end": 1333
+          },
+          {
+            "source_id": "11569583",
+            "title": "Deregulated DNA polymerase β strengthens ionizing radiation-induced nucleotidic and chromosomal instabilities",
+            "text": "Deregulated DNA polymerase β strengthens ionizing radiation-induced nucleotidic and chromosomal instabilities\nDNA polymerase β (Pol β) is an error-prone enzyme which has been found to be overexpressed in several human tumors. By using a couple of recombinant CHO cells differing only from the exogenous expression of Pol β, we showed here that cells overexpressing Pol β are much more sensitive to IR treatments by increasing apoptosis. We also found that the surviving cells displayed an hypermutator phenotype which could be explained by different pathways involving Pol β, such as (i) an increased capacity to incorporate into DNA the mutagenic dGTP analog, 8-oxo-dGTP, one of the most abundant purine-derived nucleotides exposed to γ-irradiation, (ii) the induction of IR-induced DNA breaks and (iii) accumulation of chromosome aberrations induced by radiation. Alteration of Pol β expression in irradiated cells thus appears to strengthen both cell death and genetic changes associated with a malignant phenotype. These data provide new insights into the cellular response to radiations and the associated carcinogenic consequences.",
+            "start": 0,
+            "end": 1137
+          },
+          {
+            "source_id": "12552297",
+            "title": "The DNA polymerase λ is required for the repair of non-compatible DNA double strand breaks by NHEJ in mammalian cells",
+            "text": "The DNA polymerase λ is required for the repair of non-compatible DNA double strand breaks by NHEJ in mammalian cells\nDNA polymerase lambda (polλ) is a recently identified DNA polymerase whose cellular function remains elusive. Here we show, that polλ participates at the molecular level in a chromosomal context, in the repair of DNA double strand breaks (DSB) via non-homologous end joining (NHEJ) in mammalian cells. The expression of a catalytically inactive form of polλ (polλDN) decreases the frequency of NHEJ events in response to I-Sce-I-induced DSB whereas inactivated forms of its homologues polβ and polμ do not. Only events requiring DNA end processing before ligation are affected; this defect is associated with large deletions arising in the vicinity of the induced DSB. Furthermore, polλDN-expressing cells exhibit increased sensitization and genomic instability in response to ionizing radiation similar to that of NHEJ-defective cells. Our data support a requirement for polλ in repairing a subset of DSB in genomic DNA, thereby contributing to the maintenance of genetic stability mediated by the NHEJ pathway.",
+            "start": 0,
+            "end": 1130
+          },
+          {
+            "source_id": "43014661",
+            "title": "Increased susceptibility to UV-induced skin carcinogenesis in polymerase eta-deficient mice.",
+            "text": "Increased susceptibility to UV-induced skin carcinogenesis in polymerase eta-deficient mice.\nXeroderma pigmentosum variant (XPV) patients with mutations in the DNA polymerase eta (pol eta) gene are hypersensitive to sunlight and have greatly increased susceptibility to sunlight-induced skin cancer. Consistent with the ability of Pol eta to efficiently bypass UV light-induced cyclobutane pyrimidine dimers, XPV cells lacking Pol eta have diminished capacity to replicate UV-damaged DNA and are sensitive to UV light-induced killing and mutagenesis. To better understand these and other Pol eta functions, we generated Pol eta-deficient mice. Mice homozygous for a null mutation in pol eta are viable, fertile, and do not show any obvious spontaneous defects during the first year of life. However, fibroblasts derived from these mutant mice are sensitive to killing by exposure to UV light, and all Pol eta-deficient mice develop skin tumors after UV irradiation, in contrast to the wild-type littermate controls that did not develop such tumors. These results and biochemical studies of translesion synthesis by mouse Pol eta indicate that Pol eta-dependent bypass of cyclobutane pyrimidine dimers suppresses UV light-induced skin cancer in mice. Moreover, 37.5% of pol eta heterozygous mice also developed skin cancer during 5 months after a 5-month exposure to UV light, suggesting that humans who are heterozygous for mutations in pol eta may also have an increased risk of skin cancer.",
+            "start": 0,
+            "end": 1492
+          }
+        ],
+        "evidence_tokens": 1367,
+        "evidence_budget": 1400
+      }
+    }
+  ]
+}

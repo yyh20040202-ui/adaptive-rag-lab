@@ -1,0 +1,45 @@
+{
+  "seed": 42,
+  "epochs_requested": 4,
+  "selected_epoch": 1,
+  "optimizer_steps": 324,
+  "batch_size": 8,
+  "max_length": 192,
+  "learning_rate": 0.0003,
+  "temperature": 0.05,
+  "negative_mining": "BM25 top-10, excludes all train-qrels positives",
+  "validation_selection": "minimum held-out document-grouped contrastive loss; epoch 0 allowed",
+  "trainable_parameters": 73728,
+  "total_parameters": 22786944,
+  "trainable_fraction": 0.0032355369811765894,
+  "backend": "PyTorch CPU, float32, 4 threads",
+  "seconds": 346.5608769999999,
+  "base_model": "sentence-transformers/all-MiniLM-L6-v2",
+  "base_revision": "1110a243fdf4706b3f48f1d95db1a4f5529b4d41",
+  "history": [
+    {
+      "epoch": 0,
+      "validation_contrastive_loss": 1.109821736446919
+    },
+    {
+      "epoch": 1,
+      "train_contrastive_loss": 0.4563374483133248,
+      "validation_contrastive_loss": 1.101873935183133
+    },
+    {
+      "epoch": 2,
+      "train_contrastive_loss": 0.3754669806167437,
+      "validation_contrastive_loss": 1.1115329602013337
+    },
+    {
+      "epoch": 3,
+      "train_contrastive_loss": 0.3148561729227795,
+      "validation_contrastive_loss": 1.1635571526237791
+    },
+    {
+      "epoch": 4,
+      "train_contrastive_loss": 0.27953323066788194,
+      "validation_contrastive_loss": 1.1986746833733986
+    }
+  ]
+}

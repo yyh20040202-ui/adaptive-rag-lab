@@ -1,0 +1,54 @@
+{
+  "variant": "bge",
+  "model_path": "models/bge_reranker",
+  "model": "gpustack/bge-reranker-v2-m3-GGUF",
+  "revision": "3093af03b1a635e67b084b1d8c03c5f5e020fd05",
+  "rerank_depth": 50,
+  "alpha": 0.75,
+  "max_length": 384,
+  "inference": "GGUF-Q8_0-Vulkan",
+  "backend": "llama_vulkan",
+  "model_file": "bge-reranker-v2-m3-Q8_0.gguf",
+  "candidate_depth": 100,
+  "rrf_constant": 60,
+  "validation_metrics": {
+    "ndcg@10": 0.7662334351699481,
+    "mrr@10": 0.7352760736196319,
+    "recall@10": 0.879959100204499,
+    "recall@5": 0.8278118609406954
+  },
+  "embedding_fingerprint": {
+    "schema": 2,
+    "documents": {
+      "count": 5183,
+      "ids_sha256": "3df87dafd673a62a3ec6cb9ecc42d65916bff917e3fa539778ed543a2d72fe26",
+      "texts_sha256": "7b1dc0a5ca2f5b019468505af285f84821205986bfcbe225cd3970790c94bad7"
+    },
+    "queries": {
+      "count": 1109,
+      "ids_sha256": "574b5c6a26e2e5d1a99ef82f257c842eaacb8be6a3884fd3a219c0374c5bdbe1",
+      "texts_sha256": "7a81bd430f5b2c0088e5f73c1cd6b5c42648af67a8ee93849a873a7f34d9749a"
+    },
+    "encoder": {
+      "model_id": "sentence-transformers/all-MiniLM-L6-v2",
+      "revision": "1110a243fdf4706b3f48f1d95db1a4f5529b4d41",
+      "files_sha256": {
+        "config.json": "953f9c0d463486b10a6871cc2fd59f223b2c70184f49815e7efbcab5d8908b41",
+        "model.safetensors": "53aa51172d142c89d9012cce15ae4d6cc0ca6895895114379cacb4fab128d9db",
+        "tokenizer.json": "be50c3628f2bf5bb5e3a7f17b1f74611b2561a3a27eeab05e5aa30f411572037",
+        "tokenizer_config.json": "acb92769e8195aabd29b7b2137a9e6d6e25c476a4f15aa4355c233426c61576b",
+        "special_tokens_map.json": "303df45a03609e4ead04bc3dc1536d0ab19b5358db685b6f3da123d05ec200e3",
+        "vocab.txt": "07eced375cec144d27c900241f3e339478dec958f92fddbc551f295c992038a3"
+      },
+      "max_length": 192,
+      "dimension": 384,
+      "pooling": "attention-mask-mean-l2-v1",
+      "dtype": "float32"
+    },
+    "adapter": {
+      "adapter_config.json": "1b228996228016019bc2da2950226c62a5e4ff1de1a8b17345b2289645a9352e",
+      "adapter_model.safetensors": "4fad7e9b7ff432d41176ee32673fda9a16d95c3540b58ff4487893cbb2ae81e2"
+    },
+    "fingerprint_sha256": "55e93cc1aaadb6f94055e9ed5b38ce75d327d0c4cb35b8db5e2d0855ab818bfc"
+  }
+}

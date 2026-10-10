@@ -1,0 +1,7 @@
+{
+  "queries": 300,
+  "ranking_checks": 1200,
+  "failures": [],
+  "passed": true,
+  "scope": "all official test top-10 rankings in four served modes; includes live query encoding"
+}
