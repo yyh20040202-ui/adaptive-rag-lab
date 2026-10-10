@@ -166,5 +166,3 @@ python -m adaptive_rag.quality_analysis
 - [BGE v2-m3](https://huggingface.co/BAAI/bge-reranker-v2-m3)、[GPUStack GGUF](https://huggingface.co/gpustack/bge-reranker-v2-m3-GGUF)：多语种预训练重排器的Q8_0本地推理，未在本项目微调。
 - [Qwen3](https://huggingface.co/Qwen/Qwen3-1.7B)、[4B Instruct](https://huggingface.co/Qwen/Qwen3-4B-Instruct-2507)、[ggml-org GGUF](https://huggingface.co/ggml-org/Qwen3-1.7B-GGUF)、[LM Studio GGUF](https://huggingface.co/lmstudio-community/Qwen3-4B-Instruct-2507-GGUF)、[llama.cpp](https://github.com/ggml-org/llama.cpp)：本地推理，不进行Qwen微调。
 - [LoRA](https://arxiv.org/abs/2106.09685) 与 [Adaptive Re-Ranking](https://arxiv.org/abs/2606.25249)：借鉴参数高效训练、按查询权衡质量与计算的思路；模型/数据/方法不同，不声称复现论文结果。
-
-代码与自训练ranker/router为MIT，MiniLM adapter为Apache-2.0，数据与基础模型保留上游许可。仓库不上传完整基础模型、私人资料、API密钥或个人简历。
